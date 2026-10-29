@@ -1,0 +1,31 @@
+name: Correction or issue
+description: Report an error, a missing source or a problem with the page
+title: "[Issue] "
+labels: ["needs-triage"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Element, page or panel, for example "Iron, Extraction methods"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: The claim as shown, and what it should say
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: A filing, docket, government record or reference that supports the correction
+  - type: checkboxes
+    id: understood
+    attributes:
+      label: Understanding
+      options:
+        - label: I understand this site is a work in progress and is not investment advice.
+          required: true
