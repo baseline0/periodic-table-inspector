@@ -1,0 +1,13 @@
+{
+  "name": "periodic-table-inspector",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser-side tests for the periodic table page. Runs with Node's built-in test runner and jsdom.",
+  "scripts": {
+    "test": "node --test tests/js/*.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.0"
+  },
+  "type": "module"
+}

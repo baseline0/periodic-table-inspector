@@ -47,3 +47,8 @@ tag VERSION:
     git tag -a "v{{VERSION}}" -m "Release v{{VERSION}}"
     echo "Tagged v{{VERSION}} at $(git rev-parse --short HEAD). Not pushed."
     echo "To publish the tag, the owner runs: git push origin v{{VERSION}} (sign-off gate)."
+
+# Browser-side tests (jsdom) and data contracts. Installs node_modules on first run; no browser is needed.
+test-js:
+    @test -d node_modules || npm install --no-audit --no-fund
+    npm test
