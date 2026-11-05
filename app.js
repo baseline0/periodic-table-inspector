@@ -2,6 +2,11 @@
 // facet registry that decides which metadata appears in the side panel and in search. Nothing here is specific to a
 // particular element, so new elements, categories or facets are data changes only (see README.md).
 
+import {
+    STATUS, isEmpty, valueToText, buildSearchText, matchesFilters, flagUrl as flagUrlFor, lensById as findLens,
+    resolveLensState, setLensState, toggleFacetState, statusInfo,
+} from "./core.js";
+
 const DATA_URL = "data/elements.json";
 const OPERATIONS_URL = "data/operations.json";
 const LAWSUITS_URL = "data/lawsuits.json";
@@ -53,49 +58,16 @@ const refreshIcons = () => {
 };
 
 // A field counts as empty when it has no value, or an empty list or string.
-const isEmpty = (value) =>
-    value === null ||
-    value === undefined ||
-    value === "" ||
-    (Array.isArray(value) && value.length === 0);
-
-const valueToText = (value) => (Array.isArray(value) ? value.join(" | ") : String(value ?? ""));
-
-// Every searchable string on an element: the core fields plus every facet field the registry declares.
-function buildSearchText(element) {
-    const parts = [
-        element.name,
-        element.symbol,
-        String(element.number),
-        element.state,
-        categories.get(element.category)?.label ?? element.category,
-    ];
-    for (const facet of facets) {
-        const data = element.facets?.[facet.key] ?? {};
-        for (const field of facet.fields) {
-            if (field.type === "methods") {
-                for (const entry of data[field.key] ?? []) parts.push(methodText(entry));
-            } else if (field.type === "country_values") {
-                if (data[field.key]) parts.push(data[field.key].countries.map((row) => row.country).join(" "));
-            } else if (!isEmpty(data[field.key])) {
-                parts.push(valueToText(data[field.key]));
-            }
-        }
-    }
-    return parts.join(" | ").toLowerCase();
-}
-
-// One extraction entry as text: the method label, the source and the production route, when there is one.
-const methodText = (entry) =>
-    [extractionMethods[entry.method]?.label ?? entry.method, entry.source, entry.production_route].filter(Boolean).join(" ");
-
-const methodIds = (element) => (element.facets?.mining?.extraction ?? []).map((entry) => entry.method);
+// Thin wrappers that bind the pure logic in core.js to this page's data.
+const buildSearchTextFor = (element) =>
+    buildSearchText(element, {
+        facets,
+        categoryLabel: (id) => categories.get(id)?.label,
+        methodLabel: (id) => extractionMethods[id]?.label,
+    });
 
 function isVisible(element) {
-    if (state.category !== "all" && element.category !== state.category) return false;
-    if (state.stateFilter !== "all" && element.state !== state.stateFilter) return false;
-    if (state.method !== "all" && !methodIds(element).includes(state.method)) return false;
-    return !state.query || searchIndex.get(element.number).includes(state.query);
+    return matchesFilters(element, state, searchIndex.get(element.number));
 }
 
 function placement(element) {
@@ -254,16 +226,9 @@ function renderPanel(element) {
 
 // Facet status badges. The legend under the lens controls reads the same table and classes.
 const BADGE_CLASS = "rounded border px-1.5 py-0.5 text-[9px] normal-case tracking-normal";
-const STATUS = {
-    "human-verified": { label: "Verified", cls: "status-human-verified", meaning: "A person has checked the value against its cited source." },
-    "agent-extracted": { label: "Sourced, not yet checked", cls: "status-agent-extracted", meaning: "Taken from a cited source. No person has checked it yet." },
-    unaudited: { label: "Unaudited", cls: "status-unaudited", meaning: "No check has been made. Treat the value as unverified." },
-    disputed: { label: "Disputed", cls: "status-disputed", meaning: "Under review. The panel links to the open dispute." },
-};
-
 function facetSection(facet, element) {
     const data = element.facets?.[facet.key] ?? {};
-    const status = STATUS[data.status] ?? STATUS.unaudited;
+    const status = statusInfo(data.status);
     const section = el("section", "surface-panel line rounded-xl border p-4");
 
     const heading = el("h3", "text-muted mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider");
@@ -315,7 +280,7 @@ function facetSection(facet, element) {
     }
 
     const flag = el("a", "text-link mt-3 inline-block text-[11px] underline", "Flag this fact");
-    flag.href = flagUrl(element, facet, data);
+    flag.href = flagUrlFor(element, facet, data, facetConfig.repo);
     flag.target = "_blank";
     flag.rel = "noopener noreferrer";
     section.append(flag);
@@ -344,27 +309,6 @@ function modularBody(data) {
 }
 
 // Pre-filled GitHub issue for a correction. The reader adds the counter-source; nothing is sent until they submit it.
-function flagUrl(element, facet, record) {
-    const sources = (record.citations ?? []).map((c) => `- ${c.source ?? c.title ?? "source"}: ${c.url} (retrieved ${c.retrieved_at ?? c.retrieved})`);
-    const body = [
-        `Element: ${element.name} (${element.symbol})`,
-        `Facet: ${facet.key} (${facet.label})`,
-        `Status shown: ${record.status ?? "unaudited"}`,
-        "",
-        "Value shown (paste the line you dispute):",
-        "",
-        "Current sources:",
-        ...(sources.length ? sources : ["- none recorded"]),
-        "",
-        "Counter-source (URL, table or page, retrieval date):",
-        "",
-        "Quote from the source, if short:",
-        "",
-    ].join("\n");
-    const params = new URLSearchParams({ title: `Dispute: ${element.symbol} ${facet.key}`, body, labels: "data-dispute" });
-    return `https://github.com/${facetConfig.repo}/issues/new?${params.toString()}`;
-}
-
 function methodologyFor(facetId) {
     return facetConfig.facets.find((f) => f.id === facetId)?.methodology ?? "";
 }
@@ -398,26 +342,21 @@ function syncState() {
     writeStoredState();
 }
 
-function lensById(id) {
-    return facetConfig.lenses.find((lens) => lens.id === id) ?? null;
-}
+// The lens with this id, or null. The lens list comes from facets.config.json.
+const lensById = (id) => findLens(facetConfig.lenses, id);
 
 function initLensState() {
     const params = new URLSearchParams(window.location.search);
-    const saved = readStoredState();
-    const known = new Set(facets.map((f) => f.key));
-    const urlLens = lensById(params.get("lens"));
-    const savedLens = lensById(saved?.lens);
-    const lens = urlLens ?? savedLens ?? lensById(facetConfig.default_lens);
-
-    let ids;
-    if (params.has("facets")) ids = params.get("facets").split(",");
-    else if (urlLens) ids = urlLens.facets;
-    else if (Array.isArray(saved?.facetIds)) ids = saved.facetIds;
-    else ids = lens.facets;
-
-    state.lens = lens.id;
-    state.facetIds = new Set(ids.filter((id) => known.has(id)));
+    const next = resolveLensState({
+        lensParam: params.get("lens"),
+        facetsParam: params.get("facets"),
+        saved: readStoredState(),
+        lenses: facetConfig.lenses,
+        defaultLens: facetConfig.default_lens,
+        knownFacetIds: new Set(facets.map((f) => f.key)),
+    });
+    state.lens = next.lens;
+    state.facetIds = next.facetIds;
     syncState();
 }
 
@@ -426,19 +365,17 @@ function visibleFacets() {
 }
 
 function setLens(id) {
-    const lens = lensById(id);
-    if (!lens) return;
-    state.lens = id;
-    state.facetIds = new Set(lens.facets.filter((fid) => facets.some((f) => f.key === fid)));
+    const next = setLensState(id, { lenses: facetConfig.lenses, knownFacetIds: new Set(facets.map((f) => f.key)) });
+    if (!next) return;
+    state.lens = next.lens;
+    state.facetIds = next.facetIds;
     afterStateChange();
 }
 
 function toggleFacet(id) {
-    if (state.facetIds.has(id)) state.facetIds.delete(id);
-    else state.facetIds.add(id);
-    const current = lensById(state.lens);
-    const matches = current && current.facets.length === state.facetIds.size && current.facets.every((f) => state.facetIds.has(f));
-    if (!matches) state.lens = "custom";
+    const next = toggleFacetState(state, id, facetConfig.lenses);
+    state.lens = next.lens;
+    state.facetIds = next.facetIds;
     afterStateChange();
 }
 
@@ -707,7 +644,7 @@ async function init() {
     await loadModularFacets();
     initLensState();
     renderLensControls();
-    for (const element of elements) searchIndex.set(element.number, buildSearchText(element));
+    for (const element of elements) searchIndex.set(element.number, buildSearchTextFor(element));
 
     populateMethodFilter();
     renderChips();

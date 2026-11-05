@@ -23,7 +23,7 @@ serve-dev PORT=dev_port:
     cd "{{dev_dir}}" && python3 -m http.server {{PORT}}
 
 # Check facet registry, lenses, status values and citations (data/facets.config.json, data/schemas/).
-validate:
+validate: test-js
     python3 scripts/validate_facets.py
 
 # Create an annotated release tag locally. Refuses unless VERSION is X.Y.Z, the branch is main, the tree is clean,

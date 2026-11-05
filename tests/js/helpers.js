@@ -11,6 +11,28 @@ export function readRepo(relativePath) {
   return readFileSync(join(ROOT, relativePath), "utf8");
 }
 
+// app.js imports core.js as an ES module. The browser loads both natively; the jsdom loader joins them into one
+// classic script: core.js with its export keywords removed, then app.js with its import line removed.
+export function browserSource() {
+  const core = readRepo("core.js");
+  const app = readRepo("app.js");
+  // Mirror the real module binding: destructure exactly the names app.js imports, honouring `as` aliases.
+  const importMatch = app.match(/^import \{([\s\S]*?)\} from "\.\/core\.js";/m);
+  if (!importMatch) throw new Error("app.js must import from ./core.js");
+  const bindings = importMatch[1]
+    .split(",")
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => {
+      const [name, alias] = part.split(/\s+as\s+/);
+      return alias ? `${name}: ${alias}` : name;
+    });
+  const coreBody = core.replace(/^export /gm, "");
+  const exported = [...core.matchAll(/^export (?:const|function) (\w+)/gm)].map((m) => m[1]);
+  const body = app.replace(importMatch[0], "");
+  return `const CORE = (() => {\n${coreBody}\nreturn { ${exported.join(", ")} };\n})();\nconst { ${bindings.join(", ")} } = CORE;\n${body}`;
+}
+
 export const wait = (ms = 50) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Loads the page and waits until the table is drawn. Returns the window, plus the errors it logged.
@@ -45,7 +67,7 @@ export async function loadPage({ url = "http://127.0.0.1:8000/", storage = true,
   }
   if (savedTheme !== null) window.localStorage.setItem("pti_theme", savedTheme);
   window.eval(startupScript(source));
-  window.eval(readRepo("app.js"));
+  window.eval(browserSource());
   // Wait for init() to draw the 118 tiles.
   for (let i = 0; i < 50 && window.document.querySelectorAll("#ptable button.tile").length < 118; i++) {
     await wait(20);
