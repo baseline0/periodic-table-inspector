@@ -106,6 +106,89 @@
       ]
     },
     {
+      "key": "geography",
+      "label": "Where it is produced",
+      "icon": "globe",
+      "fields": [
+        {
+          "key": "commodity",
+          "label": "USGS commodity",
+          "type": "text"
+        },
+        {
+          "key": "production",
+          "label": "Mine production by country",
+          "type": "country_values"
+        },
+        {
+          "key": "reserves",
+          "label": "Reserves by country",
+          "type": "country_values"
+        }
+      ]
+    },
+    {
+      "key": "supply",
+      "label": "US supply reliance",
+      "icon": "package",
+      "fields": [
+        {
+          "key": "net_import_reliance",
+          "label": "Net import reliance (US)",
+          "type": "text"
+        },
+        {
+          "key": "delivery_origin",
+          "label": "US reactor deliveries by origin (EIA, 2025)",
+          "type": "text"
+        },
+        {
+          "key": "critical_list",
+          "label": "US critical minerals list (2025)",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "trade",
+      "label": "Traded goods (WTO)",
+      "icon": "ship",
+      "fields": [
+        {
+          "key": "commodity",
+          "label": "WTO product group",
+          "type": "text"
+        },
+        {
+          "key": "exports",
+          "label": "Exports by selected economy",
+          "type": "country_values"
+        },
+        {
+          "key": "imports",
+          "label": "Imports by selected economy",
+          "type": "country_values"
+        }
+      ]
+    },
+    {
+      "key": "tariff",
+      "label": "Import duty (WTO)",
+      "icon": "receipt",
+      "fields": [
+        {
+          "key": "commodity",
+          "label": "HS line",
+          "type": "text"
+        },
+        {
+          "key": "duty",
+          "label": "MFN duty by selected economy",
+          "type": "country_values"
+        }
+      ]
+    },
+    {
       "key": "economics",
       "label": "Economic significance",
       "icon": "trending-up",
@@ -189,6 +272,17 @@
           ],
           "source_text": "Extracted from natural gas deposits via fractional distillation."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "E% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "High-value non-renewable strategic gas; critical for high-tech manufacturing, medical imaging, and aerospace."
@@ -230,6 +324,94 @@
           ],
           "source_text": "Continental brine deposits (lithium triangle), hard-rock pegmatite (spodumene)."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Lithium (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 92000.0,
+                "share_percent": 31.7
+              },
+              {
+                "country": "China",
+                "value": 62000.0,
+                "share_percent": 21.4
+              },
+              {
+                "country": "Chile",
+                "value": 56000.0,
+                "share_percent": 19.3
+              },
+              {
+                "country": "Zimbabwe",
+                "value": 28000.0,
+                "share_percent": 9.7
+              },
+              {
+                "country": "Argentina",
+                "value": 23000.0,
+                "share_percent": 7.9
+              }
+            ],
+            "world_total": 290000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Chile",
+                "value": 9200000.0,
+                "share_percent": 24.9
+              },
+              {
+                "country": "Australia",
+                "value": 8400000.0,
+                "share_percent": 22.7
+              },
+              {
+                "country": "China",
+                "value": 4600000.0,
+                "share_percent": 12.4
+              },
+              {
+                "country": "United States",
+                "value": 4400000.0,
+                "share_percent": 11.9
+              },
+              {
+                "country": "Argentina",
+                "value": 4400000.0,
+                "share_percent": 11.9
+              }
+            ],
+            "world_total": 37000000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": ">50% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Cornerstone element of the green energy transition; core battery material experiencing geopolitical supply race."
@@ -267,6 +449,61 @@
           ],
           "source_text": "Bertrandite ore and beryl mineral deposits."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Beryllium (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "United States",
+                "value": 230.0,
+                "share_percent": 53.5
+              },
+              {
+                "country": "Brazil",
+                "value": 80.0,
+                "share_percent": 18.6
+              },
+              {
+                "country": "China",
+                "value": 77.0,
+                "share_percent": 17.9
+              },
+              {
+                "country": "Nigeria",
+                "value": 40.0,
+                "share_percent": 9.3
+              },
+              {
+                "country": "Mozambique",
+                "value": 3.0,
+                "share_percent": 0.7
+              }
+            ],
+            "world_total": 430.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "E% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Critical strategic defense material; irreplaceable in high-stress aerospace structures and nuclear components."
@@ -303,6 +540,39 @@
             }
           ],
           "source_text": "Borax, kernite, colemanite evaporite mineral deposits."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Boron (the element itself)",
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "United States",
+                "value": 48000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "E% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -344,6 +614,94 @@
             }
           ],
           "source_text": "Natural graphite mining, coal deposits, petroleum coke processing, synthetic diamond CVD."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Graphite (Natural) (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 1400000.0,
+                "share_percent": 77.8
+              },
+              {
+                "country": "Madagascar",
+                "value": 80000.0,
+                "share_percent": 4.4
+              },
+              {
+                "country": "Tanzania",
+                "value": 75000.0,
+                "share_percent": 4.2
+              },
+              {
+                "country": "Brazil",
+                "value": 65000.0,
+                "share_percent": 3.6
+              },
+              {
+                "country": "Mozambique",
+                "value": 60000.0,
+                "share_percent": 3.3
+              }
+            ],
+            "world_total": 1800000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 100000000.0,
+                "share_percent": 32.3
+              },
+              {
+                "country": "Brazil",
+                "value": 74000000.0,
+                "share_percent": 23.9
+              },
+              {
+                "country": "Madagascar",
+                "value": 27000000.0,
+                "share_percent": 8.7
+              },
+              {
+                "country": "Mozambique",
+                "value": 25000000.0,
+                "share_percent": 8.1
+              },
+              {
+                "country": "Tanzania",
+                "value": 18000000.0,
+                "share_percent": 5.8
+              }
+            ],
+            "world_total": 310000000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -456,6 +814,94 @@
           ],
           "source_text": "Fluorite (fluorspar) mineral mining and fluorapatite processing."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Fluorspar (a product that contains this element)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 6000.0,
+                "share_percent": 60.0
+              },
+              {
+                "country": "Mexico",
+                "value": 1500.0,
+                "share_percent": 15.0
+              },
+              {
+                "country": "Mongolia",
+                "value": 1500.0,
+                "share_percent": 15.0
+              },
+              {
+                "country": "South Africa",
+                "value": 410.0,
+                "share_percent": 4.1
+              },
+              {
+                "country": "Vietnam",
+                "value": 160.0,
+                "share_percent": 1.6
+              }
+            ],
+            "world_total": 10000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 110000.0,
+                "share_percent": 33.3
+              },
+              {
+                "country": "Mexico",
+                "value": 68000.0,
+                "share_percent": 20.6
+              },
+              {
+                "country": "South Africa",
+                "value": 41000.0,
+                "share_percent": 12.4
+              },
+              {
+                "country": "Mongolia",
+                "value": 34000.0,
+                "share_percent": 10.3
+              },
+              {
+                "country": "Vietnam",
+                "value": 16000.0,
+                "share_percent": 4.8
+              }
+            ],
+            "world_total": 330000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Critical for nuclear fuel enrichment, refrigerants, and EV battery electrolyte salts (LiPF6)."
@@ -493,6 +939,17 @@
           ],
           "source_text": "Byproduct of large-scale cryogenic iron/steel air separation units."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "52% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Highly vulnerable supply chain bottle-neck essential for deep ultraviolet (DUV) semiconductor lithography."
@@ -528,6 +985,61 @@
             }
           ],
           "source_text": "Rock salt (halite) mining and trona ore processing."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Salt (a product that contains this element)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 56000.0,
+                "share_percent": 20.7
+              },
+              {
+                "country": "United States",
+                "value": 40000.0,
+                "share_percent": 14.8
+              },
+              {
+                "country": "India",
+                "value": 30000.0,
+                "share_percent": 11.1
+              },
+              {
+                "country": "Germany",
+                "value": 15000.0,
+                "share_percent": 5.6
+              },
+              {
+                "country": "Canada",
+                "value": 13000.0,
+                "share_percent": 4.8
+              }
+            ],
+            "world_total": 270000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "31% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -570,6 +1082,119 @@
           ],
           "source_text": "Magnesite ore, dolomite, and seawater/brine extraction via the Pidgeon process."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Magnesium Metal (the element itself)",
+          "production": {
+            "basis": "Smelter production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 950.0,
+                "share_percent": 86.4
+              },
+              {
+                "country": "Russia",
+                "value": 60.0,
+                "share_percent": 5.5
+              },
+              {
+                "country": "Brazil",
+                "value": 20.0,
+                "share_percent": 1.8
+              },
+              {
+                "country": "Israel",
+                "value": 20.0,
+                "share_percent": 1.8
+              },
+              {
+                "country": "Turkey",
+                "value": 15.0,
+                "share_percent": 1.4
+              }
+            ],
+            "world_total": 1100.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": ">75% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810411: Magnesium containing at least 99.8% magnesium",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810411 (Magnesium containing at least 99.8% magnesium)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "United States of America",
+                "value": 8.0
+              },
+              {
+                "country": "China",
+                "value": 6.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 6.0
+              },
+              {
+                "country": "Brazil",
+                "value": 5.4
+              },
+              {
+                "country": "Türkiye",
+                "value": 5.3
+              },
+              {
+                "country": "European Union",
+                "value": 5.3
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "China holds virtual monopoly; essential lightweight structural metal for automotive weight reduction."
@@ -606,6 +1231,119 @@
             }
           ],
           "source_text": "Bauxite ore strip mining, refined via Bayer process and Hall-Héroult smelting."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Aluminum (the element itself)",
+          "production": {
+            "basis": "Smelter production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 45000.0,
+                "share_percent": 60.8
+              },
+              {
+                "country": "India",
+                "value": 4200.0,
+                "share_percent": 5.7
+              },
+              {
+                "country": "Russia",
+                "value": 3900.0,
+                "share_percent": 5.3
+              },
+              {
+                "country": "Canada",
+                "value": 3300.0,
+                "share_percent": 4.5
+              },
+              {
+                "country": "United Arab Emirates",
+                "value": 2700.0,
+                "share_percent": 3.6
+              }
+            ],
+            "world_total": 74000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "60% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 760110: Aluminium, not alloyed",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 760110 (Aluminium, not alloyed)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "India",
+                "value": 7.5
+              },
+              {
+                "country": "Brazil",
+                "value": 5.4
+              },
+              {
+                "country": "China",
+                "value": 5.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 3.0
+              },
+              {
+                "country": "European Union",
+                "value": 3.0
+              },
+              {
+                "country": "United States of America",
+                "value": 1.3
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 1.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -644,6 +1382,67 @@
           ],
           "source_text": "High-purity quartz (quartzite) reduction with carbon in electric arc furnaces."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-11-05"
+            }
+          ],
+          "commodity": "Silicon (silicon metal, the elemental product; ferrosilicon not included)",
+          "production": {
+            "basis": "Silicon metal",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 4000.0,
+                "share_percent": 87.0
+              },
+              {
+                "country": "Brazil",
+                "value": 180.0,
+                "share_percent": 3.9
+              },
+              {
+                "country": "Norway",
+                "value": 130.0,
+                "share_percent": 2.8
+              },
+              {
+                "country": "France",
+                "value": 68.0,
+                "share_percent": 1.5
+              },
+              {
+                "country": "Australia",
+                "value": 47.0,
+                "share_percent": 1.0
+              }
+            ],
+            "world_total": 4600.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-11-05"
+            },
+            {
+              "source": "usgs-critical-minerals-list-2025",
+              "url": "https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals",
+              "retrieved": "2026-11-05"
+            }
+          ],
+          "net_import_reliance": "<50% (USGS, 2025)",
+          "critical_list": "Yes (USGS MCS 2026 critical-mineral flag; final 2025 list, 7 Nov 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Foundation of all microelectronics (Silicon Valley) and photovoltaics for solar energy."
@@ -681,6 +1480,94 @@
           ],
           "source_text": "Phosphate rock mining (apatite deposits)."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Phosphate Rock (a product that contains this element)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 110000.0,
+                "share_percent": 44.0
+              },
+              {
+                "country": "Morocco",
+                "value": 36000.0,
+                "share_percent": 14.4
+              },
+              {
+                "country": "United States",
+                "value": 20000.0,
+                "share_percent": 8.0
+              },
+              {
+                "country": "Russia",
+                "value": 14000.0,
+                "share_percent": 5.6
+              },
+              {
+                "country": "Jordan",
+                "value": 12000.0,
+                "share_percent": 4.8
+              }
+            ],
+            "world_total": 250000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Morocco",
+                "value": 50000000.0,
+                "share_percent": 68.5
+              },
+              {
+                "country": "China",
+                "value": 3400000.0,
+                "share_percent": 4.7
+              },
+              {
+                "country": "Egypt",
+                "value": 2800000.0,
+                "share_percent": 3.8
+              },
+              {
+                "country": "Tunisia",
+                "value": 2500000.0,
+                "share_percent": 3.4
+              },
+              {
+                "country": "Russia",
+                "value": 2400000.0,
+                "share_percent": 3.3
+              }
+            ],
+            "world_total": 73000000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "16% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Geopolitically concentrated non-renewable resource essential for global food production and LFP EV batteries."
@@ -717,6 +1604,61 @@
             }
           ],
           "source_text": "Byproduct desulfurization of crude oil and natural gas (Claus process)."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Sulfur (the element itself)",
+          "production": {
+            "basis": "Production, all forms",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 19000.0,
+                "share_percent": 22.6
+              },
+              {
+                "country": "United States",
+                "value": 8100.0,
+                "share_percent": 9.6
+              },
+              {
+                "country": "Russia",
+                "value": 7500.0,
+                "share_percent": 8.9
+              },
+              {
+                "country": "Saudi Arabia",
+                "value": 7200.0,
+                "share_percent": 8.6
+              },
+              {
+                "country": "United Arab Emirates",
+                "value": 6300.0,
+                "share_percent": 7.5
+              }
+            ],
+            "world_total": 84000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "14% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -792,6 +1734,17 @@
           ],
           "source_text": "Fractional distillation of liquid air in industrial air separation plants."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "E% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Critical non-reactive shielding atmosphere for high-tier metallurgy and silicon crystal growing."
@@ -828,6 +1781,84 @@
             }
           ],
           "source_text": "Evaporite potash deposits (sylvinite, carnallite) mined underground."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Potash (a product that contains this element)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Canada",
+                "value": 15000.0,
+                "share_percent": 30.6
+              },
+              {
+                "country": "Russia",
+                "value": 10000.0,
+                "share_percent": 20.4
+              },
+              {
+                "country": "China",
+                "value": 6300.0,
+                "share_percent": 12.9
+              },
+              {
+                "country": "Belarus",
+                "value": 6000.0,
+                "share_percent": 12.2
+              },
+              {
+                "country": "Germany",
+                "value": 3000.0,
+                "share_percent": 6.1
+              }
+            ],
+            "world_total": 49000.0
+          },
+          "reserves": {
+            "basis": "Reserves, Recoverable ore",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Canada",
+                "value": 4500000.0
+              },
+              {
+                "country": "Belarus",
+                "value": 3300000.0
+              },
+              {
+                "country": "United States",
+                "value": 970000.0
+              },
+              {
+                "country": "Brazil",
+                "value": 10000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "92% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -903,6 +1934,17 @@
           ],
           "source_text": "Byproduct of titanium oxide, nickel-cobalt, and uranium processing."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "High-value niche metal that drastically improves strength and weldability of aluminum alloys for aerospace."
@@ -939,6 +1981,64 @@
             }
           ],
           "source_text": "Ilmenite and rutile mineral sands mining."
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810820: Unwrought titanium; powders",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810820 (Unwrought titanium; powders)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Russian Federation",
+                "value": 15.0
+              },
+              {
+                "country": "United States of America",
+                "value": 15.0
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 5.0
+              },
+              {
+                "country": "European Union",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 2.5
+              },
+              {
+                "country": "Japan",
+                "value": 1.5
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "Brazil",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -977,6 +2077,89 @@
           ],
           "source_text": "Vanadiferous titanomagnetite iron ore processing and slag recovery."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Vanadium (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 82000.0,
+                "share_percent": 74.5
+              },
+              {
+                "country": "Russia",
+                "value": 21000.0,
+                "share_percent": 19.1
+              },
+              {
+                "country": "Brazil",
+                "value": 5300.0,
+                "share_percent": 4.8
+              },
+              {
+                "country": "South Africa",
+                "value": 5000.0,
+                "share_percent": 4.5
+              }
+            ],
+            "world_total": 110000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 10000.0,
+                "share_percent": 47.6
+              },
+              {
+                "country": "China",
+                "value": 5800.0,
+                "share_percent": 27.6
+              },
+              {
+                "country": "Russia",
+                "value": 5000.0,
+                "share_percent": 23.8
+              },
+              {
+                "country": "South Africa",
+                "value": 520.0,
+                "share_percent": 2.5
+              },
+              {
+                "country": "Brazil",
+                "value": 94.0,
+                "share_percent": 0.4
+              }
+            ],
+            "world_total": 21000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "41% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Critical for ultra-high-strength steel alloys and long-duration vanadium redox flow batteries (VRFB)."
@@ -1013,6 +2196,88 @@
             }
           ],
           "source_text": "Chromite ore underground and open-pit mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Chromium (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "South Africa",
+                "value": 23000.0,
+                "share_percent": 45.1
+              },
+              {
+                "country": "Turkey",
+                "value": 9000.0,
+                "share_percent": 17.6
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 7000.0,
+                "share_percent": 13.7
+              },
+              {
+                "country": "India",
+                "value": 3000.0,
+                "share_percent": 5.9
+              },
+              {
+                "country": "Brazil",
+                "value": 2000.0,
+                "share_percent": 3.9
+              }
+            ],
+            "world_total": 51000.0
+          },
+          "reserves": {
+            "basis": "Reserves: Cr2O3 content",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "South Africa",
+                "value": 110000.0
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 100000.0
+              },
+              {
+                "country": "Zimbabwe",
+                "value": 78000.0
+              },
+              {
+                "country": "India",
+                "value": 27000.0
+              },
+              {
+                "country": "Finland",
+                "value": 16000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "79% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -1051,6 +2316,94 @@
           ],
           "source_text": "Pyrolusite ore deposits and sedimentary manganese manganese rocks."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Manganese (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "South Africa",
+                "value": 7600.0,
+                "share_percent": 38.0
+              },
+              {
+                "country": "Gabon",
+                "value": 5000.0,
+                "share_percent": 25.0
+              },
+              {
+                "country": "Ghana",
+                "value": 2000.0,
+                "share_percent": 10.0
+              },
+              {
+                "country": "Australia",
+                "value": 1600.0,
+                "share_percent": 8.0
+              },
+              {
+                "country": "Brazil",
+                "value": 800.0,
+                "share_percent": 4.0
+              }
+            ],
+            "world_total": 20000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 580000.0,
+                "share_percent": 34.1
+              },
+              {
+                "country": "South Africa",
+                "value": 550000.0,
+                "share_percent": 32.4
+              },
+              {
+                "country": "Brazil",
+                "value": 300000.0,
+                "share_percent": 17.6
+              },
+              {
+                "country": "China",
+                "value": 260000.0,
+                "share_percent": 15.3
+              },
+              {
+                "country": "Gabon",
+                "value": 61000.0,
+                "share_percent": 3.6
+              }
+            ],
+            "world_total": 1700000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Essential ingredient in steelmaking (no substitute exists); emerging as critical battery cathode material (NMC/LMFP)."
@@ -1087,6 +2440,258 @@
             }
           ],
           "source_text": "Banded iron formations (hematite, magnetite mining)."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Iron Ore (a product that contains this element)",
+          "reserves": {
+            "basis": "Reserves (million metric tons): Crude ore",
+            "year": 2025,
+            "unit": "million metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 59000.0
+              },
+              {
+                "country": "Russia",
+                "value": 35000.0
+              },
+              {
+                "country": "Brazil",
+                "value": 34000.0
+              },
+              {
+                "country": "China",
+                "value": 17000.0
+              },
+              {
+                "country": "Mauritania",
+                "value": 10000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "E% (USGS, 2025)"
+        },
+        "trade": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Iron and steel (product group; not the ore)",
+          "exports": {
+            "basis": "Exports, iron and steel (WTO sector MAIS)",
+            "year": 2024,
+            "unit": "Million US dollar",
+            "countries": [
+              {
+                "country": "China",
+                "value": 88962.0
+              },
+              {
+                "country": "Germany",
+                "value": 33782.0
+              },
+              {
+                "country": "Japan",
+                "value": 28991.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 27932.0
+              },
+              {
+                "country": "Italy",
+                "value": 22504.0
+              },
+              {
+                "country": "Belgium",
+                "value": 19101.0
+              },
+              {
+                "country": "United States of America",
+                "value": 17772.0
+              },
+              {
+                "country": "Netherlands",
+                "value": 14239.0
+              },
+              {
+                "country": "France",
+                "value": 13727.0
+              },
+              {
+                "country": "India",
+                "value": 13475.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 13189.0
+              },
+              {
+                "country": "Brazil",
+                "value": 13018.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 12218.0
+              },
+              {
+                "country": "Spain",
+                "value": 10046.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 3660.0
+              }
+            ]
+          },
+          "imports": {
+            "basis": "Imports, iron and steel (WTO sector MAIS)",
+            "year": 2024,
+            "unit": "Million US dollar",
+            "countries": [
+              {
+                "country": "United States of America",
+                "value": 42817.0
+              },
+              {
+                "country": "China",
+                "value": 34061.0
+              },
+              {
+                "country": "Germany",
+                "value": 29183.0
+              },
+              {
+                "country": "Italy",
+                "value": 22338.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 16902.0
+              },
+              {
+                "country": "France",
+                "value": 14670.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 14501.0
+              },
+              {
+                "country": "Netherlands",
+                "value": 13973.0
+              },
+              {
+                "country": "India",
+                "value": 13889.0
+              },
+              {
+                "country": "Belgium",
+                "value": 12159.0
+              },
+              {
+                "country": "Spain",
+                "value": 11856.0
+              },
+              {
+                "country": "Japan",
+                "value": 8898.0
+              },
+              {
+                "country": "Brazil",
+                "value": 6699.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 2879.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 1775.0
+              }
+            ]
+          }
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 720110: Nonalloy pig iron containing 0.5% or less phosphorus",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 720110 (Nonalloy pig iron containing 0.5% or less phosphorus)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "India",
+                "value": 15.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 5.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 5.0
+              },
+              {
+                "country": "Brazil",
+                "value": 3.6
+              },
+              {
+                "country": "European Union",
+                "value": 1.3
+              },
+              {
+                "country": "China",
+                "value": 1.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.5
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 0.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -1125,6 +2730,152 @@
           ],
           "source_text": "Byproduct of copper and nickel mining."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Cobalt (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Congo (Kinshasa)",
+                "value": 230000.0,
+                "share_percent": 74.2
+              },
+              {
+                "country": "Indonesia",
+                "value": 44000.0,
+                "share_percent": 14.2
+              },
+              {
+                "country": "Russia",
+                "value": 7700.0,
+                "share_percent": 2.5
+              },
+              {
+                "country": "Madagascar",
+                "value": 3900.0,
+                "share_percent": 1.3
+              },
+              {
+                "country": "Australia",
+                "value": 3700.0,
+                "share_percent": 1.2
+              }
+            ],
+            "world_total": 310000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Congo (Kinshasa)",
+                "value": 6000000.0,
+                "share_percent": 50.0
+              },
+              {
+                "country": "Australia",
+                "value": 1700000.0,
+                "share_percent": 14.2
+              },
+              {
+                "country": "Russia",
+                "value": 800000.0,
+                "share_percent": 6.7
+              },
+              {
+                "country": "Indonesia",
+                "value": 760000.0,
+                "share_percent": 6.3
+              },
+              {
+                "country": "Cuba",
+                "value": 500000.0,
+                "share_percent": 4.2
+              }
+            ],
+            "world_total": 12000000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "79% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810520: Unwrought cobalt; powders",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810520 (Unwrought cobalt; powders)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 4.0
+              },
+              {
+                "country": "Brazil",
+                "value": 3.6
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 2.7
+              },
+              {
+                "country": "United States of America",
+                "value": 1.5
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "Geopolitically sensitive critical material plagued by DRC supply dominance and human rights scrutiny."
@@ -1161,6 +2912,142 @@
             }
           ],
           "source_text": "Laterite deposits (HPAL processing) and magmatic sulfide ores."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Nickel (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Indonesia",
+                "value": 2600000.0,
+                "share_percent": 66.7
+              },
+              {
+                "country": "Philippines",
+                "value": 270000.0,
+                "share_percent": 6.9
+              },
+              {
+                "country": "Russia",
+                "value": 200000.0,
+                "share_percent": 5.1
+              },
+              {
+                "country": "Canada",
+                "value": 140000.0,
+                "share_percent": 3.6
+              },
+              {
+                "country": "New Caledonia",
+                "value": 140000.0,
+                "share_percent": 3.6
+              }
+            ],
+            "world_total": 3900000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Indonesia",
+                "value": 62000000.0
+              },
+              {
+                "country": "Australia",
+                "value": 25000000.0
+              },
+              {
+                "country": "Brazil",
+                "value": 16000000.0
+              },
+              {
+                "country": "Russia",
+                "value": 8300000.0
+              },
+              {
+                "country": "New Caledonia",
+                "value": 7100000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "41% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 750210: Nickel, not alloyed",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 750210 (Nickel, not alloyed)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Brazil",
+                "value": 5.4
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 3.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -1199,6 +3086,152 @@
           ],
           "source_text": "Porphyry copper deposit open-pit mining."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Copper (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Chile",
+                "value": 5300.0,
+                "share_percent": 23.0
+              },
+              {
+                "country": "Congo (Kinshasa)",
+                "value": 3200.0,
+                "share_percent": 13.9
+              },
+              {
+                "country": "Peru",
+                "value": 2700.0,
+                "share_percent": 11.7
+              },
+              {
+                "country": "China",
+                "value": 1800.0,
+                "share_percent": 7.8
+              },
+              {
+                "country": "Russia",
+                "value": 1300.0,
+                "share_percent": 5.7
+              }
+            ],
+            "world_total": 23000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Chile",
+                "value": 180000.0,
+                "share_percent": 18.4
+              },
+              {
+                "country": "Australia",
+                "value": 100000.0,
+                "share_percent": 10.2
+              },
+              {
+                "country": "Peru",
+                "value": 85000.0,
+                "share_percent": 8.7
+              },
+              {
+                "country": "Congo (Kinshasa)",
+                "value": 80000.0,
+                "share_percent": 8.2
+              },
+              {
+                "country": "Russia",
+                "value": 80000.0,
+                "share_percent": 8.2
+              }
+            ],
+            "world_total": 980000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "57% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 740311: Refined copper cathodes and sections of cathodes",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 740311 (Refined copper cathodes and sections of cathodes)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Brazil",
+                "value": 5.4
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "China",
+                "value": 2.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 2.0
+              },
+              {
+                "country": "United States of America",
+                "value": 1.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "'Dr. Copper' - economic health barometer; pivotal spine of global electrification, renewables, and EV grids."
@@ -1235,6 +3268,152 @@
             }
           ],
           "source_text": "Sphalerite zinc sulfide mineral deposits."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Zinc (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 4100.0,
+                "share_percent": 31.5
+              },
+              {
+                "country": "Peru",
+                "value": 1500.0,
+                "share_percent": 11.5
+              },
+              {
+                "country": "Australia",
+                "value": 1100.0,
+                "share_percent": 8.5
+              },
+              {
+                "country": "India",
+                "value": 870.0,
+                "share_percent": 6.7
+              },
+              {
+                "country": "Mexico",
+                "value": 780.0,
+                "share_percent": 6.0
+              }
+            ],
+            "world_total": 13000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 64000.0,
+                "share_percent": 26.7
+              },
+              {
+                "country": "China",
+                "value": 60000.0,
+                "share_percent": 25.0
+              },
+              {
+                "country": "Russia",
+                "value": 29000.0,
+                "share_percent": 12.1
+              },
+              {
+                "country": "Peru",
+                "value": 18000.0,
+                "share_percent": 7.5
+              },
+              {
+                "country": "Mexico",
+                "value": 14000.0,
+                "share_percent": 5.8
+              }
+            ],
+            "world_total": 240000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "E% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 790111: Zinc containing 99.99% or more of zinc",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 790111 (Zinc containing 99.99% or more of zinc)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Brazil",
+                "value": 7.2
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 3.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 2.5
+              },
+              {
+                "country": "European Union",
+                "value": 2.5
+              },
+              {
+                "country": "United States of America",
+                "value": 1.5
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -1273,6 +3452,51 @@
           ],
           "source_text": "Byproduct recovered during bauxite processing for aluminum."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Gallium (the element itself)",
+          "production": {
+            "basis": "Primary production",
+            "year": 2025,
+            "unit": "kilograms",
+            "countries": [
+              {
+                "country": "China",
+                "value": 900000.0,
+                "share_percent": 100.0
+              },
+              {
+                "country": "Russia",
+                "value": 6000.0,
+                "share_percent": 0.7
+              },
+              {
+                "country": "Japan",
+                "value": 3000.0,
+                "share_percent": 0.3
+              }
+            ],
+            "world_total": 900000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Extreme geopolitical concentration; China implemented export restrictions in 2023. Critical for military radar & chips."
@@ -1309,6 +3533,17 @@
             }
           ],
           "source_text": "Byproduct of zinc refining and coal fly ash processing."
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": ">50% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -1347,6 +3582,17 @@
           ],
           "source_text": "Byproduct of copper, gold, and lead smelting operations."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "High toxicity commodity; specialized strategic role in high-speed microelectronics."
@@ -1383,6 +3629,61 @@
             }
           ],
           "source_text": "Extracted from electrolytic copper refinery anode slimes."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Selenium (the element itself)",
+          "production": {
+            "basis": "Refinery production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 2000.0,
+                "share_percent": 52.6
+              },
+              {
+                "country": "Japan",
+                "value": 640.0,
+                "share_percent": 16.8
+              },
+              {
+                "country": "Russia",
+                "value": 320.0,
+                "share_percent": 8.4
+              },
+              {
+                "country": "Belgium",
+                "value": 200.0,
+                "share_percent": 5.3
+              },
+              {
+                "country": "Canada",
+                "value": 130.0,
+                "share_percent": 3.4
+              }
+            ],
+            "world_total": 3800.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": ">50% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -1421,6 +3722,80 @@
           ],
           "source_text": "Subsurface natural salt brines and inland sea brine extraction."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Bromine (the element itself)",
+          "production": {
+            "basis": "Production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Israel",
+                "value": 200000.0,
+                "share_percent": 46.5
+              },
+              {
+                "country": "Jordan",
+                "value": 110000.0,
+                "share_percent": 25.6
+              },
+              {
+                "country": "China",
+                "value": 90000.0,
+                "share_percent": 20.9
+              },
+              {
+                "country": "Japan",
+                "value": 20000.0,
+                "share_percent": 4.7
+              },
+              {
+                "country": "India",
+                "value": 7000.0,
+                "share_percent": 1.6
+              }
+            ],
+            "world_total": 430000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "United States",
+                "value": 11000000.0
+              },
+              {
+                "country": "Jordan",
+                "value": 360000.0
+              },
+              {
+                "country": "China",
+                "value": 130000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "<25% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "High barrier-to-entry chemical sector controlled by key brine deposit owners."
@@ -1457,6 +3832,17 @@
             }
           ],
           "source_text": "Air separation unit (ASU) byproduct of cryogenic air distillation."
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "93% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -1531,6 +3917,76 @@
           ],
           "source_text": "Celestite mineral mining."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Strontium (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Iran",
+                "value": 250000.0,
+                "share_percent": 55.6
+              },
+              {
+                "country": "Spain",
+                "value": 100000.0,
+                "share_percent": 22.2
+              },
+              {
+                "country": "China",
+                "value": 80000.0,
+                "share_percent": 17.8
+              },
+              {
+                "country": "Mexico",
+                "value": 20000.0,
+                "share_percent": 4.4
+              },
+              {
+                "country": "Argentina",
+                "value": 700.0,
+                "share_percent": 0.2
+              }
+            ],
+            "world_total": 450000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 12000000.0
+              },
+              {
+                "country": "Iran",
+                "value": 2000000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Essential for ceramic permanent magnets in automotive motors."
@@ -1571,6 +4027,17 @@
           ],
           "source_text": "Xenotime & ion-adsorption clays."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Critical heavy rare earth element for advanced ceramics and lasers."
@@ -1607,6 +4074,119 @@
           ],
           "source_text": "Zircon mineral sand mining."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Zirconium (the element itself)",
+          "production": {
+            "basis": "Zirconium mineral concentrates, mine production (thousand metric tons, gross weight)",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 400.0,
+                "share_percent": 33.3
+              },
+              {
+                "country": "South Africa",
+                "value": 270.0,
+                "share_percent": 22.5
+              },
+              {
+                "country": "Mozambique",
+                "value": 160.0,
+                "share_percent": 13.3
+              },
+              {
+                "country": "United States",
+                "value": 100.0,
+                "share_percent": 8.3
+              },
+              {
+                "country": "China",
+                "value": 100.0,
+                "share_percent": 8.3
+              }
+            ],
+            "world_total": 1200.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "<25% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810920: Unwrought zirconium; powders",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810920 (Unwrought zirconium; powders)",
+            "year": 2022,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Russian Federation",
+                "value": 15.0
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 5.0
+              },
+              {
+                "country": "European Union",
+                "value": 5.0
+              },
+              {
+                "country": "United States of America",
+                "value": 4.2
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Brazil",
+                "value": 2.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "Vital for nuclear power safety due to extremely low neutron absorption."
@@ -1642,6 +4222,88 @@
             }
           ],
           "source_text": "Pyrochlore mineral deposit mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Niobium (Columbium) (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Brazil",
+                "value": 104000.0,
+                "share_percent": 92.9
+              },
+              {
+                "country": "Canada",
+                "value": 6000.0,
+                "share_percent": 5.4
+              },
+              {
+                "country": "Congo (Kinshasa)",
+                "value": 970.0,
+                "share_percent": 0.9
+              },
+              {
+                "country": "Russia",
+                "value": 300.0,
+                "share_percent": 0.3
+              },
+              {
+                "country": "Rwanda",
+                "value": 200.0,
+                "share_percent": 0.2
+              }
+            ],
+            "world_total": 112000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Brazil",
+                "value": 14000000.0
+              },
+              {
+                "country": "China",
+                "value": 6500000.0
+              },
+              {
+                "country": "Canada",
+                "value": 640000.0
+              },
+              {
+                "country": "United States",
+                "value": 210000.0
+              },
+              {
+                "country": "Russia",
+                "value": 3000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -1682,6 +4344,148 @@
             }
           ],
           "source_text": "Molybdenite ore & copper mining byproduct."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Molybdenum (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 97000.0,
+                "share_percent": 37.3
+              },
+              {
+                "country": "Chile",
+                "value": 42000.0,
+                "share_percent": 16.2
+              },
+              {
+                "country": "United States",
+                "value": 40000.0,
+                "share_percent": 15.4
+              },
+              {
+                "country": "Peru",
+                "value": 39000.0,
+                "share_percent": 15.0
+              },
+              {
+                "country": "Mexico",
+                "value": 17000.0,
+                "share_percent": 6.5
+              }
+            ],
+            "world_total": 260000.0
+          },
+          "reserves": {
+            "basis": "Reserves (thousand metric tons)",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 7800.0,
+                "share_percent": 45.9
+              },
+              {
+                "country": "United States",
+                "value": 3500.0,
+                "share_percent": 20.6
+              },
+              {
+                "country": "Chile",
+                "value": 2600.0,
+                "share_percent": 15.3
+              },
+              {
+                "country": "Russia",
+                "value": 1100.0,
+                "share_percent": 6.5
+              },
+              {
+                "country": "Peru",
+                "value": 1000.0,
+                "share_percent": 5.9
+              }
+            ],
+            "world_total": 17000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "E% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810294: Unwrought molybdenum, including bars and rods obtained simply by sintering",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810294 (Unwrought molybdenum, including bars and rods obtained simply by sintering)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Russian Federation",
+                "value": 15.0
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 3.0
+              },
+              {
+                "country": "European Union",
+                "value": 3.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "Brazil",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -1827,6 +4631,75 @@
           ],
           "source_text": "PGM sulfide ore mining."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "57% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 711021: Unwrought palladium, or in powder form",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 711021 (Unwrought palladium, or in powder form)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "India",
+                "value": 10.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 6.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 2.0
+              },
+              {
+                "country": "China",
+                "value": 0.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              },
+              {
+                "country": "Brazil",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "Geopolitically volatile critical metal essential for automotive emissions standards."
@@ -1862,6 +4735,152 @@
             }
           ],
           "source_text": "Lead-zinc, copper, and dedicated silver mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Silver (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Mexico",
+                "value": 6300.0,
+                "share_percent": 24.2
+              },
+              {
+                "country": "Peru",
+                "value": 3600.0,
+                "share_percent": 13.8
+              },
+              {
+                "country": "China",
+                "value": 3400.0,
+                "share_percent": 13.1
+              },
+              {
+                "country": "Bolivia",
+                "value": 1500.0,
+                "share_percent": 5.8
+              },
+              {
+                "country": "Chile",
+                "value": 1400.0,
+                "share_percent": 5.4
+              }
+            ],
+            "world_total": 26000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Peru",
+                "value": 110000.0,
+                "share_percent": 18.0
+              },
+              {
+                "country": "Russia",
+                "value": 92000.0,
+                "share_percent": 15.1
+              },
+              {
+                "country": "Australia",
+                "value": 91000.0,
+                "share_percent": 14.9
+              },
+              {
+                "country": "China",
+                "value": 67000.0,
+                "share_percent": 11.0
+              },
+              {
+                "country": "Poland",
+                "value": 59000.0,
+                "share_percent": 9.7
+              }
+            ],
+            "world_total": 610000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "77% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 710691: Unwrought silver",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 710691 (Unwrought silver)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "India",
+                "value": 10.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 6.3
+              },
+              {
+                "country": "Brazil",
+                "value": 5.4
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 2.0
+              },
+              {
+                "country": "United States of America",
+                "value": 1.5
+              },
+              {
+                "country": "China",
+                "value": 0.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -1900,6 +4919,119 @@
           ],
           "source_text": "Zinc refining byproduct."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Cadmium (the element itself)",
+          "production": {
+            "basis": "Refinery production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 9500.0,
+                "share_percent": 41.3
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 4300.0,
+                "share_percent": 18.7
+              },
+              {
+                "country": "Canada",
+                "value": 1300.0,
+                "share_percent": 5.7
+              },
+              {
+                "country": "Japan",
+                "value": 1300.0,
+                "share_percent": 5.7
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 1100.0,
+                "share_percent": 4.8
+              }
+            ],
+            "world_total": 23000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "<25% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810720: Unwrought cadmium; powders",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810720 (Unwrought cadmium; powders)",
+            "year": 2022,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Russian Federation",
+                "value": 8.0
+              },
+              {
+                "country": "Brazil",
+                "value": 6.0
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Japan",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 3.0
+              },
+              {
+                "country": "European Union",
+                "value": 3.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "Strictly regulated toxic heavy metal; critical component of First Solar's CdTe panels."
@@ -1935,6 +5067,61 @@
             }
           ],
           "source_text": "Zinc ore processing byproduct."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Indium (the element itself)",
+          "production": {
+            "basis": "Refinery production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 760.0,
+                "share_percent": 69.1
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 180.0,
+                "share_percent": 16.4
+              },
+              {
+                "country": "Japan",
+                "value": 65.0,
+                "share_percent": 5.9
+              },
+              {
+                "country": "Canada",
+                "value": 40.0,
+                "share_percent": 3.6
+              },
+              {
+                "country": "France",
+                "value": 21.0,
+                "share_percent": 1.9
+              }
+            ],
+            "world_total": 1100.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -1972,6 +5159,142 @@
           ],
           "source_text": "Cassiterite mineral mining."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Tin (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 71000.0,
+                "share_percent": 24.5
+              },
+              {
+                "country": "Indonesia",
+                "value": 61000.0,
+                "share_percent": 21.0
+              },
+              {
+                "country": "Peru",
+                "value": 33000.0,
+                "share_percent": 11.4
+              },
+              {
+                "country": "Brazil",
+                "value": 28000.0,
+                "share_percent": 9.7
+              },
+              {
+                "country": "Congo (Kinshasa)",
+                "value": 27000.0,
+                "share_percent": 9.3
+              }
+            ],
+            "world_total": 290000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Indonesia",
+                "value": 1400000.0
+              },
+              {
+                "country": "China",
+                "value": 1200000.0
+              },
+              {
+                "country": "Brazil",
+                "value": 700000.0
+              },
+              {
+                "country": "Burma",
+                "value": 700000.0
+              },
+              {
+                "country": "Australia",
+                "value": 570000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "77% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 800110: Tin, not alloyed",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 800110 (Tin, not alloyed)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Brazil",
+                "value": 5.4
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 2.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "The 'glue' of the modern digital economy; essential for bonding electronic micro-components."
@@ -2007,6 +5330,146 @@
             }
           ],
           "source_text": "Stibnite mineral mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Antimony (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 40000.0,
+                "share_percent": 36.4
+              },
+              {
+                "country": "Russia",
+                "value": 32000.0,
+                "share_percent": 29.1
+              },
+              {
+                "country": "Tajikistan",
+                "value": 22000.0,
+                "share_percent": 20.0
+              },
+              {
+                "country": "Bolivia",
+                "value": 5000.0,
+                "share_percent": 4.5
+              },
+              {
+                "country": "Burma",
+                "value": 4500.0,
+                "share_percent": 4.1
+              }
+            ],
+            "world_total": 110000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 830000.0
+              },
+              {
+                "country": "Russia",
+                "value": 350000.0
+              },
+              {
+                "country": "Bolivia",
+                "value": 310000.0
+              },
+              {
+                "country": "Kyrgyzstan",
+                "value": 260000.0
+              },
+              {
+                "country": "Burma",
+                "value": 140000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "91% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 811010: Unwrought antimony; powders",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 811010 (Unwrought antimony; powders)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Türkiye",
+                "value": 7.0
+              },
+              {
+                "country": "European Union",
+                "value": 7.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 6.0
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Brazil",
+                "value": 2.7
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -2044,6 +5507,61 @@
           ],
           "source_text": "Copper anode slime refining byproduct."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Tellurium (the element itself)",
+          "production": {
+            "basis": "Refinery production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 800.0,
+                "share_percent": 80.0
+              },
+              {
+                "country": "Russia",
+                "value": 67.0,
+                "share_percent": 6.7
+              },
+              {
+                "country": "Japan",
+                "value": 61.0,
+                "share_percent": 6.1
+              },
+              {
+                "country": "Canada",
+                "value": 28.0,
+                "share_percent": 2.8
+              },
+              {
+                "country": "Uzbekistan",
+                "value": 18.0,
+                "share_percent": 1.8
+              }
+            ],
+            "world_total": 1000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": ">25% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Key bottleneck element for utility-scale thin-film solar power generation."
@@ -2079,6 +5597,88 @@
             }
           ],
           "source_text": "Caliche ore and natural gas brine extraction."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Iodine (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Chile",
+                "value": 23000.0,
+                "share_percent": 67.6
+              },
+              {
+                "country": "Japan",
+                "value": 9000.0,
+                "share_percent": 26.5
+              },
+              {
+                "country": "Turkmenistan",
+                "value": 800.0,
+                "share_percent": 2.4
+              },
+              {
+                "country": "Iran",
+                "value": 700.0,
+                "share_percent": 2.1
+              },
+              {
+                "country": "Azerbaijan",
+                "value": 210.0,
+                "share_percent": 0.6
+              }
+            ],
+            "world_total": 34000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Japan",
+                "value": 4900000.0
+              },
+              {
+                "country": "Chile",
+                "value": 750000.0
+              },
+              {
+                "country": "United States",
+                "value": 250000.0
+              },
+              {
+                "country": "Azerbaijan",
+                "value": 170000.0
+              },
+              {
+                "country": "Russia",
+                "value": 120000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "<50% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -2117,6 +5717,17 @@
           ],
           "source_text": "Cryogenic air separation unit byproduct."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "98% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Ultra-expensive noble gas prized for spacecraft deep-space ion drives."
@@ -2153,6 +5764,17 @@
           ],
           "source_text": "Pollucite mineral ore mining."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Chinese firm Sinomine holds total global dominance over pollucite deposits."
@@ -2188,6 +5810,88 @@
             }
           ],
           "source_text": "Baryte (barite) mineral mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Barite (a product that contains this element)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "India",
+                "value": 3000.0,
+                "share_percent": 34.5
+              },
+              {
+                "country": "China",
+                "value": 2200.0,
+                "share_percent": 25.3
+              },
+              {
+                "country": "Morocco",
+                "value": 1000.0,
+                "share_percent": 11.5
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 700.0,
+                "share_percent": 8.0
+              },
+              {
+                "country": "Iran",
+                "value": 300.0,
+                "share_percent": 3.4
+              }
+            ],
+            "world_total": 8700.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 120000.0
+              },
+              {
+                "country": "Iran",
+                "value": 100000.0
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 85000.0
+              },
+              {
+                "country": "India",
+                "value": 51000.0
+              },
+              {
+                "country": "Turkey",
+                "value": 34000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": ">75% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -2765,6 +6469,17 @@
           ],
           "source_text": "Byproduct of zirconium refining for nuclear reactors."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "NA% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Critical high-k dielectric material enabling sub-5nm microchip transistor miniaturization."
@@ -2800,6 +6515,142 @@
             }
           ],
           "source_text": "Coltan (columbite-tantalite) mineral mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Tantalum (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Congo (Kinshasa)",
+                "value": 1300.0,
+                "share_percent": 52.0
+              },
+              {
+                "country": "Rwanda",
+                "value": 400.0,
+                "share_percent": 16.0
+              },
+              {
+                "country": "Nigeria",
+                "value": 390.0,
+                "share_percent": 15.6
+              },
+              {
+                "country": "Brazil",
+                "value": 190.0,
+                "share_percent": 7.6
+              },
+              {
+                "country": "China",
+                "value": 80.0,
+                "share_percent": 3.2
+              }
+            ],
+            "world_total": 2500.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 240000.0
+              },
+              {
+                "country": "Australia",
+                "value": 120000.0
+              },
+              {
+                "country": "Brazil",
+                "value": 40000.0
+              },
+              {
+                "country": "Russia",
+                "value": 150.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "100% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810320: Unwrought tantalum, including bars and rods obtained simply by sintering",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810320 (Unwrought tantalum, including bars and rods obtained simply by sintering)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "China",
+                "value": 6.0
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "Japan",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "United States of America",
+                "value": 2.5
+              },
+              {
+                "country": "Russian Federation",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "Brazil",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -2837,6 +6688,146 @@
           ],
           "source_text": "Scheelite and wolframite ore mining."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Tungsten (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 67000.0,
+                "share_percent": 78.8
+              },
+              {
+                "country": "Vietnam",
+                "value": 3000.0,
+                "share_percent": 3.5
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 2400.0,
+                "share_percent": 2.8
+              },
+              {
+                "country": "Korea, North",
+                "value": 2000.0,
+                "share_percent": 2.4
+              },
+              {
+                "country": "Russia",
+                "value": 2000.0,
+                "share_percent": 2.4
+              }
+            ],
+            "world_total": 85000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 2500000.0
+              },
+              {
+                "country": "Australia",
+                "value": 570000.0
+              },
+              {
+                "country": "Russia",
+                "value": 400000.0
+              },
+              {
+                "country": "Vietnam",
+                "value": 170000.0
+              },
+              {
+                "country": "Spain",
+                "value": 66000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": ">50% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810194: Unwrought tungsten, including bars and rods obtained simply by sintering",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810194 (Unwrought tungsten, including bars and rods obtained simply by sintering)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Russian Federation",
+                "value": 15.0
+              },
+              {
+                "country": "United States of America",
+                "value": 6.6
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 5.0
+              },
+              {
+                "country": "European Union",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              },
+              {
+                "country": "Brazil",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "Highest melting point metal on Earth; essential for heavy machining and defense armor piercing."
@@ -2872,6 +6863,88 @@
             }
           ],
           "source_text": "Molybdenum roasting byproduct."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Rhenium (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "kilograms",
+            "countries": [
+              {
+                "country": "Chile",
+                "value": 30000.0,
+                "share_percent": 37.0
+              },
+              {
+                "country": "China",
+                "value": 20000.0,
+                "share_percent": 24.7
+              },
+              {
+                "country": "Poland",
+                "value": 10000.0,
+                "share_percent": 12.3
+              },
+              {
+                "country": "United States",
+                "value": 9800.0,
+                "share_percent": 12.1
+              },
+              {
+                "country": "Uzbekistan",
+                "value": 7000.0,
+                "share_percent": 8.6
+              }
+            ],
+            "world_total": 81000.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "kilograms",
+            "countries": [
+              {
+                "country": "Chile",
+                "value": 1300000.0
+              },
+              {
+                "country": "United States",
+                "value": 400000.0
+              },
+              {
+                "country": "Russia",
+                "value": 310000.0
+              },
+              {
+                "country": "China",
+                "value": 200000.0
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 190000.0
+              }
+            ]
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "75% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -2980,6 +7053,75 @@
           ],
           "source_text": "Bushveld Igneous Complex PGM deposits."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "89% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 711011: Unwrought platinum, or in powder form",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 711011 (Unwrought platinum, or in powder form)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "India",
+                "value": 10.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 6.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 2.0
+              },
+              {
+                "country": "China",
+                "value": 0.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              },
+              {
+                "country": "Brazil",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "Dominant industrial & precious precious metal vital for clean mobility & fuel cells."
@@ -3017,6 +7159,152 @@
           ],
           "source_text": "Lode & placer gold mining."
         },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Gold (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 380.0,
+                "share_percent": 11.5
+              },
+              {
+                "country": "Russia",
+                "value": 310.0,
+                "share_percent": 9.4
+              },
+              {
+                "country": "Australia",
+                "value": 280.0,
+                "share_percent": 8.5
+              },
+              {
+                "country": "Canada",
+                "value": 200.0,
+                "share_percent": 6.1
+              },
+              {
+                "country": "United States",
+                "value": 160.0,
+                "share_percent": 4.8
+              }
+            ],
+            "world_total": 3300.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 13000.0,
+                "share_percent": 19.7
+              },
+              {
+                "country": "Russia",
+                "value": 12000.0,
+                "share_percent": 18.2
+              },
+              {
+                "country": "South Africa",
+                "value": 5000.0,
+                "share_percent": 7.6
+              },
+              {
+                "country": "Indonesia",
+                "value": 3600.0,
+                "share_percent": 5.5
+              },
+              {
+                "country": "Canada",
+                "value": 3200.0,
+                "share_percent": 4.8
+              }
+            ],
+            "world_total": 66000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "s% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 710812: Unwrought gold",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 710812 (Unwrought gold)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Russian Federation",
+                "value": 12.0
+              },
+              {
+                "country": "India",
+                "value": 10.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "United States of America",
+                "value": 2.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 2.0
+              },
+              {
+                "country": "China",
+                "value": 0.0
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 0.0
+              },
+              {
+                "country": "Brazil",
+                "value": 0.0
+              },
+              {
+                "country": "European Union",
+                "value": 0.0
+              }
+            ]
+          }
+        },
         "economics": {
           "verified": false,
           "significance": "The ultimate monetary safe haven asset and highly reliable non-corrosive electronic connector."
@@ -3052,6 +7340,61 @@
             }
           ],
           "source_text": "Cinnabar mineral ore processing."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Mercury (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 200.0,
+                "share_percent": 95.2
+              },
+              {
+                "country": "Kyrgyzstan",
+                "value": 5.0,
+                "share_percent": 2.4
+              },
+              {
+                "country": "Tajikistan",
+                "value": 4.0,
+                "share_percent": 1.9
+              },
+              {
+                "country": "Morocco",
+                "value": 2.0,
+                "share_percent": 1.0
+              },
+              {
+                "country": "Norway",
+                "value": 1.0,
+                "share_percent": 0.5
+              }
+            ],
+            "world_total": 210.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "NA% (USGS, 2025)"
         },
         "economics": {
           "verified": false,
@@ -3089,6 +7432,17 @@
           ],
           "source_text": "Heavy metal copper/lead smelting byproduct."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "NA% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Highly toxic trace metal with niche medical diagnostic applications."
@@ -3123,6 +7477,148 @@
             }
           ],
           "source_text": "Galena mineral mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Lead (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 1900.0,
+                "share_percent": 42.2
+              },
+              {
+                "country": "Australia",
+                "value": 480.0,
+                "share_percent": 10.7
+              },
+              {
+                "country": "Peru",
+                "value": 290.0,
+                "share_percent": 6.4
+              },
+              {
+                "country": "United States",
+                "value": 280.0,
+                "share_percent": 6.2
+              },
+              {
+                "country": "Russia",
+                "value": 260.0,
+                "share_percent": 5.8
+              }
+            ],
+            "world_total": 4500.0
+          },
+          "reserves": {
+            "basis": "Reserves",
+            "year": 2025,
+            "unit": "thousand metric tons",
+            "countries": [
+              {
+                "country": "Australia",
+                "value": 34000.0,
+                "share_percent": 35.8
+              },
+              {
+                "country": "China",
+                "value": 22000.0,
+                "share_percent": 23.2
+              },
+              {
+                "country": "Russia",
+                "value": 8900.0,
+                "share_percent": 9.4
+              },
+              {
+                "country": "Mexico",
+                "value": 5600.0,
+                "share_percent": 5.9
+              },
+              {
+                "country": "Peru",
+                "value": 5000.0,
+                "share_percent": 5.3
+              }
+            ],
+            "world_total": 95000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "33% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 780110: Refined lead",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 780110 (Refined lead)",
+            "year": 2024,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Brazil",
+                "value": 7.2
+              },
+              {
+                "country": "India",
+                "value": 5.0
+              },
+              {
+                "country": "China",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Russian Federation",
+                "value": 3.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 2.5
+              },
+              {
+                "country": "European Union",
+                "value": 2.5
+              },
+              {
+                "country": "Japan",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -3159,6 +7655,119 @@
             }
           ],
           "source_text": "Tungsten and lead-zinc mining byproduct."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "Bismuth (the element itself)",
+          "production": {
+            "basis": "Refinery production",
+            "year": 2025,
+            "unit": "metric tons",
+            "countries": [
+              {
+                "country": "China",
+                "value": 14000.0,
+                "share_percent": 87.5
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 1000.0,
+                "share_percent": 6.2
+              },
+              {
+                "country": "Japan",
+                "value": 500.0,
+                "share_percent": 3.1
+              },
+              {
+                "country": "Laos",
+                "value": 500.0,
+                "share_percent": 3.1
+              },
+              {
+                "country": "Kazakhstan",
+                "value": 180.0,
+                "share_percent": 1.1
+              }
+            ],
+            "world_total": 16000.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "92% (USGS, 2025)"
+        },
+        "tariff": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "wto-timeseries",
+              "url": "https://stats.wto.org/",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "commodity": "HS 810600: Unwrought bismuth, including waste and scrap",
+          "duty": {
+            "basis": "MFN simple-average duty, HS 810600 (Unwrought bismuth, including waste and scrap)",
+            "year": 2022,
+            "unit": "Percent",
+            "countries": [
+              {
+                "country": "Russian Federation",
+                "value": 10.0
+              },
+              {
+                "country": "India",
+                "value": 6.3
+              },
+              {
+                "country": "China",
+                "value": 5.5
+              },
+              {
+                "country": "Japan",
+                "value": 3.0
+              },
+              {
+                "country": "Korea, Republic of",
+                "value": 3.0
+              },
+              {
+                "country": "Brazil",
+                "value": 2.0
+              },
+              {
+                "country": "Türkiye",
+                "value": 1.0
+              },
+              {
+                "country": "European Union",
+                "value": 1.0
+              },
+              {
+                "country": "United States of America",
+                "value": 0.0
+              },
+              {
+                "country": "Ukraine",
+                "value": 0.0
+              }
+            ]
+          }
         },
         "economics": {
           "verified": false,
@@ -3396,6 +8005,17 @@
           ],
           "source_text": "Monazite mineral sand mining byproduct."
         },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "usgs-mcs-2026",
+              "url": "https://doi.org/10.5066/P1WKQ63T",
+              "retrieved": "2026-10-29"
+            }
+          ],
+          "net_import_reliance": "NA% (USGS, 2025)"
+        },
         "economics": {
           "verified": false,
           "significance": "Abundant nuclear fuel alternative with higher proliferation resistance than Uranium."
@@ -3466,6 +8086,72 @@
             }
           ],
           "source_text": "In-situ recovery (ISR) & underground mining."
+        },
+        "geography": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "WNA-world-uranium-mining-production",
+              "url": "https://world-nuclear.org/information-library/nuclear-fuel-cycle/mining-of-uranium/world-uranium-mining-production",
+              "retrieved": "2026-11-05"
+            }
+          ],
+          "commodity": "Uranium (the element itself)",
+          "production": {
+            "basis": "Mine production",
+            "year": 2024,
+            "unit": "metric tons U",
+            "countries": [
+              {
+                "country": "Kazakhstan",
+                "value": 23270.0,
+                "share_percent": 38.6
+              },
+              {
+                "country": "Canada",
+                "value": 14309.0,
+                "share_percent": 23.8
+              },
+              {
+                "country": "Namibia",
+                "value": 7333.0,
+                "share_percent": 12.2
+              },
+              {
+                "country": "Australia",
+                "value": 4598.0,
+                "share_percent": 7.6
+              },
+              {
+                "country": "Uzbekistan",
+                "value": 4000.0,
+                "share_percent": 6.6
+              }
+            ],
+            "world_total": 60213.0
+          }
+        },
+        "supply": {
+          "verified": false,
+          "citations": [
+            {
+              "source": "eia-uranium-marketing-2025",
+              "url": "https://www.eia.gov/uranium/marketing/",
+              "retrieved": "2026-11-05"
+            },
+            {
+              "source": "eia-uranium-marketing-table2",
+              "url": "https://www.eia.gov/uranium/marketing/table2.php",
+              "retrieved": "2026-11-05"
+            },
+            {
+              "source": "usgs-critical-minerals-list-2025",
+              "url": "https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals",
+              "retrieved": "2026-11-05"
+            }
+          ],
+          "delivery_origin": "Canada 32%, Kazakhstan 28%, Australia 15%, Uzbekistan 7%, Namibia 4%; 93% foreign origin (share of total 2025 deliveries, EIA)",
+          "critical_list": "Yes (final 2025 list, 7 Nov 2025)"
         },
         "economics": {
           "verified": false,

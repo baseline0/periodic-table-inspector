@@ -69,6 +69,8 @@ function buildSearchText(element) {
         for (const field of facet.fields) {
             if (field.type === "methods") {
                 for (const entry of data[field.key] ?? []) parts.push(methodText(entry));
+            } else if (field.type === "country_values") {
+                if (data[field.key]) parts.push(data[field.key].countries.map((row) => row.country).join(" "));
             } else if (!isEmpty(data[field.key])) {
                 parts.push(valueToText(data[field.key]));
             }
@@ -247,6 +249,21 @@ function facetSection(facet, element) {
         wrapper.append(fieldValue(field, data[field.key]));
         section.append(wrapper);
     }
+
+    // Citations stay visible whether or not the facet is verified: each one links to its source with its retrieval date.
+    if (Array.isArray(data.citations) && data.citations.length) {
+        const list = el("ul", "mt-3 space-y-1 border-t border-slate-800 pt-2 text-[11px] text-slate-500");
+        for (const c of data.citations) {
+            const item = el("li", "");
+            const link = el("a", "underline hover:text-blue-300", c.source);
+            link.href = c.url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            item.append(link, ` · retrieved ${c.retrieved}`);
+            list.append(item);
+        }
+        section.append(el("h4", "mt-3 mb-1 text-[11px] font-medium text-slate-400", "Sources"), list);
+    }
     return section;
 }
 
@@ -254,6 +271,21 @@ function fieldValue(field, value) {
     if (isEmpty(value)) {
         const message = field.type === "methods" ? "No commercial extraction recorded." : "No data recorded.";
         return el("p", "placeholder-text text-xs", message);
+    }
+
+    if (field.type === "country_values") {
+        const wrapper = el("div", "space-y-2");
+        wrapper.append(el("p", "text-[11px] text-slate-500", `${value.basis} · ${value.year} · ${value.unit}`));
+        const list = el("ul", "space-y-1 text-xs text-slate-300");
+        for (const row of value.countries) {
+            const share = row.share_percent === undefined ? "" : ` (${row.share_percent}%)`;
+            list.append(el("li", "leading-relaxed", `${row.country}: ${row.value.toLocaleString("en-US")}${share}`));
+        }
+        wrapper.append(list);
+        if (value.world_total !== undefined) {
+            wrapper.append(el("p", "text-[11px] text-slate-500", `World total: ${value.world_total.toLocaleString("en-US")} ${value.unit}`));
+        }
+        return wrapper;
     }
 
     if (field.type === "methods") {
