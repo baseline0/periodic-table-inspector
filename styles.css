@@ -327,10 +327,6 @@ a.text-link,
     color: var(--ink-strong);
 }
 
-#detail {
-    --c-ink: var(--c);
-}
-
 #heroCategory {
     color: var(--c-ink);
 }
@@ -388,6 +384,34 @@ a.text-link,
     font-style: italic;
     color: var(--ink-subtle);
 }
+
+/* Label colour for category text (tile symbol, row and series labels, chips, side panel). Dark keeps the category
+   colour. In light, the colour is mixed with black so the label reaches 4.5:1 on white. --light-share is the largest
+   share of the category colour that still passes (see the contrast table in the commit notes). */
+[data-category] {
+    --c-ink: color-mix(in srgb, var(--c) var(--light-share, 100%), black);
+}
+
+:root[data-theme="dark"] [data-category] {
+    --c-ink: var(--c);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) [data-category] {
+        --c-ink: var(--c);
+    }
+}
+
+[data-category="alkali-metal"] { --light-share: 90%; }
+[data-category="alkaline-earth"] { --light-share: 77%; }
+[data-category="transition-metal"] { --light-share: 89%; }
+[data-category="post-transition"] { --light-share: 73%; }
+[data-category="metalloid"] { --light-share: 72%; }
+[data-category="nonmetal"] { --light-share: 96%; }
+[data-category="halogen"] { --light-share: 87%; }
+[data-category="noble-gas"] { --light-share: 71%; }
+[data-category="lanthanide"] { --light-share: 67%; }
+[data-category="actinide"] { --light-share: 82%; }
 
 /* Theme toggle in the header. */
 .theme-toggle {

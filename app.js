@@ -121,6 +121,7 @@ function renderTable() {
         const tile = el("button", "tile");
         tile.type = "button";
         tile.style.setProperty("--c", categoryColor(element.category));
+        tile.dataset.category = element.category;
         tile.style.gridRow = row;
         tile.style.gridColumn = column;
         tile.setAttribute("aria-label", `${element.name}, atomic number ${element.number}, ${label}`);
@@ -142,6 +143,7 @@ function renderTable() {
 function seriesNote(range, text, row, categoryId) {
     const node = el("div", "series-note", range);
     node.style.setProperty("--c", categoryColor(categoryId));
+    node.dataset.category = categoryId;
     node.style.gridRow = row;
     node.style.gridColumn = SERIES_FIRST_COLUMN;
     node.append(el("span", "text-[8px] opacity-75", text));
@@ -151,6 +153,7 @@ function seriesNote(range, text, row, categoryId) {
 function rowLabel(text, row, categoryId) {
     const node = el("div", "row-label", text);
     node.style.setProperty("--c", categoryColor(categoryId));
+    node.dataset.category = categoryId;
     node.style.gridRow = row;
     node.style.gridColumn = "1 / 3";
     return node;
@@ -172,6 +175,7 @@ function chipButton(id, label, color, count) {
     const button = el("button", "chip");
     button.type = "button";
     button.style.setProperty("--c", color);
+    if (id !== "all") button.dataset.category = id;
     button.setAttribute("aria-pressed", String(id === state.category));
     button.append(el("span", "chip-dot"), el("span", "", label), el("span", "chip-count", count));
     button.addEventListener("click", () => {
@@ -207,6 +211,7 @@ function renderPanel(element) {
     const label = categories.get(element.category)?.label ?? element.category;
     const detail = document.getElementById("detail");
     detail.style.setProperty("--c", categoryColor(element.category));
+    detail.dataset.category = element.category;
     document.getElementById("emptyState").classList.add("hidden");
     detail.classList.remove("hidden");
 
@@ -254,7 +259,7 @@ function facetSection(facet, element) {
     const section = el("section", "surface-panel line rounded-xl border p-4");
 
     const heading = el("h3", "text-muted mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider");
-    heading.append(icon(facet.icon, "h-4 w-4 text-[var(--c)]"), el("span", "", facet.label));
+    heading.append(icon(facet.icon, "h-4 w-4 text-[var(--c-ink)]"), el("span", "", facet.label));
     heading.append(el("span", `ml-auto rounded border px-1.5 py-0.5 text-[9px] normal-case tracking-normal ${status.cls}`, status.label));
     section.append(heading);
 
