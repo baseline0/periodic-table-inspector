@@ -252,11 +252,13 @@ function renderPanel(element) {
     refreshIcons();
 }
 
+// Facet status badges. The legend under the lens controls reads the same table and classes.
+const BADGE_CLASS = "rounded border px-1.5 py-0.5 text-[9px] normal-case tracking-normal";
 const STATUS = {
-    "human-verified": { label: "Verified", cls: "status-human-verified" },
-    "agent-extracted": { label: "Sourced, not yet checked", cls: "status-agent-extracted" },
-    unaudited: { label: "Unaudited", cls: "status-unaudited" },
-    disputed: { label: "Disputed", cls: "status-disputed" },
+    "human-verified": { label: "Verified", cls: "status-human-verified", meaning: "A person has checked the value against its cited source." },
+    "agent-extracted": { label: "Sourced, not yet checked", cls: "status-agent-extracted", meaning: "Taken from a cited source. No person has checked it yet." },
+    unaudited: { label: "Unaudited", cls: "status-unaudited", meaning: "No check has been made. Treat the value as unverified." },
+    disputed: { label: "Disputed", cls: "status-disputed", meaning: "Under review. The panel links to the open dispute." },
 };
 
 function facetSection(facet, element) {
@@ -266,7 +268,7 @@ function facetSection(facet, element) {
 
     const heading = el("h3", "text-muted mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider");
     heading.append(icon(facet.icon, "h-4 w-4 text-[var(--c-ink)]"), el("span", "", facet.label));
-    heading.append(el("span", `ml-auto rounded border px-1.5 py-0.5 text-[9px] normal-case tracking-normal ${status.cls}`, status.label));
+    heading.append(el("span", `ml-auto ${BADGE_CLASS} ${status.cls}`, status.label));
     section.append(heading);
 
     if (data.status === "disputed" && data.dispute_url) {
@@ -473,6 +475,21 @@ function renderLensControls() {
     container.append(pillRow);
     const note = lensById(state.lens)?.description ?? "Custom selection of facets.";
     container.append(el("p", "text-subtle text-[11px]", note));
+    container.append(statusLegend());
+}
+
+function statusLegend() {
+    const legend = el("section", "line surface-inset mt-2 rounded-lg border p-2 text-[11px]");
+    legend.setAttribute("aria-label", "Status key");
+    legend.append(el("p", "text-subtle mb-1 text-[10px] font-semibold uppercase tracking-wider", "Status key"));
+    const list = el("ul", "space-y-1");
+    for (const status of Object.values(STATUS)) {
+        const item = el("li", "flex items-start gap-2");
+        item.append(el("span", `flex-none ${BADGE_CLASS} ${status.cls}`, status.label), el("span", "text-body", status.meaning));
+        list.append(item);
+    }
+    legend.append(list);
+    return legend;
 }
 
 function fieldValue(field, value) {
