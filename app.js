@@ -685,6 +685,7 @@ function bindTheme() {
 
 async function init() {
     bindTheme();
+    document.getElementById("status").textContent = "Loading elements…";
     let loaded;
     try {
         loaded = await load();
