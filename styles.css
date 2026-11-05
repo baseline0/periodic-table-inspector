@@ -452,6 +452,68 @@ details > summary:hover {
     outline-offset: 2px;
 }
 
+/* Print: white paper and black text. The header controls and the lens bar are hidden; the table and the selected
+   element's panel are shown in one column. Tile tints and category borders are kept. */
+@media print {
+    @page {
+        margin: 10mm;
+    }
+
+    .header-controls,
+    #lensControls,
+    #emptyState,
+    #loadError,
+    .theme-toggle {
+        display: none !important;
+    }
+
+    html,
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    body * {
+        background-color: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border-color: #777 !important;
+        transform: none !important;
+    }
+
+    body .tile,
+    body .tile-swatch,
+    body .series-note {
+        background-color: color-mix(in srgb, var(--c) 14%, #fff) !important;
+        border-color: color-mix(in srgb, var(--c) 70%, #fff) !important;
+    }
+
+    body .tile.is-dim {
+        opacity: 0.35;
+    }
+
+    #panel {
+        position: static !important;
+    }
+
+    main {
+        display: block !important;
+    }
+
+    .table-scroll {
+        overflow: visible !important;
+    }
+
+    .tile[aria-pressed="true"] {
+        outline: 2px solid #000 !important;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .tile,
     .chip {
