@@ -1440,7 +1440,7 @@
               "retrieved_at": "2026-11-05"
             }
           ],
-          "net_import_reliance": "<50% (USGS, 2025)",
+          "net_import_reliance": ">50% (USGS, 2025, total of all silicon products)",
           "critical_list": "Yes (USGS MCS 2026 critical-mineral flag; final 2025 list, 7 Nov 2025)"
         },
         "economics": {
