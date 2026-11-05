@@ -34,7 +34,7 @@ Company and producer lists are withheld from this release until each entry is so
 ## Contributing data
 
 Every row needs a `source_url` pointing at the filing, docket or government record it came from.
-Facets that have no citations stay marked `verified: false`.
+Each facet has a `status`: `unaudited`, `agent-extracted`, `human-verified` or `disputed`. Facets that have no citations stay `unaudited`. Run `just validate` before opening a pull request.
 
 ## Licence
 

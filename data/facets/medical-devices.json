@@ -1,0 +1,110 @@
+{
+  "facet_id": "medical-devices",
+  "records": {
+    "He": {
+      "status": "agent-extracted",
+      "summary": "Liquid helium cools the superconducting magnet windings in many MRI scanners, holding them near 4.2 K. The share of helium end use that goes to medical imaging is not sourced here.",
+      "metrics": [
+        {"label": "Bath-cooled NbTi MRI magnet operating temperature", "value": "about 4.2 K", "severity": "info"}
+      ],
+      "citations": [
+        {
+          "title": "Superconductive magnet design - Questions and Answers in MRI",
+          "url": "https://mriquestions.com/superconductive-design.html",
+          "retrieved_at": "2026-11-05",
+          "locator": "MRI magnet design section, liquid-helium cooling statement"
+        }
+      ]
+    },
+    "Nb": {
+      "status": "agent-extracted",
+      "summary": "Niobium-titanium (NbTi) wire is the superconducting conductor in nearly all modern superconducting MRI scanners. The share of niobium end use in medical imaging is not sourced here.",
+      "metrics": [
+        {"label": "MRI superconducting conductor", "value": "niobium-titanium (NbTi) wire", "severity": "info"}
+      ],
+      "citations": [
+        {
+          "title": "Superconductive magnet design - Questions and Answers in MRI",
+          "url": "https://mriquestions.com/superconductive-design.html",
+          "retrieved_at": "2026-11-05",
+          "locator": "MRI magnet design section, conductor statement"
+        }
+      ]
+    },
+    "Ta": {
+      "status": "agent-extracted",
+      "summary": "The source is a USGS tantalum deposits page, which names implantable medical devices among tantalum's uses. It is not end-use data, so it gives no medical share and no biocompatibility data.",
+      "metrics": [
+        {"label": "Named medical use", "value": "implantable medical devices (no end-use share sourced)", "severity": "info"}
+      ],
+      "citations": [
+        {
+          "title": "Tantalum Deposits in the United States",
+          "url": "https://www.usgs.gov/data/tantalum-deposits-united-states",
+          "retrieved_at": "2026-11-05",
+          "locator": "page description of tantalum's uses"
+        }
+      ]
+    },
+    "Gd": {
+      "status": "agent-extracted",
+      "summary": "Gadolinium is used in medical imaging as a chelated paramagnetic contrast agent for MRI.",
+      "metrics": [
+        {
+          "label": "Imaging role",
+          "value": "Chelated paramagnetic MRI contrast agent (T1 shortening)",
+          "severity": "info"
+        }
+      ],
+      "citations": [
+        {
+          "title": "Gadolinium in Medical Imaging: Usefulness, Toxic Reactions and Possible Countermeasures - A Review (Biomolecules 2022;12(6):742)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9221011",
+          "retrieved_at": "2026-11-05",
+          "locator": "Section 2, Gadolinium in Medical Imaging"
+        },
+        {
+          "title": "Gadolinium - Radiopaedia",
+          "url": "https://www.radiopaedia.org/articles/gadolinium-1",
+          "retrieved_at": "2026-11-05",
+          "locator": "Chemistry, Applied chemistry"
+        }
+      ]
+    },
+    "Mo": {
+      "status": "agent-extracted",
+      "summary": "Molybdenum-99 is the parent isotope from which technetium-99m, used in diagnostic imaging, is generated. The sources read describe the U.S. as historically importing all of its Mo-99 and global supply as concentrated among a few irradiation suppliers. The 2016 National Academies data and 2018 DOE/NNSA statement may be out of date.",
+      "metrics": [
+        {
+          "label": "Global Mo-99 supply concentration",
+          "value": "About 95 percent produced by seven irradiation services suppliers (2016 NAS report)",
+          "severity": "watch"
+        },
+        {
+          "label": "U.S. Mo-99 import dependence",
+          "value": "100 percent imported before first domestic non-uranium approval (DOE/NNSA, February 8, 2018)",
+          "severity": "watch"
+        },
+        {
+          "label": "NRU shutdown capacity loss",
+          "value": "Almost 20 percent of global Mo-99 production capacity (2016 NAS report)",
+          "severity": "high"
+        }
+      ],
+      "citations": [
+        {
+          "title": "Chapter 7: Molybdenum-99/Technetium-99m Supply - Molybdenum-99 for Medical Imaging (National Academies)",
+          "url": "https://www.nationalacademies.org/read/23563/chapter/10",
+          "retrieved_at": "2026-11-05",
+          "locator": "Sections 7.1.1 and 7.1.2"
+        },
+        {
+          "title": "DOE/NNSA Partnership With U.S. Healthcare Industry Results in FDA Approval of Domestically-Produced, Non-Uranium Based Molybdenum-99",
+          "url": "https://www.energy.gov/articles/doennsa-partnership-us-healthcare-industry-results-fda-approval-domestically-produced-non",
+          "retrieved_at": "2026-11-05",
+          "locator": "Announcement dated February 8, 2018"
+        }
+      ]
+    }
+  }
+}

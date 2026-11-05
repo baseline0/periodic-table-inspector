@@ -21,3 +21,7 @@ serve-dev PORT=dev_port:
     @test -f "{{dev_dir}}/index.html" || { echo "no dev version at {{dev_dir}}; set PERIODIC_DEV_DIR" >&2; exit 1; }
     @echo "dev (consolidation) at http://localhost:{{PORT}}  (Ctrl+C to stop)"
     cd "{{dev_dir}}" && python3 -m http.server {{PORT}}
+
+# Check facet registry, lenses, status values and citations (data/facets.config.json, data/schemas/).
+validate:
+    python3 scripts/validate_facets.py

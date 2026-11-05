@@ -226,7 +226,7 @@
       "abundance": "1,400 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "hydrocarbon-gas",
@@ -236,11 +236,11 @@
           "source_text": "Steam methane reforming (SMR), coal gasification, water electrolysis."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Essential for global food security through ammonia synthesis (Haber-Bosch process). Spearheading the decarbonization transition via green hydrogen."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Ammonia synthesis for agricultural fertilizers",
             "Petroleum hydrocracking & desulfurization",
@@ -263,7 +263,7 @@
       "abundance": "0.008 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "hydrocarbon-gas",
@@ -273,22 +273,22 @@
           "source_text": "Extracted from natural gas deposits via fractional distillation."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "E% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "High-value non-renewable strategic gas; critical for high-tech manufacturing, medical imaging, and aerospace."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Cooling superconducting magnets in MRI machines",
             "Semiconductor & fiber optic manufacturing",
@@ -311,7 +311,7 @@
       "abundance": "20 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -325,12 +325,12 @@
           "source_text": "Continental brine deposits (lithium triangle), hard-rock pegmatite (spodumene)."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Lithium (the element itself)",
@@ -402,22 +402,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": ">50% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Cornerstone element of the green energy transition; core battery material experiencing geopolitical supply race."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Lithium-ion batteries for Electric Vehicles (EVs)",
             "Grid energy storage systems",
@@ -440,7 +440,7 @@
       "abundance": "2.8 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -450,12 +450,12 @@
           "source_text": "Bertrandite ore and beryl mineral deposits."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Beryllium (the element itself)",
@@ -494,22 +494,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "E% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical strategic defense material; irreplaceable in high-stress aerospace structures and nuclear components."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Aerospace & defense structural alloys",
             "Beryllium-copper non-sparking precision tools",
@@ -532,7 +532,7 @@
       "abundance": "10 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "evaporite-brine",
@@ -542,12 +542,12 @@
           "source_text": "Borax, kernite, colemanite evaporite mineral deposits."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Boron (the element itself)",
@@ -564,22 +564,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "E% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Monopolized supply chains (Turkey & Rio Tinto hold >70%); vital for durable glass, insulation, and solar cells."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Borosilicate heat-resistant glass (Pyrex)",
             "Fiberglass thermal insulation",
@@ -602,7 +602,7 @@
       "abundance": "200 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -616,12 +616,12 @@
           "source_text": "Natural graphite mining, coal deposits, petroleum coke processing, synthetic diamond CVD."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Graphite (Natural) (the element itself)",
@@ -693,22 +693,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Basis of organic chemistry, steelmaking, and battery anodes; critical supply chain pivot for anode graphite."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Lithium-ion battery graphite anodes",
             "Steelmaking carbon additive & coke",
@@ -731,7 +731,7 @@
       "abundance": "19 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "air-separation",
@@ -741,11 +741,11 @@
           "source_text": "Cryogenic fractional distillation of liquefied atmospheric air."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Basis of modern agricultural yields via synthetic nitrogenous fertilizers."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Agricultural nitrogen fertilizers (Urea, Ammonium Nitrate)",
             "Inerting atmosphere for electronics & food packaging",
@@ -768,7 +768,7 @@
       "abundance": "461,000 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "air-separation",
@@ -778,11 +778,11 @@
           "source_text": "Air separation units (ASU) using cryogenic distillation."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Most abundant crustal element; essential for steel production, chemical synthesis, and healthcare."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Basic oxygen steelmaking processes",
             "Medical oxygen therapy systems",
@@ -805,7 +805,7 @@
       "abundance": "585 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -815,12 +815,12 @@
           "source_text": "Fluorite (fluorspar) mineral mining and fluorapatite processing."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Fluorspar (a product that contains this element)",
@@ -892,22 +892,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical for nuclear fuel enrichment, refrigerants, and EV battery electrolyte salts (LiPF6)."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Lithium-ion battery electrolyte salt (LiPF6)",
             "Uranium enrichment (UF6 gas)",
@@ -930,7 +930,7 @@
       "abundance": "0.005 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "air-separation",
@@ -940,22 +940,22 @@
           "source_text": "Byproduct of large-scale cryogenic iron/steel air separation units."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "52% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Highly vulnerable supply chain bottle-neck essential for deep ultraviolet (DUV) semiconductor lithography."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "DUV excimer lasers for semiconductor lithography",
             "High-voltage indicator lights & neon signage",
@@ -977,7 +977,7 @@
       "abundance": "23,600 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "evaporite-brine",
@@ -987,12 +987,12 @@
           "source_text": "Rock salt (halite) mining and trona ore processing."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Salt (a product that contains this element)",
@@ -1031,22 +1031,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "31% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Fundamental chemical building block (chlor-alkali industry); foundation for emerging sodium-ion batteries."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Table salt & food preservation",
             "Chemical manufacturing (Caustic Soda & Soda Ash)",
@@ -1069,7 +1069,7 @@
       "abundance": "23,300 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -1083,12 +1083,12 @@
           "source_text": "Magnesite ore, dolomite, and seawater/brine extraction via the Pidgeon process."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Magnesium Metal (the element itself)",
@@ -1127,23 +1127,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": ">75% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810411: Magnesium containing at least 99.8% magnesium",
@@ -1196,11 +1196,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "China holds virtual monopoly; essential lightweight structural metal for automotive weight reduction."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Lightweight aluminum-magnesium alloys for aerospace & auto",
             "Steel desulfurization reagent",
@@ -1223,7 +1223,7 @@
       "abundance": "82,300 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -1233,12 +1233,12 @@
           "source_text": "Bauxite ore strip mining, refined via Bayer process and Hall-Héroult smelting."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Aluminum (the element itself)",
@@ -1277,23 +1277,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "60% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 760110: Aluminium, not alloyed",
@@ -1346,11 +1346,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Second most used metal globally; central to power grids, lightweight transport, and green construction."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Aerospace fuselages & automotive structural frames",
             "Electrical power transmission grid cables",
@@ -1373,7 +1373,7 @@
       "abundance": "282,000 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -1383,12 +1383,12 @@
           "source_text": "High-purity quartz (quartzite) reduction with carbon in electric arc furnaces."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-11-05"
+              "retrieved_at": "2026-11-05"
             }
           ],
           "commodity": "Silicon (silicon metal, the elemental product; ferrosilicon not included)",
@@ -1427,28 +1427,28 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-11-05"
+              "retrieved_at": "2026-11-05"
             },
             {
               "source": "usgs-critical-minerals-list-2025",
               "url": "https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals",
-              "retrieved": "2026-11-05"
+              "retrieved_at": "2026-11-05"
             }
           ],
           "net_import_reliance": "<50% (USGS, 2025)",
           "critical_list": "Yes (USGS MCS 2026 critical-mineral flag; final 2025 list, 7 Nov 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Foundation of all microelectronics (Silicon Valley) and photovoltaics for solar energy."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Semiconductor microchips & integrated circuits",
             "Photovoltaic solar panels (polysilicon)",
@@ -1471,7 +1471,7 @@
       "abundance": "1,050 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -1481,12 +1481,12 @@
           "source_text": "Phosphate rock mining (apatite deposits)."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Phosphate Rock (a product that contains this element)",
@@ -1558,22 +1558,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "16% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Geopolitically concentrated non-renewable resource essential for global food production and LFP EV batteries."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Agricultural phosphate fertilizers (DAP/MAP)",
             "Lithium Iron Phosphate (LFP) EV batteries",
@@ -1596,7 +1596,7 @@
       "abundance": "350 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "hydrocarbon-gas",
@@ -1606,12 +1606,12 @@
           "source_text": "Byproduct desulfurization of crude oil and natural gas (Claus process)."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Sulfur (the element itself)",
@@ -1650,22 +1650,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "14% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Industrial benchmark commodity; sulfuric acid consumption is a direct indicator of national industrial health."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Sulfuric acid production for fertilizer manufacturing",
             "Rubber vulcanization",
@@ -1688,7 +1688,7 @@
       "abundance": "145 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "evaporite-brine",
@@ -1698,11 +1698,11 @@
           "source_text": "Chlor-alkali electrolysis of brine (sodium chloride solution)."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Pervasive chemical building block required for plastics, pharmaceuticals, and municipal sanitation."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Polyvinyl Chloride (PVC) plastic manufacturing",
             "Municipal water disinfection & sanitation",
@@ -1725,7 +1725,7 @@
       "abundance": "3.5 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "air-separation",
@@ -1735,22 +1735,22 @@
           "source_text": "Fractional distillation of liquid air in industrial air separation plants."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "E% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical non-reactive shielding atmosphere for high-tier metallurgy and silicon crystal growing."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Inert shielding gas for TIG/MIG welding",
             "Monocrystalline silicon crystal growth (solar/chips)",
@@ -1773,7 +1773,7 @@
       "abundance": "20,900 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "evaporite-brine",
@@ -1783,12 +1783,12 @@
           "source_text": "Evaporite potash deposits (sylvinite, carnallite) mined underground."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Potash (a product that contains this element)",
@@ -1850,22 +1850,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "92% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Essential agricultural macronutrient; production heavily concentrated in Canada and East Europe."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Potash fertilizers (Muriate of Potash)",
             "Potassium hydroxide (KOH) soap/detergent base",
@@ -1888,7 +1888,7 @@
       "abundance": "41,500 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -1898,11 +1898,11 @@
           "source_text": "Limestone, chalk, marble (calcium carbonate) quarrying."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Ubiquitous construction material backbone; essential in metallurgy and civil infrastructure."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Portland cement and concrete construction",
             "Steelmaking flux & slag conditioner",
@@ -1925,7 +1925,7 @@
       "abundance": "22 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -1935,22 +1935,22 @@
           "source_text": "Byproduct of titanium oxide, nickel-cobalt, and uranium processing."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "High-value niche metal that drastically improves strength and weldability of aluminum alloys for aerospace."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Aluminum-scandium alloys for aerospace structural frames",
             "Solid oxide fuel cells (SOFC) electrolyte stabilizer",
@@ -1973,7 +1973,7 @@
       "abundance": "5,650 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -1983,12 +1983,12 @@
           "source_text": "Ilmenite and rutile mineral sands mining."
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810820: Unwrought titanium; powders",
@@ -2041,11 +2041,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Strategic aerospace metal and dominant white pigment foundation (TiO2) across global commerce."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Commercial & military aircraft airframes and jet engines",
             "Titanium dioxide (TiO2) white pigment for paints/plastics",
@@ -2068,7 +2068,7 @@
       "abundance": "120 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -2078,12 +2078,12 @@
           "source_text": "Vanadiferous titanomagnetite iron ore processing and slag recovery."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Vanadium (the element itself)",
@@ -2150,22 +2150,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "41% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical for ultra-high-strength steel alloys and long-duration vanadium redox flow batteries (VRFB)."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "High-strength low-alloy (HSLA) construction steel",
             "Vanadium Redox Flow Batteries for grid storage",
@@ -2188,7 +2188,7 @@
       "abundance": "102 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -2198,12 +2198,12 @@
           "source_text": "Chromite ore underground and open-pit mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Chromium (the element itself)",
@@ -2269,22 +2269,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "79% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Irreplaceable anti-corrosive ingredient in stainless steel; heavily concentrated in South Africa."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Stainless steel manufacturing (minimum 10.5% Cr)",
             "Chrome electroplating for corrosion & wear resistance",
@@ -2307,7 +2307,7 @@
       "abundance": "950 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -2317,12 +2317,12 @@
           "source_text": "Pyrolusite ore deposits and sedimentary manganese manganese rocks."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Manganese (the element itself)",
@@ -2394,22 +2394,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Essential ingredient in steelmaking (no substitute exists); emerging as critical battery cathode material (NMC/LMFP)."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Steel deoxidation and desulfurization (Ferromanganese)",
             "EV battery cathodes (NMC, LMFP chemistries)",
@@ -2432,7 +2432,7 @@
       "abundance": "56,300 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -2442,12 +2442,12 @@
           "source_text": "Banded iron formations (hematite, magnetite mining)."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Iron Ore (a product that contains this element)",
@@ -2480,23 +2480,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "E% (USGS, 2025)"
         },
         "trade": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Iron and steel (product group; not the ore)",
@@ -2636,12 +2636,12 @@
           }
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 720110: Nonalloy pig iron containing 0.5% or less phosphorus",
@@ -2694,11 +2694,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "The workhorse metal of modern human civilization; accounts for 90% of all refined metal tonnage worldwide."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Steel production for buildings, bridges & infrastructure",
             "Automotive & shipbuilding heavy structural plate",
@@ -2721,7 +2721,7 @@
       "abundance": "25 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -2731,12 +2731,12 @@
           "source_text": "Byproduct of copper and nickel mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Cobalt (the element itself)",
@@ -2808,23 +2808,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "79% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810520: Unwrought cobalt; powders",
@@ -2877,11 +2877,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Geopolitically sensitive critical material plagued by DRC supply dominance and human rights scrutiny."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Lithium-ion battery cathodes (NMC/LCO)",
             "Superalloys for gas turbine jet engines",
@@ -2904,7 +2904,7 @@
       "abundance": "84 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -2914,12 +2914,12 @@
           "source_text": "Laterite deposits (HPAL processing) and magmatic sulfide ores."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Nickel (the element itself)",
@@ -2985,23 +2985,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "41% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 750210: Nickel, not alloyed",
@@ -3050,11 +3050,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Indonesian output surge transformed global market; vital for stainless steel and high-nickel EV batteries."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Stainless steel & corrosion-resistant alloys",
             "High-energy-density EV battery cathodes",
@@ -3077,7 +3077,7 @@
       "abundance": "60 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -3087,12 +3087,12 @@
           "source_text": "Porphyry copper deposit open-pit mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Copper (the element itself)",
@@ -3164,23 +3164,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "57% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 740311: Refined copper cathodes and sections of cathodes",
@@ -3233,11 +3233,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "'Dr. Copper' - economic health barometer; pivotal spine of global electrification, renewables, and EV grids."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Electrical wiring, motors & power grid cables",
             "Printed circuit boards & microelectronics interconnects",
@@ -3260,7 +3260,7 @@
       "abundance": "70 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -3270,12 +3270,12 @@
           "source_text": "Sphalerite zinc sulfide mineral deposits."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Zinc (the element itself)",
@@ -3347,23 +3347,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "E% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 790111: Zinc containing 99.99% or more of zinc",
@@ -3416,11 +3416,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Primary anti-corrosion barrier metal for global infrastructure steel protection."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Galvanizing steel structures against rust",
             "Die-casting intricate automotive parts",
@@ -3443,7 +3443,7 @@
       "abundance": "19 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -3453,12 +3453,12 @@
           "source_text": "Byproduct recovered during bauxite processing for aluminum."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Gallium (the element itself)",
@@ -3487,22 +3487,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Extreme geopolitical concentration; China implemented export restrictions in 2023. Critical for military radar & chips."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Gallium Arsenide (GaAs) high-frequency RF microchips",
             "Gallium Nitride (GaN) fast power electronics & 5G",
@@ -3525,7 +3525,7 @@
       "abundance": "1.5 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -3535,22 +3535,22 @@
           "source_text": "Byproduct of zinc refining and coal fly ash processing."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": ">50% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Subject to strategic export controls; crucial for thermal defense optics and fiber optics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Fiber optic communications cables",
             "Infrared thermal imaging night-vision optics",
@@ -3573,7 +3573,7 @@
       "abundance": "1.8 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -3583,22 +3583,22 @@
           "source_text": "Byproduct of copper, gold, and lead smelting operations."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "High toxicity commodity; specialized strategic role in high-speed microelectronics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Gallium Arsenide (GaAs) semiconductors",
             "Wood preservatives (CCA) (phased out in many regions)",
@@ -3621,7 +3621,7 @@
       "abundance": "0.05 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -3631,12 +3631,12 @@
           "source_text": "Extracted from electrolytic copper refinery anode slimes."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Selenium (the element itself)",
@@ -3675,22 +3675,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": ">50% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Niche industrial byproduct essential for metallurgy decolorization and thin-film solar."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Glass manufacturing color control & tinting",
             "CIGS thin-film solar photovoltaic panels",
@@ -3713,7 +3713,7 @@
       "abundance": "2.4 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "evaporite-brine",
@@ -3723,12 +3723,12 @@
           "source_text": "Subsurface natural salt brines and inland sea brine extraction."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Bromine (the element itself)",
@@ -3786,22 +3786,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "<25% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "High barrier-to-entry chemical sector controlled by key brine deposit owners."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Brominated flame retardants for electronics & plastics",
             "Clear brine fluids for deep-sea oil drilling",
@@ -3824,7 +3824,7 @@
       "abundance": "0.0001 ppm",
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "air-separation",
@@ -3834,22 +3834,22 @@
           "source_text": "Air separation unit (ASU) byproduct of cryogenic air distillation."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "93% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Rare noble gas used in energy-efficient architectural glazing and satellite propulsion."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Thermal insulation filling for high-efficiency windows",
             "Excimer lasers for semiconductor production",
@@ -3872,7 +3872,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -3882,11 +3882,11 @@
           "source_text": "Lepidolite ore processing."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Strategic micro-market for precise frequency standards."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Atomic clocks",
             "Specialty glass",
@@ -3908,7 +3908,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -3918,12 +3918,12 @@
           "source_text": "Celestite mineral mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Strontium (the element itself)",
@@ -3977,22 +3977,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Essential for ceramic permanent magnets in automotive motors."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Ferrite magnets",
             "Pyrotechnic red flares",
@@ -4014,7 +4014,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -4028,22 +4028,22 @@
           "source_text": "Xenotime & ion-adsorption clays."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical heavy rare earth element for advanced ceramics and lasers."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "YAG lasers",
             "Superconductors",
@@ -4065,7 +4065,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -4075,12 +4075,12 @@
           "source_text": "Zircon mineral sand mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Zirconium (the element itself)",
@@ -4119,23 +4119,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "<25% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810920: Unwrought zirconium; powders",
@@ -4188,11 +4188,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Vital for nuclear power safety due to extremely low neutron absorption."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Nuclear reactor fuel cladding",
             "Refractory ceramics",
@@ -4214,7 +4214,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -4224,12 +4224,12 @@
           "source_text": "Pyrochlore mineral deposit mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Niobium (Columbium) (the element itself)",
@@ -4295,22 +4295,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Extreme supply concentration in Brazil; vital for high-strength pipelines and structural steel."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "High-strength low-alloy (HSLA) steel",
             "Superconducting magnets (MRI)",
@@ -4332,7 +4332,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -4346,12 +4346,12 @@
           "source_text": "Molybdenite ore & copper mining byproduct."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Molybdenum (the element itself)",
@@ -4423,23 +4423,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "E% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810294: Unwrought molybdenum, including bars and rods obtained simply by sintering",
@@ -4488,11 +4488,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical alloying element for structural strength and extreme temperature resilience."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "High-temperature steel alloys",
             "Petroleum desulfurization catalysts",
@@ -4514,7 +4514,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -4525,11 +4525,11 @@
           "source_text": "Nuclear reactor fission product recovery."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Synthetic radioactive element; standard of global nuclear medicine diagnostics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Medical diagnostic nuclear imaging (Tc-99m)",
             "Corrosion protection study"
@@ -4550,7 +4550,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -4560,11 +4560,11 @@
           "source_text": "Platinum group metal (PGM) mining."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Ultra-rare platinum group metal crucial for cloud data storage hard drives."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Hard disk drive magnetic layers",
             "Chlor-alkali electrodes",
@@ -4586,7 +4586,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -4596,11 +4596,11 @@
           "source_text": "PGM mining byproduct."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "One of the most expensive industrial metals on Earth; indispensable for emissions control."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Automotive catalytic converters (NOx reduction)",
             "Glass fiber bushings",
@@ -4622,7 +4622,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -4632,23 +4632,23 @@
           "source_text": "PGM sulfide ore mining."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "57% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 711021: Unwrought palladium, or in powder form",
@@ -4701,11 +4701,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Geopolitically volatile critical metal essential for automotive emissions standards."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Gasoline vehicle catalytic converters",
             "MLCC electronics capacitors",
@@ -4727,7 +4727,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -4737,12 +4737,12 @@
           "source_text": "Lead-zinc, copper, and dedicated silver mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Silver (the element itself)",
@@ -4814,23 +4814,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "77% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 710691: Unwrought silver",
@@ -4883,11 +4883,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Monetary precious metal with booming industrial demand from solar grid transition."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Photovoltaic solar cell paste",
             "Electronics & electrical contacts",
@@ -4910,7 +4910,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -4920,12 +4920,12 @@
           "source_text": "Zinc refining byproduct."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Cadmium (the element itself)",
@@ -4964,23 +4964,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "<25% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810720: Unwrought cadmium; powders",
@@ -5033,11 +5033,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Strictly regulated toxic heavy metal; critical component of First Solar's CdTe panels."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Thin-film CdTe solar panels",
             "NiCd aircraft batteries",
@@ -5059,7 +5059,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -5069,12 +5069,12 @@
           "source_text": "Zinc ore processing byproduct."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Indium (the element itself)",
@@ -5113,22 +5113,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Transparent conductor backing every modern Smartphone and display screen."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Indium Tin Oxide (ITO) touchscreens & flat screens",
             "Low-melting solders",
@@ -5150,7 +5150,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -5160,12 +5160,12 @@
           "source_text": "Cassiterite mineral mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Tin (the element itself)",
@@ -5231,23 +5231,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "77% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 800110: Tin, not alloyed",
@@ -5296,11 +5296,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "The 'glue' of the modern digital economy; essential for bonding electronic micro-components."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Lead-free electronics soldering",
             "Tinplate food packaging",
@@ -5322,7 +5322,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -5332,12 +5332,12 @@
           "source_text": "Stibnite mineral mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Antimony (the element itself)",
@@ -5403,23 +5403,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "91% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 811010: Unwrought antimony; powders",
@@ -5472,11 +5472,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Strategic defense material with severe Chinese export restrictions enacted in 2024."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Munitions & military armor",
             "Flame retardant synergist",
@@ -5498,7 +5498,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -5508,12 +5508,12 @@
           "source_text": "Copper anode slime refining byproduct."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Tellurium (the element itself)",
@@ -5552,22 +5552,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": ">25% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Key bottleneck element for utility-scale thin-film solar power generation."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "CdTe solar photovoltaic panels",
             "Thermoelectric cooling devices",
@@ -5589,7 +5589,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "evaporite-brine",
@@ -5599,12 +5599,12 @@
           "source_text": "Caliche ore and natural gas brine extraction."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Iodine (the element itself)",
@@ -5670,22 +5670,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "<50% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Monopolized by Chilean nitrate caliche deposits and Japanese natural gas brines."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "X-ray medical contrast agents",
             "Disinfectants & antiseptics",
@@ -5708,7 +5708,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "air-separation",
@@ -5718,22 +5718,22 @@
           "source_text": "Cryogenic air separation unit byproduct."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "98% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Ultra-expensive noble gas prized for spacecraft deep-space ion drives."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Satellite ion engine propulsion",
             "Anesthesia gas",
@@ -5755,7 +5755,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -5765,22 +5765,22 @@
           "source_text": "Pollucite mineral ore mining."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Chinese firm Sinomine holds total global dominance over pollucite deposits."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Atomic clocks (GPS definition)",
             "Deep oil well drilling fluids",
@@ -5802,7 +5802,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -5812,12 +5812,12 @@
           "source_text": "Baryte (barite) mineral mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Barite (a product that contains this element)",
@@ -5883,22 +5883,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": ">75% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Heavy weighting agent vital to maintain blowout prevention in deep oil well drilling."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Oil & gas drilling mud weighting agent",
             "Medical barium meals",
@@ -5920,7 +5920,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -5930,11 +5930,11 @@
           "source_text": "Bastrnasite & Monazite mining."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Abundant light rare earth essential for optical glass refraction."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Hybrid car NiMH batteries",
             "Camera glass lenses",
@@ -5956,7 +5956,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -5966,11 +5966,11 @@
           "source_text": "Bastnäsite ore processing."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Most abundant rare earth element used heavily in precision glass polishing."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Glass polishing powders",
             "Diesel fuel additives",
@@ -5992,7 +5992,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6002,11 +6002,11 @@
           "source_text": "Monazite & Bastnäsite deposits."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Key co-alloy with neodymium for high-temperature EV permanent magnets."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "NdFeB high-strength magnets",
             "Aircraft engine alloys",
@@ -6028,7 +6028,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6042,11 +6042,11 @@
           "source_text": "Hard-rock & ion-adsorption clay mining."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "The premier rare earth magnet driver powering clean-tech EVs and offshore wind generators."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Neodymium permanent magnets (EV motors & wind turbines)",
             "Hard drives",
@@ -6068,7 +6068,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -6079,11 +6079,11 @@
           "source_text": "Nuclear fuel reprocessing decay byproduct."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Extremely rare radioisotope used for ultra-long-life miniature nuclear battery sources."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Nuclear batteries for spacecraft/pacemakers",
             "Luminous paint signal lights"
@@ -6104,7 +6104,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6114,11 +6114,11 @@
           "source_text": "Bastnäsite mineral processing."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Irreplaceable magnets for high-temperature aerospace and defense actuators."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Samarium-Cobalt high-temp magnets",
             "Cancer radiation therapy (Sm-153)",
@@ -6140,7 +6140,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ion-adsorption-clay",
@@ -6150,11 +6150,11 @@
           "source_text": "Ion-adsorption clay mining."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical red phosphor generator; key security marker in paper currencies."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Euro banknote anti-forgery phosphors",
             "Red phosphors in TV screens",
@@ -6176,7 +6176,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6186,11 +6186,11 @@
           "source_text": "Monazite mineral processing."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Essential MRI imaging contrast drug base with immense medical value."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "MRI medical contrast agents",
             "Nuclear marine propulsion control rods",
@@ -6212,7 +6212,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ion-adsorption-clay",
@@ -6222,11 +6222,11 @@
           "source_text": "Heavy rare earth clay mining."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Heavy rare earth additive required for high-heat EV motor magnet stability."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "High-performance EV magnets",
             "Green phosphors",
@@ -6248,7 +6248,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ion-adsorption-clay",
@@ -6258,11 +6258,11 @@
           "source_text": "Ion-adsorption clay deposits."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Strategic heavy rare earth with severe supply risk; prevents EV motors from demagnetizing."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "EV motor permanent magnet heat stability",
             "Nuclear control rods",
@@ -6284,7 +6284,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6294,11 +6294,11 @@
           "source_text": "Monazite & xenotime ores."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Provides the highest magnetic field strength of any element for specialized optics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Medical holmium lasers (kidney stones)",
             "Highest magnetic moment pole pieces"
@@ -6319,7 +6319,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ion-adsorption-clay",
@@ -6329,11 +6329,11 @@
           "source_text": "Ion-adsorption clays."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Amplifies optical signal pulses driving global undersea transoceanic internet cables."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Erbium-doped fiber amplifiers (EDFA) for long-haul internet",
             "Surgical skin lasers"
@@ -6354,7 +6354,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6364,11 +6364,11 @@
           "source_text": "Xenotime & monazite ores."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Second rarest lanthanide; valuable for lightweight field medical imaging devices."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Portable medical X-ray units",
             "High-efficiency holmium-thulium surgical lasers"
@@ -6389,7 +6389,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6399,11 +6399,11 @@
           "source_text": "Monazite mining."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Core element inside heavy industrial fiber laser cutters."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "High-power fiber lasers for metal manufacturing cutting",
             "Atomic optical clocks",
@@ -6425,7 +6425,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -6435,11 +6435,11 @@
           "source_text": "Xenotime processing."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Most expensive light/heavy rare earth; vital for medical PET scanner crystal detectors."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "PET cancer scan detectors (LSO crystals)",
             "Petroleum cracking catalysts"
@@ -6460,7 +6460,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -6470,22 +6470,22 @@
           "source_text": "Byproduct of zirconium refining for nuclear reactors."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "NA% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Critical high-k dielectric material enabling sub-5nm microchip transistor miniaturization."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Nuclear submarine control rods",
             "Semiconductor microchip gate insulators",
@@ -6507,7 +6507,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -6517,12 +6517,12 @@
           "source_text": "Coltan (columbite-tantalite) mineral mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Tantalum (the element itself)",
@@ -6584,23 +6584,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "100% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810320: Unwrought tantalum, including bars and rods obtained simply by sintering",
@@ -6653,11 +6653,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "High volumetric efficiency capacitor metal essential for ultra-compact mobile electronics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Micro-capacitors in smartphones & electronics",
             "Jet engine superalloys",
@@ -6679,7 +6679,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -6689,12 +6689,12 @@
           "source_text": "Scheelite and wolframite ore mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Tungsten (the element itself)",
@@ -6760,23 +6760,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": ">50% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810194: Unwrought tungsten, including bars and rods obtained simply by sintering",
@@ -6829,11 +6829,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Highest melting point metal on Earth; essential for heavy machining and defense armor piercing."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Tungsten carbide cutting tools & drill bits",
             "Kinetic energy armor penetrators",
@@ -6855,7 +6855,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -6865,12 +6865,12 @@
           "source_text": "Molybdenum roasting byproduct."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Rhenium (the element itself)",
@@ -6936,22 +6936,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "75% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Extremely rare; enables jet engines to operate at extreme combustion temperatures without melting."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Single-crystal jet engine turbine blades",
             "Octane-boosting petroleum catalysts"
@@ -6972,7 +6972,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -6982,11 +6982,11 @@
           "source_text": "PGM mining slime byproduct."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Densest naturally occurring element on Earth; ultra-rare durable contact alloy."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Fountain pen nib tips",
             "High-durability electrical contacts",
@@ -7008,7 +7008,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -7018,11 +7018,11 @@
           "source_text": "PGM mining recovery."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Crucial bottleneck element for PEM water electrolyzers needed for green hydrogen production."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "PEM green hydrogen electrolyzer anodes",
             "Spark plugs",
@@ -7044,7 +7044,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -7054,23 +7054,23 @@
           "source_text": "Bushveld Igneous Complex PGM deposits."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "89% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 711011: Unwrought platinum, or in powder form",
@@ -7123,11 +7123,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Dominant industrial & precious precious metal vital for clean mobility & fuel cells."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Diesel engine catalytic converters",
             "Hydrogen fuel cells",
@@ -7150,7 +7150,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -7160,12 +7160,12 @@
           "source_text": "Lode & placer gold mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Gold (the element itself)",
@@ -7237,23 +7237,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "s% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 710812: Unwrought gold",
@@ -7306,11 +7306,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "The ultimate monetary safe haven asset and highly reliable non-corrosive electronic connector."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Global reserve asset & store of value",
             "High-reliability electronic connectors",
@@ -7332,7 +7332,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -7342,12 +7342,12 @@
           "source_text": "Cinnabar mineral ore processing."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Mercury (the element itself)",
@@ -7386,22 +7386,22 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "NA% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Global Minamata Convention phasing out industrial extraction due to high environmental toxicity."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Artisanal small-scale gold mining",
             "Chlor-alkali cells (phasing out)",
@@ -7423,7 +7423,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -7433,22 +7433,22 @@
           "source_text": "Heavy metal copper/lead smelting byproduct."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "NA% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Highly toxic trace metal with niche medical diagnostic applications."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Cardiac stress test nuclear imaging (Tl-201)",
             "Special infrared optical glass"
@@ -7469,7 +7469,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -7479,12 +7479,12 @@
           "source_text": "Galena mineral mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Lead (the element itself)",
@@ -7556,23 +7556,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "33% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 780110: Refined lead",
@@ -7621,11 +7621,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Over 80% globally recycled; foundational for automotive starter batteries."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "SLI automotive Lead-Acid batteries",
             "Radiation shielding for X-ray & nuclear",
@@ -7647,7 +7647,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "byproduct-smelting",
@@ -7657,12 +7657,12 @@
           "source_text": "Tungsten and lead-zinc mining byproduct."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "Bismuth (the element itself)",
@@ -7701,23 +7701,23 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "92% (USGS, 2025)"
         },
         "tariff": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "wto-timeseries",
               "url": "https://stats.wto.org/",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "commodity": "HS 810600: Unwrought bismuth, including waste and scrap",
@@ -7770,11 +7770,11 @@
           }
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Primary non-toxic heavy metal substitute for lead across consumer sectors."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Pepto-Bismol pharmaceuticals",
             "Non-toxic lead replacement solders & shot",
@@ -7796,7 +7796,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -7807,11 +7807,11 @@
           "source_text": "Bismuth neutron irradiation in nuclear reactors."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Extreme radioactivity source; tightly state-controlled."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Static eliminators in industrial machinery",
             "Spacecraft thermoelectric heating"
@@ -7832,7 +7832,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -7843,11 +7843,11 @@
           "source_text": "Cyclotron particle accelerator synthesis."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Ultra-rare targeted radio-pharmaceutical isotope synthesized in particle accelerators."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Targeted Alpha Therapy (TAT) precision cancer treatment (At-211)"
           ]
@@ -7867,16 +7867,16 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [],
           "source_text": "Radium decay product in soil/rock."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Naturally occurring radioactive hazard gas from indoor ground decay."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Radiation therapy research",
             "Earthquake hydrologic prediction monitoring"
@@ -7897,7 +7897,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -7907,11 +7907,11 @@
           "source_text": "Synthetic nuclear bombardment."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "No commercial market; second rarest element in Earth's crust."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Fundamental subatomic physics research & trap studies"
           ]
@@ -7931,16 +7931,16 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [],
           "source_text": "Uranium decay byproduct."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Historical luminous element reborn as targeted precision oncology medicine."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Targeted prostate cancer radiopharmaceuticals (Ra-223)",
             "Industrial radiography"
@@ -7961,7 +7961,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -7972,11 +7972,11 @@
           "source_text": "Radium neutron irradiation."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "High-value medical isotope driving next-generation biotech cancer therapeutics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Targeted Alpha Therapy cancer oncology (Ac-225)"
           ]
@@ -7996,7 +7996,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "rare-earth-mineral",
@@ -8006,22 +8006,22 @@
           "source_text": "Monazite mineral sand mining byproduct."
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "usgs-mcs-2026",
               "url": "https://doi.org/10.5066/P1WKQ63T",
-              "retrieved": "2026-10-29"
+              "retrieved_at": "2026-10-29"
             }
           ],
           "net_import_reliance": "NA% (USGS, 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Abundant nuclear fuel alternative with higher proliferation resistance than Uranium."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Next-generation molten salt Thorium nuclear reactors",
             "TIG welding electrodes",
@@ -8043,7 +8043,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8054,11 +8054,11 @@
           "source_text": "Spent nuclear fuel extraction."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Extremely toxic radioisotope without commercial scale applications."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Geological radiometric ocean sediment dating research"
           ]
@@ -8078,7 +8078,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "ore-dedicated",
@@ -8088,12 +8088,12 @@
           "source_text": "In-situ recovery (ISR) & underground mining."
         },
         "geography": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "WNA-world-uranium-mining-production",
               "url": "https://world-nuclear.org/information-library/nuclear-fuel-cycle/mining-of-uranium/world-uranium-mining-production",
-              "retrieved": "2026-11-05"
+              "retrieved_at": "2026-11-05"
             }
           ],
           "commodity": "Uranium (the element itself)",
@@ -8132,33 +8132,33 @@
           }
         },
         "supply": {
-          "verified": false,
+          "status": "agent-extracted",
           "citations": [
             {
               "source": "eia-uranium-marketing-2025",
               "url": "https://www.eia.gov/uranium/marketing/",
-              "retrieved": "2026-11-05"
+              "retrieved_at": "2026-11-05"
             },
             {
               "source": "eia-uranium-marketing-table2",
               "url": "https://www.eia.gov/uranium/marketing/table2.php",
-              "retrieved": "2026-11-05"
+              "retrieved_at": "2026-11-05"
             },
             {
               "source": "usgs-critical-minerals-list-2025",
               "url": "https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals",
-              "retrieved": "2026-11-05"
+              "retrieved_at": "2026-11-05"
             }
           ],
           "delivery_origin": "Canada 32%, Kazakhstan 28%, Australia 15%, Uzbekistan 7%, Namibia 4%; 93% foreign origin (share of total 2025 deliveries, EIA)",
           "critical_list": "Yes (final 2025 list, 7 Nov 2025)"
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Primary backbone element for zero-carbon nuclear baseload electrical power grids."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Commercial nuclear power station fuel (U-235)",
             "Naval submarine propulsion",
@@ -8180,7 +8180,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8191,11 +8191,11 @@
           "source_text": "Spent nuclear reactor fuel reprocessing."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Specialized nuclear material for NASA deep space probe power."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Precursor for Plutonium-238 space radioisotope thermal generators (RTG)"
           ]
@@ -8215,7 +8215,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8226,11 +8226,11 @@
           "source_text": "Uranium irradiation in nuclear reactors."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Strictly controlled strategic military and specialized space power radioisotope."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "MOX nuclear fuel recycling",
             "Space probe RTG power (Pu-238)",
@@ -8252,7 +8252,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8263,11 +8263,11 @@
           "source_text": "Plutonium decay product in reactors."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Universal life-saving radioisotope in residential fire smoke detectors."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Ionization smoke detectors",
             "Industrial fluid thickness gauge measurement"
@@ -8288,7 +8288,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8299,11 +8299,11 @@
           "source_text": "Transmutation of plutonium in reactors."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Enables compositional soil analysis on planetary space exploration missions."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Alpha Particle X-ray Spectrometers on Mars Rovers",
             "Deep space energy research"
@@ -8324,7 +8324,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8335,11 +8335,11 @@
           "source_text": "High-flux nuclear reactor synthesis."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Scientific research isotope produced in microgram quantities."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Target material synthesized to discover superheavy elements (Tennessine)"
           ]
@@ -8359,7 +8359,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8370,11 +8370,11 @@
           "source_text": "High-flux isotope reactor synthesis."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Most expensive commercial element on Earth (~$27 million/gram); powerful neutron emitter."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Neutron startup sources for nuclear reactors",
             "Coal & mineral real-time elemental analyzers",
@@ -8396,7 +8396,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8407,11 +8407,11 @@
           "source_text": "Reactor neutron irradiation."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "No commercial applications beyond heavy element research."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Fundamental physical study of actinide chemical bonding"
           ]
@@ -8431,7 +8431,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8442,11 +8442,11 @@
           "source_text": "High-flux reactor synthesis."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Produced in heavy neutron bombardments."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Basic heavy actinide chemical research"
           ]
@@ -8466,7 +8466,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8477,11 +8477,11 @@
           "source_text": "Particle accelerator alpha bombardment."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Synthesized one atom at a time."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Scientific study of aqueous valence states"
           ]
@@ -8501,7 +8501,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8512,11 +8512,11 @@
           "source_text": "Cyclotron heavy ion fusion."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Purely academic superheavy isotope."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Fundamental atomic physics research"
           ]
@@ -8536,7 +8536,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8547,11 +8547,11 @@
           "source_text": "Particle accelerator bombardment."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "End of the actinide series."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Confirmation of relativistic electron orbital contractions"
           ]
@@ -8571,7 +8571,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8582,11 +8582,11 @@
           "source_text": "Heavy ion accelerator collision."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Synthetic transactinide element."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Relativistic quantum chemistry verification"
           ]
@@ -8606,7 +8606,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8617,11 +8617,11 @@
           "source_text": "Heavy ion acceleration."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Pure research."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Superheavy element stability research"
           ]
@@ -8641,7 +8641,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8652,11 +8652,11 @@
           "source_text": "Californium beam fusion."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Named after Glenn Seaborg."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Gas-phase carbonyl complex chemical studies"
           ]
@@ -8676,7 +8676,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8687,11 +8687,11 @@
           "source_text": "Bismuth-Chromium collision."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Pure science."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Volatilization chemistry experiments"
           ]
@@ -8711,7 +8711,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8722,11 +8722,11 @@
           "source_text": "Iron-Lead nuclear fusion."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Pure science."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Group 8 tetroxide volatility studies"
           ]
@@ -8746,7 +8746,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8757,11 +8757,11 @@
           "source_text": "Bismuth-Iron bombardment."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Honors Lise Meitner."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Nuclear stability island research"
           ]
@@ -8781,7 +8781,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8792,11 +8792,11 @@
           "source_text": "Nickel-Lead collision."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Superheavy physics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Atomic decay chain mapping"
           ]
@@ -8816,7 +8816,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8827,11 +8827,11 @@
           "source_text": "Nickel-Bismuth bombardment."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Pure physics."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Relativistic gold-homologue chemistry"
           ]
@@ -8851,7 +8851,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8862,11 +8862,11 @@
           "source_text": "Zinc-Lead heavy ion fusion."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Acts chemically like a volatile noble gas."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Volatile noble-metal gas-phase chemistry research"
           ]
@@ -8886,7 +8886,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8897,11 +8897,11 @@
           "source_text": "Zinc-Bismuth collision at RIKEN."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Historic milestone for Japanese physics research."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "First element discovered in Asia; superheavy physics research"
           ]
@@ -8921,7 +8921,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8932,11 +8932,11 @@
           "source_text": "Calcium-Plutonium nuclear synthesis."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Exhibits noble-gas like inert properties."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Testing the 'Island of Stability' theoretical nuclear physics models"
           ]
@@ -8956,7 +8956,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -8967,11 +8967,11 @@
           "source_text": "Calcium-Americium fusion."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Superheavy nuclear research."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Synthesis precursor for element 117 Tennessine"
           ]
@@ -8991,7 +8991,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -9002,11 +9002,11 @@
           "source_text": "Curium-Calcium bombardment."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Honors LLNL laboratory."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Alpha decay chain mapping research"
           ]
@@ -9026,7 +9026,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -9037,11 +9037,11 @@
           "source_text": "Berkelium-Calcium heavy ion fusion."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Synthesized using rare Berkelium-249 target."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Extreme superheavy halogen chemical behavior modeling"
           ]
@@ -9061,7 +9061,7 @@
       "abundance": null,
       "facets": {
         "mining": {
-          "verified": false,
+          "status": "unaudited",
           "extraction": [
             {
               "method": "synthetic",
@@ -9072,11 +9072,11 @@
           "source_text": "Californium-Calcium nuclear collision."
         },
         "economics": {
-          "verified": false,
+          "status": "unaudited",
           "significance": "Heaviest known element in the periodic table; named after Yuri Oganessian."
         },
         "uses": {
-          "verified": false,
+          "status": "unaudited",
           "items": [
             "Theoretical relativistic quantum electrodynamics computation verification"
           ]
