@@ -238,11 +238,6 @@ a.text-link,
     z-index: 1;
 }
 
-.tile:focus-visible {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
-}
-
 .tile[aria-pressed="true"] {
     outline: 2px solid var(--selected-ring);
     outline-offset: 2px;
@@ -448,6 +443,13 @@ details > summary:hover {
 ::-webkit-scrollbar-thumb {
     background: var(--scrollbar);
     border-radius: 4px;
+}
+
+/* Keyboard focus ring for every control. It comes last and is more specific, so it also shows on selected (pressed)
+   tiles and chips, whose outlines would otherwise hide it. */
+:root :is(button, a, select, input, summary):focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

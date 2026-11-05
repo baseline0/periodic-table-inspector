@@ -114,7 +114,13 @@ function renderTable() {
     const table = document.getElementById("ptable");
     table.replaceChildren();
 
-    for (const element of elements) {
+    // Tiles go into the DOM in grid order (row by row, then column), so Tab moves across each row, not down by number.
+    const byPosition = [...elements].sort((a, b) => {
+        const pa = placement(a);
+        const pb = placement(b);
+        return pa.row - pb.row || pa.column - pb.column;
+    });
+    for (const element of byPosition) {
         const { row, column } = placement(element);
         const label = categories.get(element.category)?.label ?? element.category;
 
