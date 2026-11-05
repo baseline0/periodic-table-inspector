@@ -25,3 +25,25 @@ serve-dev PORT=dev_port:
 # Check facet registry, lenses, status values and citations (data/facets.config.json, data/schemas/).
 validate:
     python3 scripts/validate_facets.py
+
+# Create an annotated release tag locally. Refuses unless VERSION is X.Y.Z, the branch is main, the tree is clean,
+# the tag is new, and validation passes. It never pushes: pushing a tag is outward and needs the owner's sign-off.
+tag VERSION:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if ! [[ "{{VERSION}}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        echo "tag: VERSION must look like 0.1.0, got '{{VERSION}}'" >&2; exit 1
+    fi
+    if [ "$(git branch --show-current)" != "main" ]; then
+        echo "tag: switch to main first" >&2; exit 1
+    fi
+    if [ -n "$(git status --porcelain)" ]; then
+        echo "tag: working tree is not clean" >&2; exit 1
+    fi
+    if git rev-parse -q --verify "refs/tags/v{{VERSION}}" >/dev/null; then
+        echo "tag: v{{VERSION}} already exists" >&2; exit 1
+    fi
+    just validate
+    git tag -a "v{{VERSION}}" -m "Release v{{VERSION}}"
+    echo "Tagged v{{VERSION}} at $(git rev-parse --short HEAD). Not pushed."
+    echo "To publish the tag, the owner runs: git push origin v{{VERSION}} (sign-off gate)."
