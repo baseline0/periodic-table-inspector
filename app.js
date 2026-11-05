@@ -5,6 +5,8 @@
 const DATA_URL = "data/elements.json";
 const OPERATIONS_URL = "data/operations.json";
 const LAWSUITS_URL = "data/lawsuits.json";
+const CONFIG_URL = "data/facets.config.json";
+const STORAGE_KEY = "pti_facet_state";
 
 // Where each row of the table sits. Periods 1-7 are rows 1-7, row 8 is a gap, and the f-block series hang off rows 9-10.
 const SERIES_ROW = { lanthanide: 9, actinide: 10 };
@@ -16,6 +18,8 @@ const state = {
     method: "all",
     query: "",
     selected: null,
+    lens: null,
+    facetIds: new Set(),
 };
 
 // Elements in one place, keyed by atomic number.
@@ -25,6 +29,7 @@ let lawsuits = [];
 let categories = new Map();
 let extractionMethods = {};
 let facets = [];
+let facetConfig = { lenses: [], facets: [], repo: "", default_lens: "" };
 let searchIndex = new Map();
 const tiles = new Map();
 const chips = new Map();
@@ -225,23 +230,44 @@ function renderPanel(element) {
     }
 
     const sections = document.getElementById("facetSections");
-    sections.replaceChildren(...facets.map((facet) => facetSection(facet, element)));
+    const shown = visibleFacets();
+    sections.replaceChildren(
+        ...(shown.length
+            ? shown.map((facet) => facetSection(facet, element))
+            : [el("p", "placeholder-text text-xs", "No facets selected. Choose a lens or toggle facets above.")]),
+    );
     renderLookup(element);
     refreshIcons();
 }
 
+const STATUS = {
+    "human-verified": { label: "Verified", cls: "border-emerald-500/40 text-emerald-300" },
+    "agent-extracted": { label: "Sourced, not yet checked", cls: "border-sky-500/40 text-sky-300" },
+    unaudited: { label: "Unaudited", cls: "border-amber-500/40 text-amber-300" },
+    disputed: { label: "Disputed", cls: "border-rose-500/40 text-rose-300" },
+};
+
 function facetSection(facet, element) {
     const data = element.facets?.[facet.key] ?? {};
+    const status = STATUS[data.status] ?? STATUS.unaudited;
     const section = el("section", "rounded-xl border border-slate-800 bg-slate-900 p-4");
 
-    const heading = el("h3", "mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400");
+    const heading = el("h3", "mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400");
     heading.append(icon(facet.icon, "h-4 w-4 text-[var(--c)]"), el("span", "", facet.label));
-    if (data.verified === true) {
-        heading.append(el("span", "ml-auto rounded border border-emerald-500/40 px-1.5 py-0.5 text-[9px] text-emerald-300", "Verified"));
-    } else {
-        heading.append(el("span", "ml-auto rounded border border-amber-500/40 px-1.5 py-0.5 text-[9px] text-amber-300", "Unverified"));
-    }
+    heading.append(el("span", `ml-auto rounded border px-1.5 py-0.5 text-[9px] normal-case tracking-normal ${status.cls}`, status.label));
     section.append(heading);
+
+    if (data.status === "disputed" && data.dispute_url) {
+        const notice = el("p", "mb-3 rounded border border-rose-500/40 bg-rose-950/30 p-2 text-[11px] text-rose-200", "Under review: ");
+        const link = el("a", "underline hover:text-white", "view the open dispute");
+        link.href = data.dispute_url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        notice.append(link);
+        section.append(notice);
+    }
+
+    if (facet.modular) section.append(modularBody(data));
 
     for (const field of facet.fields) {
         const wrapper = el("div", "mt-3 first:mt-0");
@@ -250,21 +276,191 @@ function facetSection(facet, element) {
         section.append(wrapper);
     }
 
-    // Citations stay visible whether or not the facet is verified: each one links to its source with its retrieval date.
+    const methodology = methodologyFor(facet.key);
+    if (methodology) {
+        const drawer = el("details", "mt-3 text-[11px] text-slate-400");
+        drawer.append(el("summary", "cursor-pointer text-slate-300 hover:text-white", "How this is calculated"), el("p", "mt-1 leading-relaxed", methodology));
+        section.append(drawer);
+    }
+
     if (Array.isArray(data.citations) && data.citations.length) {
-        const list = el("ul", "mt-3 space-y-1 border-t border-slate-800 pt-2 text-[11px] text-slate-500");
+        section.append(el("h4", "mt-3 mb-1 text-[11px] font-medium text-slate-400", "Sources"));
+        const list = el("ul", "space-y-2 border-t border-slate-800 pt-2 text-[11px] text-slate-500");
         for (const c of data.citations) {
             const item = el("li", "");
-            const link = el("a", "underline hover:text-blue-300", c.source);
+            const link = el("a", "underline hover:text-blue-300", c.source ?? c.title ?? c.url);
             link.href = c.url;
             link.target = "_blank";
             link.rel = "noopener noreferrer";
-            item.append(link, ` · retrieved ${c.retrieved}`);
+            item.append(link, ` · retrieved ${c.retrieved_at ?? c.retrieved}`);
+            if (c.locator) item.append(` · ${c.locator}`);
+            if (c.quote) item.append(el("blockquote", "mt-1 border-l border-slate-700 pl-2 italic text-slate-400", `"${c.quote}"`));
             list.append(item);
         }
-        section.append(el("h4", "mt-3 mb-1 text-[11px] font-medium text-slate-400", "Sources"), list);
+        section.append(list);
     }
+
+    const flag = el("a", "mt-3 inline-block text-[11px] text-blue-400 underline hover:text-blue-300", "Flag this fact");
+    flag.href = flagUrl(element, facet, data);
+    flag.target = "_blank";
+    flag.rel = "noopener noreferrer";
+    section.append(flag);
     return section;
+}
+
+const SEVERITY_CLASS = { info: "text-slate-300", watch: "text-amber-300", high: "text-rose-300" };
+
+// Body of a modular facet: the summary as a paragraph, then the metrics as "label: value" lines.
+function modularBody(data) {
+    const metrics = Array.isArray(data.metrics) ? data.metrics : [];
+    const wrapper = el("div", "space-y-2");
+    if (!data.summary && metrics.length === 0) {
+        wrapper.append(el("p", "placeholder-text text-xs", "No data recorded."));
+        return wrapper;
+    }
+    if (data.summary) wrapper.append(el("p", "text-xs leading-relaxed text-slate-300", data.summary));
+    if (metrics.length) {
+        const list = el("ul", "mt-2 space-y-1 text-xs");
+        for (const metric of metrics) {
+            list.append(el("li", `leading-relaxed ${SEVERITY_CLASS[metric.severity] ?? SEVERITY_CLASS.info}`, `${metric.label}: ${metric.value}`));
+        }
+        wrapper.append(list);
+    }
+    return wrapper;
+}
+
+// Pre-filled GitHub issue for a correction. The reader adds the counter-source; nothing is sent until they submit it.
+function flagUrl(element, facet, record) {
+    const sources = (record.citations ?? []).map((c) => `- ${c.source ?? c.title ?? "source"}: ${c.url} (retrieved ${c.retrieved_at ?? c.retrieved})`);
+    const body = [
+        `Element: ${element.name} (${element.symbol})`,
+        `Facet: ${facet.key} (${facet.label})`,
+        `Status shown: ${record.status ?? "unaudited"}`,
+        "",
+        "Value shown (paste the line you dispute):",
+        "",
+        "Current sources:",
+        ...(sources.length ? sources : ["- none recorded"]),
+        "",
+        "Counter-source (URL, table or page, retrieval date):",
+        "",
+        "Quote from the source, if short:",
+        "",
+    ].join("\n");
+    const params = new URLSearchParams({ title: `Dispute: ${element.symbol} ${facet.key}`, body, labels: "data-dispute" });
+    return `https://github.com/${facetConfig.repo}/issues/new?${params.toString()}`;
+}
+
+function methodologyFor(facetId) {
+    return facetConfig.facets.find((f) => f.id === facetId)?.methodology ?? "";
+}
+
+// Lenses and facet toggles. The URL (?lens=&facets=) is the shareable state; localStorage remembers it per browser.
+function readStoredState() {
+    try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    } catch {
+        return null;
+    }
+}
+
+function writeStoredState() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ lens: state.lens, facetIds: [...state.facetIds] }));
+    } catch {
+        // Storage can be blocked or full; the URL still carries the state.
+    }
+}
+
+function syncState() {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lens", state.lens);
+        url.searchParams.set("facets", [...state.facetIds].join(","));
+        window.history.replaceState({}, "", url);
+    } catch {
+        // Some file:// contexts refuse history updates; the page still works.
+    }
+    writeStoredState();
+}
+
+function lensById(id) {
+    return facetConfig.lenses.find((lens) => lens.id === id) ?? null;
+}
+
+function initLensState() {
+    const params = new URLSearchParams(window.location.search);
+    const saved = readStoredState();
+    const known = new Set(facets.map((f) => f.key));
+    const urlLens = lensById(params.get("lens"));
+    const savedLens = lensById(saved?.lens);
+    const lens = urlLens ?? savedLens ?? lensById(facetConfig.default_lens);
+
+    let ids;
+    if (params.has("facets")) ids = params.get("facets").split(",");
+    else if (urlLens) ids = urlLens.facets;
+    else if (Array.isArray(saved?.facetIds)) ids = saved.facetIds;
+    else ids = lens.facets;
+
+    state.lens = lens.id;
+    state.facetIds = new Set(ids.filter((id) => known.has(id)));
+    syncState();
+}
+
+function visibleFacets() {
+    return facets.filter((facet) => state.facetIds.has(facet.key));
+}
+
+function setLens(id) {
+    const lens = lensById(id);
+    if (!lens) return;
+    state.lens = id;
+    state.facetIds = new Set(lens.facets.filter((fid) => facets.some((f) => f.key === fid)));
+    afterStateChange();
+}
+
+function toggleFacet(id) {
+    if (state.facetIds.has(id)) state.facetIds.delete(id);
+    else state.facetIds.add(id);
+    const current = lensById(state.lens);
+    const matches = current && current.facets.length === state.facetIds.size && current.facets.every((f) => state.facetIds.has(f));
+    if (!matches) state.lens = "custom";
+    afterStateChange();
+}
+
+function afterStateChange() {
+    syncState();
+    renderLensControls();
+    if (state.selected) renderPanel(state.selected);
+}
+
+function renderLensControls() {
+    const container = document.getElementById("lensControls");
+    if (!container) return;
+    container.replaceChildren();
+
+    const lensRow = el("div", "flex flex-wrap gap-1.5");
+    for (const lens of facetConfig.lenses) {
+        const button = el("button", "chip", lens.label);
+        button.type = "button";
+        button.title = lens.description;
+        button.setAttribute("aria-pressed", String(state.lens === lens.id));
+        button.addEventListener("click", () => setLens(lens.id));
+        lensRow.append(button);
+    }
+    container.append(lensRow);
+
+    const pillRow = el("div", "flex flex-wrap gap-1.5");
+    for (const facet of facets) {
+        const button = el("button", "chip", facet.label);
+        button.type = "button";
+        button.setAttribute("aria-pressed", String(state.facetIds.has(facet.key)));
+        button.addEventListener("click", () => toggleFacet(facet.key));
+        pillRow.append(button);
+    }
+    container.append(pillRow);
+    const note = lensById(state.lens)?.description ?? "Custom selection of facets.";
+    container.append(el("p", "text-[11px] text-slate-500", note));
 }
 
 function fieldValue(field, value) {
@@ -356,12 +552,13 @@ async function fetchJson(url) {
 }
 
 async function load() {
-    const [catalogue, operations, lawsuits] = await Promise.all([
+    const [catalogue, operations, lawsuits, config] = await Promise.all([
         fetchJson(DATA_URL),
         fetchJson(OPERATIONS_URL),
         fetchJson(LAWSUITS_URL),
+        fetchJson(CONFIG_URL),
     ]);
-    return { catalogue, operations, lawsuits };
+    return { catalogue, operations, lawsuits, config };
 }
 
 // Reverse lookup join: element -> operations that extract it -> lawsuits filed against those operations.
@@ -407,6 +604,28 @@ function renderLookup(element) {
     container.append(feed);
 }
 
+// Modular facets (config entries with a "source") keep their records in their own JSON file. Each record is merged
+// onto its element, and a facet with no fields is added to the facet list so it can be shown like any other.
+async function loadModularFacets() {
+    for (const config of facetConfig.facets) {
+        if (!config.source) continue;
+        let file;
+        try {
+            file = await fetchJson(config.source);
+        } catch (error) {
+            console.error(error);
+            continue;
+        }
+        for (const [symbol, record] of Object.entries(file.records ?? {})) {
+            const element = elements.find((e) => e.symbol === symbol);
+            if (!element) continue;
+            element.facets = element.facets ?? {};
+            element.facets[config.id] = record;
+        }
+        facets.push({ key: config.id, label: config.label, icon: config.icon, fields: [], modular: true });
+    }
+}
+
 async function init() {
     let loaded;
     try {
@@ -425,6 +644,10 @@ async function init() {
     categories = new Map(data.categories.map((c) => [c.id, c]));
     extractionMethods = data.extraction_methods;
     facets = data.facets;
+    facetConfig = loaded.config;
+    await loadModularFacets();
+    initLensState();
+    renderLensControls();
     for (const element of elements) searchIndex.set(element.number, buildSearchText(element));
 
     populateMethodFilter();
