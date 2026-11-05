@@ -666,7 +666,7 @@ function currentTheme() {
 function paintThemeButton() {
     const dark = currentTheme() === "dark";
     document.getElementById("themeToggle").setAttribute("aria-pressed", String(dark));
-    document.getElementById("themeLabel").textContent = dark ? "Dark mode" : "Light mode";
+    // The label names what the button controls, so it never changes; aria-pressed carries the state.
 }
 
 function bindTheme() {

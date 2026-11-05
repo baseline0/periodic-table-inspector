@@ -14,8 +14,15 @@ export function readRepo(relativePath) {
 export const wait = (ms = 50) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Loads the page and waits until the table is drawn. Returns the window, plus the errors it logged.
-export async function loadPage({ url = "http://127.0.0.1:8000/", storage = true } = {}) {
-  const html = readRepo("index.html")
+// The inline startup script in index.html re-applies a saved theme before first paint. Tests run it too.
+export function startupScript(html) {
+  const match = html.match(/<script>([\s\S]*?)<\/script>/);
+  return match ? match[1] : "";
+}
+
+export async function loadPage({ url = "http://127.0.0.1:8000/", storage = true, savedTheme = null } = {}) {
+  const source = readRepo("index.html");
+  const html = source
     .replace(/<script[^>]*src=[^>]*><\/script>/g, "")
     .replace(/<link[^>]*>/g, "");
   const dom = new JSDOM(html, { url, runScripts: "outside-only", pretendToBeVisual: true });
@@ -36,6 +43,8 @@ export async function loadPage({ url = "http://127.0.0.1:8000/", storage = true 
       },
     });
   }
+  if (savedTheme !== null) window.localStorage.setItem("pti_theme", savedTheme);
+  window.eval(startupScript(source));
   window.eval(readRepo("app.js"));
   // Wait for init() to draw the 118 tiles.
   for (let i = 0; i < 50 && window.document.querySelectorAll("#ptable button.tile").length < 118; i++) {

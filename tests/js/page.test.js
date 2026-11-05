@@ -71,3 +71,20 @@ test("the page still works when storage is blocked", async () => {
   assert.equal(document.querySelectorAll("#ptable button.tile").length, 118);
   assert.deepEqual(errors, []);
 });
+
+test("a saved dark choice is applied at startup, before the table draws", async () => {
+  const { document } = await loadPage({ savedTheme: "dark" });
+  assert.equal(document.documentElement.dataset.theme, "dark");
+  assert.equal(document.getElementById("themeToggle").getAttribute("aria-pressed"), "true");
+});
+
+test("the toggle label is stable and aria-pressed carries the state", async () => {
+  const { document } = await loadPage({ savedTheme: "light" });
+  const toggle = document.getElementById("themeToggle");
+  assert.equal(document.getElementById("themeLabel").textContent, "Dark mode");
+  assert.equal(toggle.getAttribute("aria-pressed"), "false");
+  toggle.click();
+  assert.equal(document.documentElement.dataset.theme, "dark");
+  assert.equal(toggle.getAttribute("aria-pressed"), "true");
+  assert.equal(document.getElementById("themeLabel").textContent, "Dark mode");
+});
