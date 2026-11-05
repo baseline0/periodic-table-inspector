@@ -6,6 +6,8 @@ economic notes, and to the mining operations and legal disputes linked to it.
 **Work in progress. Not investment advice.** Nothing here is a statement of who owns, holds or has
 rights to any mine. Read the [methodology](methodology.html) before relying on any claim.
 
+Built by Mark Alexiuk. Consulting work: [markalexiuk.com](https://markalexiuk.com).
+
 ## Run it locally
 
 The page loads JSON, so open it over HTTP rather than from the file system:
