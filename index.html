@@ -5,31 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Periodic Table &amp; Mining Inspector</title>
     <meta name="description" content="Interactive periodic table of all 118 elements with a side panel for extraction methods and commercial uses.">
+    <script>
+        // Apply the saved theme before the first paint. Storage can be blocked; then the OS setting applies.
+        try {
+            const saved = localStorage.getItem("pti_theme");
+            if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+        } catch (error) {
+            // No storage: follow the OS.
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@0.300.0/dist/umd/lucide.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100">
+<body class="min-h-screen">
 
-    <header class="sticky top-0 z-20 border-b border-slate-800 bg-slate-900/90 px-4 py-3 backdrop-blur">
+    <header class="surface-header line sticky top-0 z-20 border-b px-4 py-3 backdrop-blur">
         <div class="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3">
             <div class="min-w-0">
-                <h1 class="text-lg font-bold text-white">Periodic Table <span class="font-normal text-slate-400">&amp; Mining Inspector</span></h1>
-                <p class="text-xs text-slate-400">Atomic properties, extraction methods and uses for all 118 elements</p>
+                <h1 class="text-lg font-bold text-strong">Periodic Table <span class="font-normal text-muted">&amp; Mining Inspector</span></h1>
+                <p class="text-xs text-muted">Atomic properties, extraction methods and uses for all 118 elements</p>
             </div>
             <div class="flex w-full flex-1 items-center gap-2 sm:w-auto sm:max-w-xl">
                 <label class="relative flex-1">
                     <span class="sr-only">Search elements</span>
-                    <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+                    <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
                     <input id="search" type="search" autocomplete="off"
                            placeholder="Name, symbol or number"
-                           class="w-full rounded-lg border border-slate-800 bg-slate-950 py-1.5 pl-9 pr-3 text-sm text-slate-200 placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                           class="field w-full rounded-lg py-1.5 pl-9 pr-3 text-sm">
                 </label>
                 <label>
                     <span class="sr-only">Filter by state at room temperature</span>
-                    <select id="stateFilter" class="rounded-lg border border-slate-800 bg-slate-950 px-2 py-1.5 text-xs text-slate-300 focus:border-blue-500 focus:outline-none">
+                    <select id="stateFilter" class="field rounded-lg px-2 py-1.5 text-xs">
                         <option value="all">All states</option>
                         <option value="Solid">Solid</option>
                         <option value="Liquid">Liquid</option>
@@ -38,10 +47,13 @@
                 </label>
                 <label>
                     <span class="sr-only">Filter by extraction method</span>
-                    <select id="methodFilter" class="max-w-[14rem] rounded-lg border border-slate-800 bg-slate-950 px-2 py-1.5 text-xs text-slate-300 focus:border-blue-500 focus:outline-none">
+                    <select id="methodFilter" class="field max-w-[14rem] rounded-lg px-2 py-1.5 text-xs">
                         <option value="all">All extraction methods</option>
                     </select>
                 </label>
+                <button id="themeToggle" type="button" class="theme-toggle flex-none" aria-pressed="false">
+                    <span id="themeLabel">Light mode</span>
+                </button>
             </div>
         </div>
     </header>
@@ -55,28 +67,28 @@
                 <div id="ptable" class="ptable"></div>
             </div>
 
-            <p id="status" class="mt-3 text-xs text-slate-400" aria-live="polite"></p>
-            <p id="loadError" class="mt-3 hidden rounded-lg border border-red-500/40 bg-red-950/40 p-3 text-sm text-red-200" role="alert">
+            <p id="status" class="text-muted mt-3 text-xs" aria-live="polite"></p>
+            <p id="loadError" class="surface-error line-error text-error mt-3 hidden rounded-lg border p-3 text-sm" role="alert">
                 Could not load <code>data/elements.json</code>. Serve this folder over HTTP (for example <code>python3 -m http.server</code>) rather than opening the file directly.
             </p>
         </section>
 
         <aside id="panel" class="min-w-0 lg:sticky lg:top-24 lg:self-start" aria-live="polite">
-            <div id="emptyState" class="rounded-xl border border-dashed border-slate-700 p-6 text-center text-sm text-slate-400">
+            <div id="emptyState" class="line-strong text-muted rounded-xl border border-dashed p-6 text-center text-sm">
                 Select an element to see its atomic properties, extraction methods and uses.
             </div>
 
             <div id="detail" class="hidden space-y-4">
-                <div id="hero" class="flex items-start gap-4 rounded-xl border border-slate-800 bg-slate-900 p-4">
-                    <div class="flex h-20 w-20 flex-none flex-col items-center justify-center rounded-lg border tile-swatch">
-                        <span id="heroNumber" class="mono self-start px-1.5 text-[10px] text-slate-300"></span>
+                <div id="hero" class="surface-panel line flex items-start gap-4 rounded-xl border p-4">
+                    <div class="tile-swatch flex h-20 w-20 flex-none flex-col items-center justify-center rounded-lg border">
+                        <span id="heroNumber" class="mono text-body self-start px-1.5 text-[10px]"></span>
                         <span id="heroSymbol" class="text-2xl font-extrabold"></span>
-                        <span id="heroMass" class="mono text-[10px] text-slate-300"></span>
+                        <span id="heroMass" class="mono text-body text-[10px]"></span>
                     </div>
                     <div class="min-w-0 flex-1">
-                        <h2 id="heroName" class="truncate text-xl font-bold text-white"></h2>
+                        <h2 id="heroName" class="text-strong truncate text-xl font-bold"></h2>
                         <p id="heroCategory" class="mb-2 text-xs font-medium uppercase tracking-wider"></p>
-                        <dl id="coreProps" class="mono grid grid-cols-2 gap-x-3 gap-y-1 border-t border-slate-800 pt-2 text-[11px]"></dl>
+                        <dl id="coreProps" class="mono line grid grid-cols-2 gap-x-3 gap-y-1 border-t pt-2 text-[11px]"></dl>
                     </div>
                 </div>
                 <div id="lensControls" class="space-y-2"></div>
@@ -87,13 +99,13 @@
 
     </main>
 
-    <footer class="mx-auto max-w-[1400px] space-y-2 border-t border-slate-800 px-4 py-4 text-xs text-slate-500">
-        <p class="font-semibold text-amber-300">Work in progress. Not investment advice.</p>
+    <footer class="text-subtle line mx-auto max-w-[1400px] space-y-2 border-t px-4 py-4 text-xs">
+        <p class="text-warn font-semibold">Work in progress. Not investment advice.</p>
         <p>Extraction methods and uses are unverified unless a panel shows a Verified badge with citations. Nothing here is a statement of rights, ownership or legal status. Do not make financial, legal or investment decisions based on this page.</p>
         <p>
-            <a class="text-blue-400 underline hover:text-blue-300" href="methodology.html">How this site decides what it says about rights and disputes</a>
-            <span class="mx-1 text-slate-700">·</span>
-            <a id="issueLink" class="text-blue-400 underline hover:text-blue-300" href="https://github.com/baseline0/periodic-table-inspector/issues/new/choose" rel="noopener">Report an issue or a correction on GitHub</a>
+            <a class="text-link underline" href="methodology.html">How this site decides what it says about rights and disputes</a>
+            <span class="mx-1">·</span>
+            <a id="issueLink" class="text-link underline" href="https://github.com/baseline0/periodic-table-inspector/issues/new/choose" rel="noopener">Report an issue or a correction on GitHub</a>
         </p>
     </footer>
 
