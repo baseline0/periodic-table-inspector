@@ -7,6 +7,7 @@ const OPERATIONS_URL = "data/operations.json";
 const LAWSUITS_URL = "data/lawsuits.json";
 const CONFIG_URL = "data/facets.config.json";
 const STORAGE_KEY = "pti_facet_state";
+const THEME_KEY = "pti_theme";
 
 // Where each row of the table sits. Periods 1-7 are rows 1-7, row 8 is a gap, and the f-block series hang off rows 9-10.
 const SERIES_ROW = { lanthanide: 9, actinide: 10 };
@@ -113,13 +114,20 @@ function renderTable() {
     const table = document.getElementById("ptable");
     table.replaceChildren();
 
-    for (const element of elements) {
+    // Tiles go into the DOM in grid order (row by row, then column), so Tab moves across each row, not down by number.
+    const byPosition = [...elements].sort((a, b) => {
+        const pa = placement(a);
+        const pb = placement(b);
+        return pa.row - pb.row || pa.column - pb.column;
+    });
+    for (const element of byPosition) {
         const { row, column } = placement(element);
         const label = categories.get(element.category)?.label ?? element.category;
 
         const tile = el("button", "tile");
         tile.type = "button";
         tile.style.setProperty("--c", categoryColor(element.category));
+        tile.dataset.category = element.category;
         tile.style.gridRow = row;
         tile.style.gridColumn = column;
         tile.setAttribute("aria-label", `${element.name}, atomic number ${element.number}, ${label}`);
@@ -141,6 +149,7 @@ function renderTable() {
 function seriesNote(range, text, row, categoryId) {
     const node = el("div", "series-note", range);
     node.style.setProperty("--c", categoryColor(categoryId));
+    node.dataset.category = categoryId;
     node.style.gridRow = row;
     node.style.gridColumn = SERIES_FIRST_COLUMN;
     node.append(el("span", "text-[8px] opacity-75", text));
@@ -150,6 +159,7 @@ function seriesNote(range, text, row, categoryId) {
 function rowLabel(text, row, categoryId) {
     const node = el("div", "row-label", text);
     node.style.setProperty("--c", categoryColor(categoryId));
+    node.dataset.category = categoryId;
     node.style.gridRow = row;
     node.style.gridColumn = "1 / 3";
     return node;
@@ -159,7 +169,7 @@ function renderChips() {
     const container = document.getElementById("categoryChips");
     container.replaceChildren();
 
-    const all = chipButton("all", "All categories", "#94a3b8", elements.length);
+    const all = chipButton("all", "All categories", "var(--ink-muted)", elements.length);
     container.append(all);
     for (const category of categories.values()) {
         const count = elements.filter((e) => e.category === category.id).length;
@@ -171,6 +181,7 @@ function chipButton(id, label, color, count) {
     const button = el("button", "chip");
     button.type = "button";
     button.style.setProperty("--c", color);
+    if (id !== "all") button.dataset.category = id;
     button.setAttribute("aria-pressed", String(id === state.category));
     button.append(el("span", "chip-dot"), el("span", "", label), el("span", "chip-count", count));
     button.addEventListener("click", () => {
@@ -206,6 +217,7 @@ function renderPanel(element) {
     const label = categories.get(element.category)?.label ?? element.category;
     const detail = document.getElementById("detail");
     detail.style.setProperty("--c", categoryColor(element.category));
+    detail.dataset.category = element.category;
     document.getElementById("emptyState").classList.add("hidden");
     detail.classList.remove("hidden");
 
@@ -225,7 +237,7 @@ function renderPanel(element) {
     coreProps.replaceChildren();
     for (const [term, value] of core) {
         const row = el("div");
-        row.append(el("dt", "inline text-slate-500", `${term}: `), el("dd", "inline text-slate-200", value));
+        row.append(el("dt", "inline text-subtle", `${term}: `), el("dd", "inline text-value", value));
         coreProps.append(row);
     }
 
@@ -240,26 +252,28 @@ function renderPanel(element) {
     refreshIcons();
 }
 
+// Facet status badges. The legend under the lens controls reads the same table and classes.
+const BADGE_CLASS = "rounded border px-1.5 py-0.5 text-[9px] normal-case tracking-normal";
 const STATUS = {
-    "human-verified": { label: "Verified", cls: "border-emerald-500/40 text-emerald-300" },
-    "agent-extracted": { label: "Sourced, not yet checked", cls: "border-sky-500/40 text-sky-300" },
-    unaudited: { label: "Unaudited", cls: "border-amber-500/40 text-amber-300" },
-    disputed: { label: "Disputed", cls: "border-rose-500/40 text-rose-300" },
+    "human-verified": { label: "Verified", cls: "status-human-verified", meaning: "A person has checked the value against its cited source." },
+    "agent-extracted": { label: "Sourced, not yet checked", cls: "status-agent-extracted", meaning: "Taken from a cited source. No person has checked it yet." },
+    unaudited: { label: "Unaudited", cls: "status-unaudited", meaning: "No check has been made. Treat the value as unverified." },
+    disputed: { label: "Disputed", cls: "status-disputed", meaning: "Under review. The panel links to the open dispute." },
 };
 
 function facetSection(facet, element) {
     const data = element.facets?.[facet.key] ?? {};
     const status = STATUS[data.status] ?? STATUS.unaudited;
-    const section = el("section", "rounded-xl border border-slate-800 bg-slate-900 p-4");
+    const section = el("section", "surface-panel line rounded-xl border p-4");
 
-    const heading = el("h3", "mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400");
-    heading.append(icon(facet.icon, "h-4 w-4 text-[var(--c)]"), el("span", "", facet.label));
-    heading.append(el("span", `ml-auto rounded border px-1.5 py-0.5 text-[9px] normal-case tracking-normal ${status.cls}`, status.label));
+    const heading = el("h3", "text-muted mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider");
+    heading.append(icon(facet.icon, "h-4 w-4 text-[var(--c-ink)]"), el("span", "", facet.label));
+    heading.append(el("span", `ml-auto ${BADGE_CLASS} ${status.cls}`, status.label));
     section.append(heading);
 
     if (data.status === "disputed" && data.dispute_url) {
-        const notice = el("p", "mb-3 rounded border border-rose-500/40 bg-rose-950/30 p-2 text-[11px] text-rose-200", "Under review: ");
-        const link = el("a", "underline hover:text-white", "view the open dispute");
+        const notice = el("p", "surface-notice line-notice text-notice mb-3 rounded border p-2 text-[11px]", "Under review: ");
+        const link = el("a", "text-link underline", "view the open dispute");
         link.href = data.dispute_url;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
@@ -271,36 +285,36 @@ function facetSection(facet, element) {
 
     for (const field of facet.fields) {
         const wrapper = el("div", "mt-3 first:mt-0");
-        wrapper.append(el("h4", "mb-1 text-[11px] font-medium text-slate-400", field.label));
+        wrapper.append(el("h4", "text-muted mb-1 text-[11px] font-medium", field.label));
         wrapper.append(fieldValue(field, data[field.key]));
         section.append(wrapper);
     }
 
     const methodology = methodologyFor(facet.key);
     if (methodology) {
-        const drawer = el("details", "mt-3 text-[11px] text-slate-400");
-        drawer.append(el("summary", "cursor-pointer text-slate-300 hover:text-white", "How this is calculated"), el("p", "mt-1 leading-relaxed", methodology));
+        const drawer = el("details", "text-muted mt-3 text-[11px]");
+        drawer.append(el("summary", "text-body cursor-pointer", "How this is calculated"), el("p", "mt-1 leading-relaxed", methodology));
         section.append(drawer);
     }
 
     if (Array.isArray(data.citations) && data.citations.length) {
-        section.append(el("h4", "mt-3 mb-1 text-[11px] font-medium text-slate-400", "Sources"));
-        const list = el("ul", "space-y-2 border-t border-slate-800 pt-2 text-[11px] text-slate-500");
+        section.append(el("h4", "text-muted mt-3 mb-1 text-[11px] font-medium", "Sources"));
+        const list = el("ul", "text-subtle line space-y-2 border-t pt-2 text-[11px]");
         for (const c of data.citations) {
             const item = el("li", "");
-            const link = el("a", "underline hover:text-blue-300", c.source ?? c.title ?? c.url);
+            const link = el("a", "text-link underline", c.source ?? c.title ?? c.url);
             link.href = c.url;
             link.target = "_blank";
             link.rel = "noopener noreferrer";
             item.append(link, ` · retrieved ${c.retrieved_at ?? c.retrieved}`);
             if (c.locator) item.append(` · ${c.locator}`);
-            if (c.quote) item.append(el("blockquote", "mt-1 border-l border-slate-700 pl-2 italic text-slate-400", `"${c.quote}"`));
+            if (c.quote) item.append(el("blockquote", "text-muted line-strong mt-1 border-l pl-2 italic", `"${c.quote}"`));
             list.append(item);
         }
         section.append(list);
     }
 
-    const flag = el("a", "mt-3 inline-block text-[11px] text-blue-400 underline hover:text-blue-300", "Flag this fact");
+    const flag = el("a", "text-link mt-3 inline-block text-[11px] underline", "Flag this fact");
     flag.href = flagUrl(element, facet, data);
     flag.target = "_blank";
     flag.rel = "noopener noreferrer";
@@ -308,7 +322,7 @@ function facetSection(facet, element) {
     return section;
 }
 
-const SEVERITY_CLASS = { info: "text-slate-300", watch: "text-amber-300", high: "text-rose-300" };
+const SEVERITY_CLASS = { info: "text-body", watch: "text-watch", high: "text-high" };
 
 // Body of a modular facet: the summary as a paragraph, then the metrics as "label: value" lines.
 function modularBody(data) {
@@ -318,7 +332,7 @@ function modularBody(data) {
         wrapper.append(el("p", "placeholder-text text-xs", "No data recorded."));
         return wrapper;
     }
-    if (data.summary) wrapper.append(el("p", "text-xs leading-relaxed text-slate-300", data.summary));
+    if (data.summary) wrapper.append(el("p", "text-body text-xs leading-relaxed", data.summary));
     if (metrics.length) {
         const list = el("ul", "mt-2 space-y-1 text-xs");
         for (const metric of metrics) {
@@ -460,7 +474,22 @@ function renderLensControls() {
     }
     container.append(pillRow);
     const note = lensById(state.lens)?.description ?? "Custom selection of facets.";
-    container.append(el("p", "text-[11px] text-slate-500", note));
+    container.append(el("p", "text-subtle text-[11px]", note));
+    container.append(statusLegend());
+}
+
+function statusLegend() {
+    const legend = el("section", "line surface-inset mt-2 rounded-lg border p-2 text-[11px]");
+    legend.setAttribute("aria-label", "Status key");
+    legend.append(el("p", "text-subtle mb-1 text-[10px] font-semibold uppercase tracking-wider", "Status key"));
+    const list = el("ul", "space-y-1");
+    for (const status of Object.values(STATUS)) {
+        const item = el("li", "flex items-start gap-2");
+        item.append(el("span", `flex-none ${BADGE_CLASS} ${status.cls}`, status.label), el("span", "text-body", status.meaning));
+        list.append(item);
+    }
+    legend.append(list);
+    return legend;
 }
 
 function fieldValue(field, value) {
@@ -471,15 +500,15 @@ function fieldValue(field, value) {
 
     if (field.type === "country_values") {
         const wrapper = el("div", "space-y-2");
-        wrapper.append(el("p", "text-[11px] text-slate-500", `${value.basis} · ${value.year} · ${value.unit}`));
-        const list = el("ul", "space-y-1 text-xs text-slate-300");
+        wrapper.append(el("p", "text-subtle text-[11px]", `${value.basis} · ${value.year} · ${value.unit}`));
+        const list = el("ul", "text-body space-y-1 text-xs");
         for (const row of value.countries) {
             const share = row.share_percent === undefined ? "" : ` (${row.share_percent}%)`;
             list.append(el("li", "leading-relaxed", `${row.country}: ${row.value.toLocaleString("en-US")}${share}`));
         }
         wrapper.append(list);
         if (value.world_total !== undefined) {
-            wrapper.append(el("p", "text-[11px] text-slate-500", `World total: ${value.world_total.toLocaleString("en-US")} ${value.unit}`));
+            wrapper.append(el("p", "text-subtle text-[11px]", `World total: ${value.world_total.toLocaleString("en-US")} ${value.unit}`));
         }
         return wrapper;
     }
@@ -488,11 +517,11 @@ function fieldValue(field, value) {
         const list = el("ul", "space-y-2");
         for (const entry of value) {
             const method = extractionMethods[entry.method] ?? {};
-            const item = el("li", "text-xs leading-relaxed text-slate-300");
+            const item = el("li", "text-body text-xs leading-relaxed");
             item.title = method.definition ?? "";
-            item.append(el("span", "font-medium text-slate-100", method.label ?? entry.method));
+            item.append(el("span", "text-main font-medium", method.label ?? entry.method));
             const detail = [entry.source, entry.production_route].filter(Boolean).join(" · ");
-            if (detail) item.append(el("span", "text-slate-500", ` — ${detail}`));
+            if (detail) item.append(el("span", "text-subtle", ` — ${detail}`));
             list.append(item);
         }
         return list;
@@ -503,11 +532,11 @@ function fieldValue(field, value) {
         return list;
     }
     if (field.type === "list") {
-        const list = el("ul", "list-inside list-disc space-y-1 text-xs text-slate-300");
+        const list = el("ul", "text-body list-inside list-disc space-y-1 text-xs");
         for (const item of value) list.append(el("li", "leading-relaxed", item));
         return list;
     }
-    return el("p", "text-xs leading-relaxed text-slate-300", String(value));
+    return el("p", "text-body text-xs leading-relaxed", String(value));
 }
 
 function bindControls() {
@@ -576,29 +605,29 @@ function renderLookup(element) {
     const container = document.getElementById("lookup");
     container.replaceChildren();
 
-    const operationsColumn = el("section", "rounded-xl border border-slate-800 bg-slate-900 p-4");
-    operationsColumn.append(el("h3", "mb-3 text-xs font-bold uppercase tracking-wider text-slate-400", "Operations extracting " + element.symbol));
+    const operationsColumn = el("section", "surface-panel line rounded-xl border p-4");
+    operationsColumn.append(el("h3", "text-muted mb-3 text-xs font-bold uppercase tracking-wider", "Operations extracting " + element.symbol));
     if (matched.length === 0) {
         operationsColumn.append(el("p", "placeholder-text text-xs", "No mining operations recorded for this element."));
     }
     for (const op of matched) {
-        const card = el("div", "mt-2 rounded-lg border border-slate-800 bg-slate-950/60 p-3");
-        card.append(el("p", "text-sm font-semibold text-white", op.name));
-        card.append(el("p", "text-xs text-slate-400", `${op.operator} · ${[op.region, op.country].filter(Boolean).join(", ")} · ${op.status.replace(/_/g, " ")}`));
+        const card = el("div", "surface-inset line mt-2 rounded-lg border p-3");
+        card.append(el("p", "text-strong text-sm font-semibold", op.name));
+        card.append(el("p", "text-muted text-xs", `${op.operator} · ${[op.region, op.country].filter(Boolean).join(", ")} · ${op.status.replace(/_/g, " ")}`));
         operationsColumn.append(card);
     }
     container.append(operationsColumn);
 
-    const feed = el("section", "rounded-xl border border-slate-800 bg-slate-900 p-4");
-    feed.append(el("h3", "mb-3 text-xs font-bold uppercase tracking-wider text-slate-400", "Lawsuits & rights disputes"));
+    const feed = el("section", "surface-panel line rounded-xl border p-4");
+    feed.append(el("h3", "text-muted mb-3 text-xs font-bold uppercase tracking-wider", "Lawsuits & rights disputes"));
     if (cases.length === 0) {
         feed.append(el("p", "placeholder-text text-xs", matched.length ? "No lawsuits recorded against these operations." : "No linked lawsuits."));
     }
     for (const suit of cases) {
-        const card = el("div", "mt-2 rounded-lg border border-slate-800 bg-slate-950/60 p-3");
-        card.append(el("p", "text-sm font-semibold text-white", suit.case_name));
-        card.append(el("p", "text-xs text-slate-400", `${suit.court}${suit.docket_number ? " · " + suit.docket_number : ""}`));
-        card.append(el("p", "mt-1 text-[11px] text-slate-300", `${suit.dispute_type.replace(/_/g, " ")} · ${suit.status}${suit.filed_on ? " · filed " + suit.filed_on : ""}`));
+        const card = el("div", "surface-inset line mt-2 rounded-lg border p-3");
+        card.append(el("p", "text-strong text-sm font-semibold", suit.case_name));
+        card.append(el("p", "text-muted text-xs", `${suit.court}${suit.docket_number ? " · " + suit.docket_number : ""}`));
+        card.append(el("p", "text-body mt-1 text-[11px]", `${suit.dispute_type.replace(/_/g, " ")} · ${suit.status}${suit.filed_on ? " · filed " + suit.filed_on : ""}`));
         feed.append(card);
     }
     container.append(feed);
@@ -626,7 +655,37 @@ async function loadModularFacets() {
     }
 }
 
+// Light or dark. The page follows the OS until the reader picks one; the choice is stored as pti_theme (see the inline
+// script in index.html, which applies it before first paint).
+function currentTheme() {
+    const explicit = document.documentElement.dataset.theme;
+    if (explicit === "light" || explicit === "dark") return explicit;
+    return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function paintThemeButton() {
+    const dark = currentTheme() === "dark";
+    document.getElementById("themeToggle").setAttribute("aria-pressed", String(dark));
+    document.getElementById("themeLabel").textContent = dark ? "Dark mode" : "Light mode";
+}
+
+function bindTheme() {
+    paintThemeButton();
+    document.getElementById("themeToggle").addEventListener("click", () => {
+        const next = currentTheme() === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        try {
+            localStorage.setItem(THEME_KEY, next);
+        } catch {
+            // Storage blocked: the choice still applies for this page view.
+        }
+        paintThemeButton();
+    });
+}
+
 async function init() {
+    bindTheme();
+    document.getElementById("status").textContent = "Loading elements…";
     let loaded;
     try {
         loaded = await load();
