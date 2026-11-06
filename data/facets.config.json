@@ -32,6 +32,12 @@
       "label": "Medical & Life Sciences",
       "description": "Medical and pharmaceutical uses, with the supply facts behind them.",
       "facets": ["pharma", "medical-devices", "supply", "geography"]
+    },
+    {
+      "id": "quantum-exotic",
+      "label": "Quantum & Exotic States",
+      "description": "States of matter beyond the everyday: Bose-Einstein condensates of atoms, and plasma (ionised gas).",
+      "facets": ["states"]
     }
   ],
   "facets": [
@@ -78,6 +84,14 @@
       "icon": "scan",
       "renderer": "metric-list",
       "methodology": "The record covers medical imaging and implant use, from the cited regulator, USGS or National Academies sources. Dates are shown with each value, and sources are listed with their retrieval date."
+    },
+    {
+      "id": "states",
+      "source": "data/facets/states.json",
+      "label": "States of matter",
+      "icon": "atom",
+      "renderer": "metric-list",
+      "methodology": "Two states of matter. Bose-Einstein condensates: the condensed isotope and the year it was first realised, from the cited APS abstracts. Plasma (ionised gas): the definition is from NASA Science, Sun: Facts (https://science.nasa.gov/sun/facts/); each element's record is from its cited NASA, NIST or NOAA page. No plasma temperatures are recorded. Elements with no cited source are not listed. Status is agent-extracted: no person has checked these values yet."
     }
   ]
 }

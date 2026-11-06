@@ -22,6 +22,10 @@ from a source. A quotation is included only when copied word for word, and it is
 | World Uranium Mining Production (2024) | World Nuclear Association | Industry association; cited by link, facts only | Uranium mine production by country | Verify the terms of use before relying on it |
 | WTO statistics | World Trade Organization | WTO data terms; cited by link | Trade and tariff tables | Verify the terms of use before relying on it |
 | Gadolinium in Medical Imaging, Biomolecules 2022;12(6):742 | MDPI, PMC | Open access; licence per article, check the article page | Gadolinium contrast and toxicity | Peer-reviewed; meets the bar |
+| APS Physical Review Letters and Physical Review A abstracts (BEC papers, 1995 to 2012) | American Physical Society | Abstract pages cited by link, facts only | Bose-Einstein condensate isotopes (Li-7, Cr-52, Sr-84, Sr-88, Dy-164, Er-168) | Peer-reviewed; meets the bar |
+| NASA Science, Sun: Facts; First Stars: Composition; Auroras | NASA | US federal, public domain | Plasma definition; plasma statements for H, He, O | Meets the bar |
+| NIST Museum, Luminous Script Signs (neon signs) | US National Institute of Standards and Technology | US federal, public domain | Gas-discharge colours for Ne and Ar | Meets the bar |
+| NOAA National Calibration Center, Aurora | US National Oceanic and Atmospheric Administration | US federal, public domain | Auroral emission colours for N | Meets the bar |
 
 ## Sources that do not meet the bar (to be removed or replaced)
 
