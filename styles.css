@@ -520,3 +520,8 @@ details > summary:hover {
         transition: none;
     }
 }
+
+/* Embedded in another page (?embed=1): tighten the outer spacing. The disclaimer stays visible in every mode. */
+.is-embed main {
+    padding-top: 0.5rem;
+}
