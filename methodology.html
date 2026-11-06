@@ -6,6 +6,10 @@
     <title>Methodology · Periodic Table &amp; Mining Inspector</title>
     <meta name="description" content="How this site links elements, mining operations, rights and legal disputes, and what counts as verified.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // The page toggles data-theme on <html> (app.js). Tailwind must match that attribute, not the OS setting.
+        tailwind.config = { darkMode: ['class', '[data-theme="dark"]'] };
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="min-h-screen bg-slate-950 text-slate-100">

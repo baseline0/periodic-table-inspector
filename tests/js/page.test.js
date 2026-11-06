@@ -124,3 +124,15 @@ test("the disclaimer stays on the page in embed mode", async () => {
   const { document } = await loadPage({ url: "http://127.0.0.1:8000/?embed=1" });
   assert.match(document.querySelector("footer").textContent, /Not investment advice/);
 });
+
+test("Tailwind's dark strategy matches the attribute the toggle sets", async () => {
+  const { readRepo } = await import("./helpers.js");
+  const app = readRepo("app.js");
+  assert.match(app, /document\.documentElement\.dataset\.theme = next/, "toggle sets data-theme on <html>");
+  for (const file of ["index.html", "methodology.html"]) {
+    const html = readRepo(file);
+    assert.match(html, /tailwind\.config = \{ darkMode: \['class', '\[data-theme="dark"\]'\] \}/, file);
+    // The config must come after the Tailwind script that reads it.
+    assert.ok(html.indexOf("tailwind.config") > html.indexOf("cdn.tailwindcss.com"), `${file}: config after the CDN script`);
+  }
+});

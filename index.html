@@ -15,6 +15,10 @@
         }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // The page toggles data-theme on <html> (app.js). Tailwind must match that attribute, not the OS setting.
+        tailwind.config = { darkMode: ['class', '[data-theme="dark"]'] };
+    </script>
     <script src="https://unpkg.com/lucide@0.300.0/dist/umd/lucide.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
