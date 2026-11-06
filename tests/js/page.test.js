@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { loadPage, tile, wait } from "./helpers.js";
+import { loadPage, readRepo, tile, wait } from "./helpers.js";
 
 test("draws all 118 elements and logs no errors", async () => {
   const { document, errors } = await loadPage();
@@ -8,31 +8,32 @@ test("draws all 118 elements and logs no errors", async () => {
   assert.deepEqual(errors, []);
 });
 
-test("the default Core lens shows mining and uses, each with a status badge", async () => {
+test("the default Core lens shows uses, with a status badge", async () => {
   const { document } = await loadPage();
   tile(document, "Si").click();
   await wait();
   const headings = [...document.querySelectorAll("#facetSections section h3")].map((h) => h.textContent);
-  assert.ok(headings.some((h) => h.includes("Mining & rights")), headings.join(" | "));
+  assert.equal(headings.length, 1, headings.join(" | "));
   assert.ok(headings.some((h) => h.includes("Commercial & industrial uses")), headings.join(" | "));
   assert.ok(headings.every((h) => /Verified|Sourced, not yet checked|Unaudited|Disputed/.test(h)), headings.join(" | "));
 });
 
-test("the Supply Chain lens shows the sourced facets with their status", async () => {
-  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?lens=supply-chain" });
-  tile(document, "Si").click();
+test("the Medical & Life Sciences lens shows the medical facets with their status", async () => {
+  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?lens=healthcare" });
+  tile(document, "Ta").click();
   await wait();
   const headings = [...document.querySelectorAll("#facetSections section h3")].map((h) => h.textContent);
-  assert.ok(headings.some((h) => h.includes("Where it is produced")), headings.join(" | "));
+  assert.ok(headings.some((h) => h.includes("Medical imaging & implants")), headings.join(" | "));
+  assert.ok(headings.some((h) => h.includes("Pharmaceutical use")), headings.join(" | "));
   assert.ok(headings.some((h) => h.includes("Sourced, not yet checked")), headings.join(" | "));
 });
 
 test("every facet panel has a Flag link pointing at a pre-filled GitHub issue", async () => {
-  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?lens=supply-chain" });
+  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?facets=uses,pharma,medical-devices,states" });
   tile(document, "U").click();
   await wait();
   const flags = [...document.querySelectorAll("#facetSections a")].filter((a) => a.textContent === "Flag this fact");
-  assert.ok(flags.length >= 5, `flags: ${flags.length}`);
+  assert.equal(flags.length, 4, `flags: ${flags.length}`);
   for (const flag of flags) {
     const url = new URL(flag.href);
     assert.equal(url.origin, "https://github.com");
@@ -45,13 +46,13 @@ test("lens buttons change the facets shown and the URL", async () => {
   const { window, document } = await loadPage();
   tile(document, "Si").click();
   await wait();
-  const supply = [...document.querySelectorAll("#lensControls button")].find(
-    (b) => b.textContent === "Supply Chain & Geopolitics",
+  const healthcare = [...document.querySelectorAll("#lensControls button")].find(
+    (b) => b.textContent === "Medical & Life Sciences",
   );
-  supply.click();
+  healthcare.click();
   await wait();
-  assert.match(window.location.search, /lens=supply-chain/);
-  assert.match(window.location.search, /facets=mining%2Csupply%2Cgeography%2Ctrade%2Ctariff/);
+  assert.match(window.location.search, /lens=healthcare/);
+  assert.match(window.location.search, /facets=pharma%2Cmedical-devices/);
 });
 
 test("the theme toggle switches data-theme and remembers the choice", async () => {
@@ -104,12 +105,12 @@ test("embedded with ?embed=1: marks the page, posts ready and height, and posts 
   assert.ok(types.includes("pti:height"), types.join(","));
   assert.ok(parent.messages.every((m) => m.message.source === "periodic-table-inspector"));
   const before = parent.messages.length;
-  const supply = [...document.querySelectorAll("#lensControls button")].find((b) => b.textContent === "Supply Chain & Geopolitics");
-  supply.click();
+  const healthcare = [...document.querySelectorAll("#lensControls button")].find((b) => b.textContent === "Medical & Life Sciences");
+  healthcare.click();
   await wait();
   const lensMessages = parent.messages.slice(before).filter((m) => m.message.type === "pti:lens");
   assert.equal(lensMessages.length, 1);
-  assert.equal(lensMessages[0].message.lens, "supply-chain");
+  assert.equal(lensMessages[0].message.lens, "healthcare");
   assert.equal(window.location.search.includes("embed=1"), true, "the embed flag is kept in the URL after a lens change");
 });
 
@@ -131,6 +132,13 @@ test("Tailwind's dark strategy matches the attribute the toggle sets", async () 
   assert.match(app, /document\.documentElement\.dataset\.theme = next/, "toggle sets data-theme on <html>");
   const config = readRepo("tailwind.config.js");
   assert.match(config, /darkMode: \["class", '\[data-theme="dark"\]'\]/, "tailwind.config.js");
+});
+
+test("page titles, headings and meta descriptions carry no mining term", () => {
+  for (const file of ["index.html", "methodology.html"]) {
+    const html = readRepo(file);
+    assert.doesNotMatch(html, /mining/i, `${file}: no mining term`);
+  }
 });
 
 test("pages load compiled Tailwind CSS, not the Play CDN", async () => {

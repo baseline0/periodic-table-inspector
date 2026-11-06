@@ -6,38 +6,27 @@
     {
       "id": "core",
       "label": "Core Chemistry & Uses",
-      "description": "Baseline context: what the element is used for, and how it is obtained.",
-      "facets": ["uses", "mining"]
-    },
-    {
-      "id": "supply-chain",
-      "label": "Supply Chain & Geopolitics",
-      "description": "Where it is produced, how reliant the US is on imports, and the trade and duty picture.",
-      "facets": ["mining", "supply", "geography", "trade", "tariff"]
-    },
-    {
-      "id": "investor",
-      "label": "Investor & Markets",
-      "description": "Market context and import reliance. Descriptive only: not a ranking, forecast or recommendation.",
-      "facets": ["economics", "supply"]
-    },
-    {
-      "id": "esg",
-      "label": "ESG & Compliance",
-      "description": "Where extraction and production happen. Compliance and emissions facets are not yet built.",
-      "facets": ["mining", "geography"]
+      "description": "Baseline context: what the element is used for.",
+      "facets": [
+        "uses"
+      ]
     },
     {
       "id": "healthcare",
       "label": "Medical & Life Sciences",
-      "description": "Medical and pharmaceutical uses, with the supply facts behind them.",
-      "facets": ["pharma", "medical-devices", "supply", "geography"]
+      "description": "Medical and pharmaceutical uses, from cited sources.",
+      "facets": [
+        "pharma",
+        "medical-devices"
+      ]
     },
     {
       "id": "quantum-exotic",
       "label": "Quantum & Exotic States",
       "description": "States of matter beyond the everyday: Bose-Einstein condensates of atoms, and plasma (ionised gas).",
-      "facets": ["states"]
+      "facets": [
+        "states"
+      ]
     }
   ],
   "facets": [
@@ -46,36 +35,12 @@
       "methodology": "Hand-written summary of the main commercial and industrial uses. Not yet checked against a source, so its status is unaudited."
     },
     {
-      "id": "mining",
-      "methodology": "The extraction method is our classification of published descriptions of how the element is obtained. It is not taken from any company's disclosure. Not yet checked against a source."
-    },
-    {
-      "id": "economics",
-      "methodology": "Hand-written summary of market significance. Not yet checked against a source, so its status is unaudited."
-    },
-    {
-      "id": "geography",
-      "methodology": "From the USGS Mineral Commodity Summaries 2026 data release (DOI 10.5066/P1WKQ63T), latest year in the world table for the element's commodity. Shares are country value divided by the world total. Silicon uses silicon metal only, not ferrosilicon. Uranium uses World Nuclear Association mine production, which is a different publisher."
-    },
-    {
-      "id": "supply",
-      "methodology": "US net import reliance as published by USGS, a percentage of apparent consumption for the latest year. For uranium, EIA 2025 deliveries by origin, as a share of total deliveries. Critical-list flags come from the USGS 2025 final list."
-    },
-    {
-      "id": "trade",
-      "methodology": "WTO merchandise trade for the sector, 2024, from the WTO statistics service (stats.wto.org). Built by the sites incubator; not yet checked against a second source."
-    },
-    {
-      "id": "tariff",
-      "methodology": "Most-favoured-nation import duty on the unwrought metal line in the Harmonized System, latest year from 2020 to 2024, from WTO tariff data."
-    },
-    {
       "id": "pharma",
       "source": "data/facets/pharma.json",
       "label": "Pharmaceutical use",
       "icon": "flask-conical",
       "renderer": "metric-list",
-      "methodology": "The record covers the element's medical and pharmaceutical use, from the cited FDA or NIH pages, or a statement marked unaudited where no source was read. Dates are shown with each value."
+      "methodology": "The record covers the element's medical and pharmaceutical use, from the cited DailyMed drug label or NIH pages, or a statement marked unaudited where no source was read. Dates are shown with each value."
     },
     {
       "id": "medical-devices",
@@ -83,7 +48,7 @@
       "label": "Medical imaging & implants",
       "icon": "scan",
       "renderer": "metric-list",
-      "methodology": "The record covers medical imaging and implant use, from the cited regulator, USGS or National Academies sources. Dates are shown with each value, and sources are listed with their retrieval date."
+      "methodology": "The record covers medical imaging and implant use, from the cited USGS or peer-reviewed sources. Dates are shown with each value, and sources are listed with their retrieval date."
     },
     {
       "id": "states",
@@ -91,7 +56,7 @@
       "label": "States of matter",
       "icon": "atom",
       "renderer": "metric-list",
-      "methodology": "Two states of matter. Bose-Einstein condensates: the condensed isotope and the year it was first realised, from the cited APS abstracts. Plasma (ionised gas): the definition is from NASA Science, Sun: Facts (https://science.nasa.gov/sun/facts/); each element's record is from its cited NASA, NIST or NOAA page. No plasma temperatures are recorded. Elements with no cited source are not listed. Status is agent-extracted: no person has checked these values yet."
+      "methodology": "Two states of matter. Bose-Einstein condensates: the condensed isotope and the year it was first realised, from the cited APS abstracts. Plasma (ionised gas): NASA Science, Sun: Facts (https://science.nasa.gov/sun/facts/) describes plasma as a super-hot, electrically charged gas; each element's record is from its cited NASA, NIST or NOAA page. No plasma temperatures are recorded. Elements with no cited source are not listed. Status is agent-extracted: no person has checked these values yet."
     }
   ]
 }

@@ -40,7 +40,7 @@ test("a plasma element shows its sourced statement and its citation", async () =
   tile(document, "Ne").click();
   await wait();
   const text = document.getElementById("facetSections").textContent;
-  assert.match(text, /Neon is used in gas-discharge tubes/);
+  assert.match(text, /NIST describes neon gas/);
   assert.match(text, /Luminous Script Signs/);
 });
 

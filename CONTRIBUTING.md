@@ -1,13 +1,13 @@
 # Contributing
 
-Thanks for checking a value. This site is a reference for the 118 elements, their extraction methods and their
+Thanks for checking a value. This site is a reference for the 118 elements and their
 uses. It is not a market tool, so the rules below are strict on purpose.
 
 ## What counts as a source
 
 A value needs a primary source. Accepted:
 
-- a government agency or public geological, statistical or health body (for example USGS, NIST, DOE, NASA, EIA, NLM);
+- a government agency or public geological, statistical or health body (for example USGS, NIST, NASA, NLM);
 - a standards body (for example IUPAC or ISO);
 - a peer-reviewed paper.
 
@@ -36,8 +36,7 @@ The site does not accept, and will not publish, content that is:
 - rankings of companies, mines or producers;
 - commercial content, such as product listings, vendor lists or advertising.
 
-This is the public boundary. Company and producer lists are withheld until each entry has a primary source and falls
-within scope.
+This is the public boundary.
 
 ## Checks before you open a pull request
 

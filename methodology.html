@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Methodology · Periodic Table &amp; Mining Inspector</title>
-    <meta name="description" content="How this site links elements, mining operations, rights and legal disputes, and what counts as verified.">
+    <title>Methodology · Periodic Table Inspector</title>
+    <meta name="description" content="How this site sources its element facts, and what counts as verified.">
     <link rel="stylesheet" href="dist/tailwind.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,7 +14,7 @@
         <div class="mx-auto flex max-w-[860px] flex-wrap items-center justify-between gap-3">
             <div>
                 <h1 class="text-lg font-bold text-white">Methodology</h1>
-                <p class="text-xs text-slate-400">How this site decides what it can say about an element, a company or a dispute</p>
+                <p class="text-xs text-slate-400">How this site decides what it can say about an element</p>
             </div>
             <a class="text-xs text-blue-400 underline hover:text-blue-300" href="index.html">Back to the table</a>
         </div>
@@ -24,57 +24,22 @@
 
         <section class="space-y-2">
             <p class="rounded-lg border border-amber-500/40 bg-amber-500/5 p-4 text-amber-200">
-                This site is a work in progress. It is not investment advice, and nothing on it is a statement of who owns, holds or has rights to any mine.
+                This site is a work in progress. It is not investment advice.
             </p>
         </section>
 
         <section class="space-y-2">
             <h2 class="text-base font-semibold text-white">1. Element facts</h2>
-            <p>Atomic number, symbol, mass, group, period, state and abundance come from standard reference values. The periodic table layout is fixed by the element data file.</p>
+            <p>Atomic number, symbol, mass, group, period, state and abundance come from standard reference values; these are not yet cited per value. The periodic table layout is fixed by the element data file.</p>
         </section>
 
         <section class="space-y-2">
-            <h2 class="text-base font-semibold text-white">2. How an element is extracted</h2>
-            <p>Each element lists one or more extraction methods. A method describes how the element is obtained, not which company does it:</p>
-            <ul class="list-inside list-disc space-y-1">
-                <li><span class="text-slate-100">Mined as a primary ore or concentrate</span>: the element is a principal target of the operation.</li>
-                <li><span class="text-slate-100">Recovered during refining of another metal</span>: the element is a byproduct of another metal's smelting or refining.</li>
-                <li><span class="text-slate-100">Rare-earth mineral, ion-adsorption clay, evaporite or brine, cryogenic air separation, hydrocarbon processing</span>: the deposit or process type.</li>
-                <li><span class="text-slate-100">Artificially produced</span>: made in a reactor or accelerator. These elements are not mined.</li>
-            </ul>
-            <p>The methods are our classification of published descriptions of how each element is obtained. They are not taken from any company's disclosure. Each one is marked unverified until it cites a source.</p>
-        </section>
-
-        <section class="space-y-2">
-            <h2 class="text-base font-semibold text-white">3. How a company is linked to an operation</h2>
-            <p>A company is linked to a mining operation only when a source names it as the operator, owner or rights holder of that operation. Each link must record:</p>
-            <ul class="list-inside list-disc space-y-1">
-                <li>the source URL, such as a regulatory filing, an annual report or a government register;</li>
-                <li>the date the source was retrieved;</li>
-                <li>the name as the source gives it, plus any aliases.</li>
-            </ul>
-            <p>We do not infer ownership from a name that merely looks similar. Searching for a company's name in news or court text is not enough to link it to a mine.</p>
-        </section>
-
-        <section class="space-y-2">
-            <h2 class="text-base font-semibold text-white">4. How a legal dispute is linked</h2>
-            <p>A case is attached to an operation only when its court record, docket or case page names that operation or its operator. The case status comes from the court record. When a status cannot be confirmed, the page shows "status unverified" rather than guessing.</p>
-            <p>A dispute on this site is a filing, not a finding. Filing a case does not mean any party is liable.</p>
-        </section>
-
-        <section class="space-y-2">
-            <h2 class="text-base font-semibold text-white">5. What counts as verified</h2>
+            <h2 class="text-base font-semibold text-white">2. What counts as verified</h2>
             <p>A panel shows a <span class="text-slate-100">Verified</span> badge only when every entry in it has at least one citation with a URL and a retrieval date. Without citations, the panel shows <span class="text-slate-100">Unverified</span>.</p>
         </section>
 
         <section class="space-y-2">
-            <h2 class="text-base font-semibold text-white">6. What this release withholds</h2>
-            <p>The company and producing-country lists are withheld from this public release. They are not yet sourced, and a wrong name next to a mining-rights claim can cause real harm. They will return one entry at a time, each with a citation.</p>
-            <p>The reverse lookup from element to operation to dispute has its data model in place, but no operations or disputes have been added yet. Until they are, no link from an element to a company or case should be read as a finding.</p>
-        </section>
-
-        <section class="space-y-2">
-            <h2 class="text-base font-semibold text-white">7. What this site does not do</h2>
+            <h2 class="text-base font-semibold text-white">3. What this site does not do</h2>
             <ul class="list-inside list-disc space-y-1">
                 <li>It does not give prices, valuations, forecasts or rankings of companies or elements.</li>
                 <li>It does not say whether any company or dispute is good or bad.</li>
@@ -83,7 +48,7 @@
         </section>
 
         <section class="space-y-2">
-            <h2 class="text-base font-semibold text-white">8. Corrections</h2>
+            <h2 class="text-base font-semibold text-white">4. Corrections</h2>
             <p>If something here is wrong, report it on the issue tracker. Include the page, the claim and a source URL where you can. A correction changes the record only once the source has been checked.</p>
             <p>
                 <a id="issueLink" class="text-blue-400 underline hover:text-blue-300" href="https://github.com/baseline0/periodic-table-inspector/issues/new/choose" rel="noopener">Report an issue or a correction on GitHub</a>

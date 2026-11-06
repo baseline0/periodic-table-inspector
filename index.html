@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Periodic Table &amp; Mining Inspector</title>
-    <meta name="description" content="Interactive periodic table of all 118 elements with a side panel for extraction methods and commercial uses.">
+    <title>Periodic Table Inspector</title>
+    <meta name="description" content="Interactive periodic table of all 118 elements with a side panel for commercial uses.">
     <script>
         // Apply the saved theme before the first paint. Storage can be blocked; then the OS setting applies.
         try {
@@ -26,8 +26,8 @@
     <header class="surface-header line sticky top-0 z-20 border-b px-4 py-3 backdrop-blur">
         <div class="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3">
             <div class="min-w-0">
-                <h1 class="text-lg font-bold text-strong">Periodic Table <span class="font-normal text-muted">&amp; Mining Inspector</span></h1>
-                <p class="text-xs text-muted">Atomic properties, extraction methods and uses for all 118 elements</p>
+                <h1 class="text-lg font-bold text-strong">Periodic Table</h1>
+                <p class="text-xs text-muted">Atomic properties and uses for all 118 elements</p>
             </div>
             <div class="header-controls flex w-full flex-1 items-center gap-2 sm:w-auto sm:max-w-xl">
                 <label class="relative flex-1">
@@ -44,12 +44,6 @@
                         <option value="Solid">Solid</option>
                         <option value="Liquid">Liquid</option>
                         <option value="Gas">Gas</option>
-                    </select>
-                </label>
-                <label>
-                    <span class="sr-only">Filter by extraction method</span>
-                    <select id="methodFilter" class="field max-w-[14rem] rounded-lg px-2 py-1.5 text-xs">
-                        <option value="all">All extraction methods</option>
                     </select>
                 </label>
                 <button id="themeToggle" type="button" class="theme-toggle flex-none" aria-pressed="false">
@@ -77,8 +71,8 @@
         <aside id="panel" class="min-w-0 lg:sticky lg:top-24 lg:self-start" aria-live="polite">
             <div id="emptyState" class="line-strong text-muted rounded-xl border border-dashed p-6 text-center text-sm">
                 <p class="text-body font-medium">No element selected.</p>
-                <p class="mt-2">Click a tile on the table, or press Tab to reach one and Enter to open it. The panel then shows its atomic properties, extraction methods, uses and linked mining operations.</p>
-                <p class="mt-2">To find an element, type its name, symbol or number in the search box, or filter by category, state or extraction method.</p>
+                <p class="mt-2">Click a tile on the table, or press Tab to reach one and Enter to open it. The panel then shows its atomic properties and uses.</p>
+                <p class="mt-2">To find an element, type its name, symbol or number in the search box, or filter by category or state.</p>
             </div>
 
             <div id="detail" class="hidden space-y-4">
@@ -96,7 +90,6 @@
                 </div>
                 <div id="lensControls" class="space-y-2"></div>
                 <div id="facetSections" class="space-y-4"></div>
-                <div id="lookup" class="space-y-4"></div>
             </div>
         </aside>
 
@@ -104,9 +97,9 @@
 
     <footer class="text-subtle line mx-auto max-w-[1400px] space-y-2 border-t px-4 py-4 text-xs">
         <p class="text-warn font-semibold">Work in progress. Not investment advice.</p>
-        <p>Extraction methods and uses are unverified unless a panel shows a Verified badge with citations. Nothing here is a statement of rights, ownership or legal status. Do not make financial, legal or investment decisions based on this page.</p>
+        <p>Uses are unverified unless a panel shows a Verified badge with citations. Nothing here is a statement of rights, ownership or legal status. Do not make financial, legal or investment decisions based on this page.</p>
         <p>
-            <a class="text-link underline" href="methodology.html">How this site decides what it says about rights and disputes</a>
+            <a class="text-link underline" href="methodology.html">How this site decides what it says</a>
             <span class="mx-1">·</span>
             <a id="issueLink" class="text-link underline" href="https://github.com/baseline0/periodic-table-inspector/issues/new/choose" rel="noopener">Report an issue or a correction on GitHub</a>
         </p>

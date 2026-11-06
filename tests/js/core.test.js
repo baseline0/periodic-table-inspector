@@ -5,10 +5,10 @@ import * as core from "../../core.js";
 import { readRepo } from "./helpers.js";
 
 const lenses = [
-  { id: "core", facets: ["uses", "mining"] },
-  { id: "supply-chain", facets: ["mining", "supply", "geography"] },
+  { id: "core", facets: ["uses"] },
+  { id: "healthcare", facets: ["pharma", "medical-devices"] },
 ];
-const known = new Set(["uses", "mining", "supply", "geography"]);
+const known = new Set(["uses", "pharma", "medical-devices", "states"]);
 
 test("core.js has no DOM, storage, network or global references", () => {
   const source = readRepo("core.js");
@@ -23,49 +23,46 @@ test("statusInfo maps the four statuses and treats anything else as unaudited", 
   assert.equal(core.statusInfo(undefined).label, "Unaudited");
 });
 
-test("buildSearchText lower-cases and includes the core fields, facet values and method labels", () => {
+test("buildSearchText lower-cases and includes the core fields and facet values", () => {
   const element = {
     name: "Silicon", symbol: "Si", number: 14, state: "Solid", category: "metalloid",
     facets: {
-      mining: { extraction: [{ method: "ore-dedicated", source: "quartz" }] },
-      supply: { net_import_reliance: ">50% (USGS, 2025)" },
+      uses: { items: ["Dedicated semiconductor wafers"] },
+      pharma: { summary: "Silicon-based drug delivery is not a labelled use." },
     },
   };
   const facets = [
-    { key: "mining", fields: [{ key: "extraction", type: "methods" }] },
-    { key: "supply", fields: [{ key: "net_import_reliance", type: "text" }] },
+    { key: "uses", fields: [{ key: "items", type: "list" }] },
+    { key: "pharma", fields: [{ key: "summary", type: "text" }] },
   ];
   const text = core.buildSearchText(element, {
     facets,
     categoryLabel: () => "Metalloid",
-    methodLabel: (id) => (id === "ore-dedicated" ? "Dedicated ore" : undefined),
   });
   assert.equal(text, text.toLowerCase());
-  for (const term of ["silicon", "si", "14", "metalloid", "dedicated ore", "quartz", ">50%"]) {
+  for (const term of ["silicon", "si", "14", "metalloid", "semiconductor wafers", "drug delivery"]) {
     assert.ok(text.includes(term), `missing ${term} in ${text}`);
   }
 });
 
-test("matchesFilters applies category, state, method and text filters together", () => {
-  const element = { category: "metalloid", state: "Solid", facets: { mining: { extraction: [{ method: "ore-dedicated" }] } } };
-  const all = { category: "all", stateFilter: "all", method: "all", query: "" };
+test("matchesFilters applies category, state and text filters together", () => {
+  const element = { category: "metalloid", state: "Solid" };
+  const all = { category: "all", stateFilter: "all", query: "" };
   assert.equal(core.matchesFilters(element, all, "x"), true);
   assert.equal(core.matchesFilters(element, { ...all, category: "halogen" }, "x"), false);
   assert.equal(core.matchesFilters(element, { ...all, stateFilter: "Gas" }, "x"), false);
-  assert.equal(core.matchesFilters(element, { ...all, method: "ore-dedicated" }, "x"), true);
-  assert.equal(core.matchesFilters(element, { ...all, method: "byproduct-smelting" }, "x"), false);
   assert.equal(core.matchesFilters(element, { ...all, query: "silicon" }, "silicon | si"), true);
   assert.equal(core.matchesFilters(element, { ...all, query: "gold" }, "silicon | si"), false);
 });
 
 test("flagUrl builds a pre-filled GitHub issue for the given repo", () => {
   const element = { name: "Iron", symbol: "Fe" };
-  const facet = { key: "supply", label: "US supply reliance" };
+  const facet = { key: "pharma", label: "Pharmaceutical use" };
   const record = { status: "agent-extracted", citations: [{ source: "usgs", url: "https://doi.org/x", retrieved_at: "2026-11-05" }] };
   const url = new URL(core.flagUrl(element, facet, record, "owner/repo"));
   assert.equal(url.origin, "https://github.com");
   assert.equal(url.pathname, "/owner/repo/issues/new");
-  assert.equal(url.searchParams.get("title"), "Dispute: Fe supply");
+  assert.equal(url.searchParams.get("title"), "Dispute: Fe pharma");
   assert.equal(url.searchParams.get("labels"), "data-dispute");
   assert.match(url.searchParams.get("body"), /usgs: https:\/\/doi\.org\/x \(retrieved 2026-11-05\)/);
 });
@@ -77,11 +74,11 @@ test("flagUrl says so when a record has no citations", () => {
 
 test("resolveLensState: URL beats saved choice, which beats the default lens", () => {
   const base = { lenses, defaultLens: "core", knownFacetIds: known };
-  const fromUrl = core.resolveLensState({ ...base, lensParam: "supply-chain", facetsParam: null, saved: { lens: "core" } });
-  assert.equal(fromUrl.lens, "supply-chain");
-  assert.deepEqual([...fromUrl.facetIds].sort(), ["geography", "mining", "supply"]);
-  const fromSaved = core.resolveLensState({ ...base, lensParam: null, facetsParam: null, saved: { lens: "supply-chain" } });
-  assert.equal(fromSaved.lens, "supply-chain");
+  const fromUrl = core.resolveLensState({ ...base, lensParam: "healthcare", facetsParam: null, saved: { lens: "core" } });
+  assert.equal(fromUrl.lens, "healthcare");
+  assert.deepEqual([...fromUrl.facetIds].sort(), ["medical-devices", "pharma"]);
+  const fromSaved = core.resolveLensState({ ...base, lensParam: null, facetsParam: null, saved: { lens: "healthcare" } });
+  assert.equal(fromSaved.lens, "healthcare");
   const fallback = core.resolveLensState({ ...base, lensParam: null, facetsParam: null, saved: null });
   assert.equal(fallback.lens, "core");
 });
@@ -89,26 +86,26 @@ test("resolveLensState: URL beats saved choice, which beats the default lens", (
 test("resolveLensState: an explicit facets parameter wins and unknown ids are dropped", () => {
   const next = core.resolveLensState({
     lenses, defaultLens: "core", knownFacetIds: known,
-    lensParam: "core", facetsParam: "mining,bogus,geography", saved: null,
+    lensParam: "core", facetsParam: "uses,bogus,pharma", saved: null,
   });
   assert.equal(next.lens, "core");
-  assert.deepEqual([...next.facetIds].sort(), ["geography", "mining"]);
+  assert.deepEqual([...next.facetIds].sort(), ["pharma", "uses"]);
 });
 
 test("setLensState drops unregistered facets and rejects unknown lenses", () => {
-  const next = core.setLensState("supply-chain", { lenses, knownFacetIds: new Set(["mining", "supply"]) });
-  assert.deepEqual([...next.facetIds].sort(), ["mining", "supply"]);
+  const next = core.setLensState("healthcare", { lenses, knownFacetIds: new Set(["pharma"]) });
+  assert.deepEqual([...next.facetIds].sort(), ["pharma"]);
   assert.equal(core.setLensState("nope", { lenses, knownFacetIds: known }), null);
 });
 
 test("toggleFacetState keeps the lens name only while its facets match exactly", () => {
-  const start = { lens: "core", facetIds: new Set(["uses", "mining"]) };
-  const added = core.toggleFacetState(start, "supply", lenses);
+  const start = { lens: "core", facetIds: new Set(["uses"]) };
+  const added = core.toggleFacetState(start, "pharma", lenses);
   assert.equal(added.lens, "custom");
-  const removed = core.toggleFacetState(added, "supply", lenses);
+  const removed = core.toggleFacetState(added, "pharma", lenses);
   assert.equal(removed.lens, "core");
-  assert.deepEqual([...removed.facetIds].sort(), ["mining", "uses"]);
-  assert.equal(start.facetIds.size, 2, "the input state is not mutated");
+  assert.deepEqual([...removed.facetIds].sort(), ["uses"]);
+  assert.equal(start.facetIds.size, 1, "the input state is not mutated");
 });
 
 test("embed mode is requested only by ?embed=1", () => {

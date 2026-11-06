@@ -1,7 +1,9 @@
 // Data contracts for the public element data. No DOM: these read the JSON and check the rules the page depends on.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readRepo } from "./helpers.js";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { ROOT, readRepo } from "./helpers.js";
 
 const elementsText = readRepo("data/elements.json");
 const elements = JSON.parse(elementsText);
@@ -45,6 +47,30 @@ test("every lens names only registered facets, and the default lens exists", () 
     for (const facet of lens.facets) {
       assert.ok(registered.has(facet), `lens ${lens.id} names ${facet}`);
     }
+  }
+});
+
+test("public data carries no economic or mining facet, lens or extraction table", () => {
+  const ECONOMIC = ["mining", "economics", "supply", "geography", "trade", "tariff"];
+  const LENS_ONLY_FOR_ECONOMICS = ["supply-chain", "investor", "esg"];
+  assert.equal("extraction_methods" in elements, false, "extraction_methods table");
+  for (const facet of ECONOMIC) {
+    assert.equal(elements.facets.some((f) => f.key === facet), false, `registry still has ${facet}`);
+    assert.equal(config.facets.some((f) => f.id === facet), false, `config still has ${facet}`);
+  }
+  for (const lens of config.lenses) {
+    assert.equal(LENS_ONLY_FOR_ECONOMICS.includes(lens.id), false, `lens ${lens.id} is economic`);
+  }
+});
+
+test("the public repo carries no mining or litigation data, files or code paths", () => {
+  for (const file of ["data/operations.json", "data/lawsuits.json", "data/schema.sql"]) {
+    assert.equal(existsSync(join(ROOT, file)), false, `${file} must not be in the public repo`);
+  }
+  for (const file of ["app.js", "core.js", "index.html", "methodology.html", "README.md"]) {
+    const text = readRepo(file);
+    assert.doesNotMatch(text, /operations\.json|lawsuits\.json|schema\.sql|OPERATIONS_URL|LAWSUITS_URL/, file);
+    assert.doesNotMatch(text, /operations extracting|lawsuit|lookup|extraction method|production_route/i, file);
   }
 });
 

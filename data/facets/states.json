@@ -3,6 +3,7 @@
   "records": {
     "Li": {
       "status": "agent-extracted",
+      "summary": "Evidence for Bose-Einstein condensation of a gas of spin-polarised 7Li atoms, reported in a Physical Review Letters abstract published 28 August 1995.",
       "metrics": [
         {
           "label": "Condensed isotope",
@@ -10,7 +11,7 @@
           "severity": "info"
         },
         {
-          "label": "First realised",
+          "label": "Evidence reported",
           "value": "1995",
           "severity": "info"
         }
@@ -19,14 +20,14 @@
         {
           "title": "Evidence of Bose-Einstein Condensation in an Atomic Gas with Attractive Interactions",
           "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.75.1687",
-          "retrieved_at": "2026-11-05",
-          "locator": "abstract page (first sentence names spin-polarized 7Li atoms)"
+          "retrieved_at": "2026-11-06",
+          "locator": "Abstract, first sentence; published 28 August 1995"
         }
-      ],
-      "summary": "Evidence of Bose-Einstein condensation in spin-polarised 7Li atoms, from the 1995 APS abstract. The page reports evidence for condensation, not a direct atom-number measurement."
+      ]
     },
     "Cr": {
       "status": "agent-extracted",
+      "summary": "Bose-Einstein condensation of chromium, with the isotope 52Cr named in the abstract, published 29 April 2005.",
       "metrics": [
         {
           "label": "Condensed isotope",
@@ -43,11 +44,10 @@
         {
           "title": "Bose-Einstein Condensation of Chromium",
           "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.94.160401",
-          "retrieved_at": "2026-11-05",
-          "locator": "abstract page; isotope 52Cr named in the abstract"
+          "retrieved_at": "2026-11-06",
+          "locator": "Abstract, first sentence; 52Cr named in the abstract; published 29 April 2005"
         }
-      ],
-      "summary": "Bose-Einstein condensation of chromium, with the isotope 52Cr named in the 2005 APS abstract."
+      ]
     },
     "Sr": {
       "status": "agent-extracted",
@@ -68,16 +68,14 @@
         {
           "title": "Bose-Einstein Condensation of Strontium",
           "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.200401",
-          "retrieved_at": "2026-11-05",
-          "locator": "abstract page, first sentence: 'We report on the attainment of Bose-Einstein condensation with ultracold strontium atoms.'; isotope identified as 84Sr",
-          "quote": "We report on the attainment of Bose-Einstein condensation with ultracold strontium atoms."
+          "retrieved_at": "2026-11-06",
+          "locator": "Abstract, first sentence; isotope 84Sr named in the abstract; published 9 November 2009"
         },
         {
           "title": "Bose-Einstein condensation of 88Sr through sympathetic cooling with 87Sr",
           "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.81.051601",
-          "retrieved_at": "2026-11-05",
-          "locator": "abstract page, first sentence: 'We report Bose-Einstein condensation of Sr88, which has a small, negative s-wave scattering length (a88=-2a0).'",
-          "quote": "We report Bose-Einstein condensation of Sr88, which has a small, negative s-wave scattering length (a88=-2a0)."
+          "retrieved_at": "2026-11-06",
+          "locator": "Abstract, first sentence; published 5 May 2010"
         }
       ]
     },
@@ -99,9 +97,8 @@
         {
           "title": "Strongly Dipolar Bose-Einstein Condensate of Dysprosium",
           "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.107.190401",
-          "retrieved_at": "2026-11-05",
-          "locator": "abstract page, first sentence: 'We report the Bose-Einstein condensation (BEC) of the most magnetic element, dysprosium.'; 164Dy named on the page",
-          "quote": "We report the Bose-Einstein condensation (BEC) of the most magnetic element, dysprosium."
+          "retrieved_at": "2026-11-06",
+          "locator": "Abstract, first sentence; 164Dy named later in the abstract; published 31 October 2011"
         }
       ],
       "summary": "Bose-Einstein condensation of dysprosium, the most magnetic element, with the condensed isotope 164Dy named in the 2011 APS abstract."
@@ -124,89 +121,92 @@
         {
           "title": "Bose-Einstein Condensation of Erbium",
           "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.210401",
-          "retrieved_at": "2026-11-05",
-          "locator": "abstract page: 'we produce pure condensates of Er168, containing up to 7x10^4 atoms'",
-          "quote": "we produce pure condensates of Er168, containing up to 7x10^4 atoms"
+          "retrieved_at": "2026-11-06",
+          "locator": "Abstract; published 21 May 2012"
         }
       ],
       "summary": "Bose-Einstein condensation of erbium-168, reported in the 2012 APS abstract as pure condensates of up to 7 x 10^4 atoms."
     },
     "H": {
       "status": "agent-extracted",
-      "summary": "Hydrogen is a main constituent of stars. NASA states that the first generation of stars (Population III) were made almost entirely of hydrogen and helium, and describes the Sun as a ball of hydrogen and helium. This is a statement about stars that NASA describes, not a claim about every star.",
+      "summary": "NASA states that the first generation of stars (Population III) were made almost entirely of hydrogen and helium, so hydrogen was a main part of them. This is a statement about the first stars, not about every star.",
       "metrics": [],
       "citations": [
         {
           "title": "First Stars: Composition - NASA Science",
           "url": "https://science.nasa.gov/asset/webb/first-stars-composition/",
-          "retrieved_at": "2026-11-05",
-          "locator": "Main text: first generation of stars made almost entirely of hydrogen and helium (page read via WebFetch)"
+          "retrieved_at": "2026-11-06",
+          "locator": "Main text, first generation of stars",
+          "quote": "The first generation of stars, also known as Population III stars, were made almost entirely of hydrogen and helium."
         }
       ]
     },
     "He": {
       "status": "agent-extracted",
-      "summary": "Helium is a main constituent of stars. NASA states that the first generation of stars were made almost entirely of hydrogen and helium, and describes the Sun as a ball of hydrogen and helium. This is a statement about stars that NASA describes, not a claim about every star.",
+      "summary": "NASA states that the first generation of stars (Population III) were made almost entirely of hydrogen and helium, so helium was a main part of them. This is a statement about the first stars, not about every star.",
       "metrics": [],
       "citations": [
         {
           "title": "First Stars: Composition - NASA Science",
           "url": "https://science.nasa.gov/asset/webb/first-stars-composition/",
-          "retrieved_at": "2026-11-05",
-          "locator": "Main text: first generation of stars made almost entirely of hydrogen and helium (page read via WebFetch)"
+          "retrieved_at": "2026-11-06",
+          "locator": "Main text, first generation of stars",
+          "quote": "The first generation of stars, also known as Population III stars, were made almost entirely of hydrogen and helium."
         }
       ]
     },
     "Ne": {
       "status": "agent-extracted",
-      "summary": "Neon is used in gas-discharge tubes (neon signs). When electrically energised, neon gas gives an orange-red light, and the gases emit light at characteristic wavelengths when electrically energised. Plasma display use is not sourced here.",
+      "summary": "NIST describes neon gas as giving an orange-red light when an electric charge is applied, and states that gases release a specific, characteristic wavelength of photons, which sets the colour.",
       "metrics": [],
       "citations": [
         {
           "title": "Luminous Script Signs: The Origins of the 'Neon Sign' - NIST",
           "url": "https://www.nist.gov/nist-museum/luminous-script-signs-origins-neon-sign",
-          "retrieved_at": "2026-11-05",
-          "locator": "Colour statements for neon, and the statement that gases release a specific characteristic wavelength of photons (page read via WebFetch)"
+          "retrieved_at": "2026-11-06",
+          "locator": "Colour statement for neon; statement on characteristic wavelengths",
+          "quote": "Neon gas produces an orange-red color."
         }
       ]
     },
     "Ar": {
       "status": "agent-extracted",
-      "summary": "Argon is used in gas-discharge tubes (neon-type signs). When electrically energised, argon gas gives a blue light, per NIST. Plasma display and lamp fill use are not sourced here.",
+      "summary": "NIST describes argon gas as giving a blue light when an electric charge is applied.",
       "metrics": [],
       "citations": [
         {
           "title": "Luminous Script Signs: The Origins of the 'Neon Sign' - NIST",
           "url": "https://www.nist.gov/nist-museum/luminous-script-signs-origins-neon-sign",
-          "retrieved_at": "2026-11-05",
-          "locator": "Colour statement for argon ('This gas produces a blue color.') and the characteristic-wavelength statement (page read via WebFetch)",
+          "retrieved_at": "2026-11-06",
+          "locator": "Colour statement for argon",
           "quote": "This gas produces a blue color."
         }
       ]
     },
     "N": {
       "status": "agent-extracted",
-      "summary": "Nitrogen gas in the upper atmosphere produces auroras. Energetic particles collide with oxygen and nitrogen atoms at about 100 to 400 km altitude and emit light; nitrogen contributes blue and purple. NOAA's National Calibration Center describes this.",
+      "summary": "Nitrogen gas in the upper atmosphere produces auroras. Energetic particles collide with oxygen and nitrogen atoms at about 100 to 400 km altitude; NOAA's National Calibration Center lists nitrogen's aurora colours as blue and purple.",
       "metrics": [],
       "citations": [
         {
           "title": "NOAA National Calibration Center - Aurora",
           "url": "https://ncc.nesdis.noaa.gov/VIIRS/SWX/Aurora.php",
-          "retrieved_at": "2026-11-05",
-          "locator": "Aurora mechanism and colour list (Oxygen: green and red, Nitrogen: blue and purple) (page read via WebFetch)"
+          "retrieved_at": "2026-11-06",
+          "locator": "Aurora mechanism and colour list (Oxygen: green and red, Nitrogen: blue and purple)",
+          "quote": "Particles collide with oxygen and nitrogen atoms in the upper atmosphere (~100-400 km altitude)"
         }
       ]
     },
     "O": {
       "status": "agent-extracted",
-      "summary": "Oxygen gas in the upper atmosphere produces auroras. Energetic particles excite oxygen, which gives off green and red light; NASA states that oxygen excited to different energy levels can produce green and red.",
+      "summary": "NASA states that oxygen in auroras can produce green and red light.",
       "metrics": [],
       "citations": [
         {
           "title": "Auroras - NASA Science",
           "url": "https://science.nasa.gov/sun/auroras/",
-          "retrieved_at": "2026-11-05",
-          "locator": "Which gases emit light: 'Oxygen excited to different energy levels can produce green and red.' (page read via WebFetch)",
+          "retrieved_at": "2026-11-06",
+          "locator": "Section 'Why Are Auroras Colorful?'",
           "quote": "Oxygen excited to different energy levels can produce green and red."
         }
       ]

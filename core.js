@@ -22,13 +22,8 @@ export function valueToText(value) {
     return Array.isArray(value) ? value.join(" | ") : String(value ?? "");
 }
 
-// One extraction entry as text: the method label, the source and the production route, when there is one.
-export function methodText(entry, methodLabel) {
-    return [methodLabel(entry.method) ?? entry.method, entry.source, entry.production_route].filter(Boolean).join(" ");
-}
-
 // Every searchable string on an element: the core fields plus every facet field the registry declares.
-export function buildSearchText(element, { facets, categoryLabel, methodLabel }) {
+export function buildSearchText(element, { facets, categoryLabel }) {
     const parts = [
         element.name,
         element.symbol,
@@ -39,9 +34,7 @@ export function buildSearchText(element, { facets, categoryLabel, methodLabel })
     for (const facet of facets) {
         const data = element.facets?.[facet.key] ?? {};
         for (const field of facet.fields) {
-            if (field.type === "methods") {
-                for (const entry of data[field.key] ?? []) parts.push(methodText(entry, methodLabel));
-            } else if (field.type === "country_values") {
+            if (field.type === "country_values") {
                 if (data[field.key]) parts.push(data[field.key].countries.map((row) => row.country).join(" "));
             } else if (!isEmpty(data[field.key])) {
                 parts.push(valueToText(data[field.key]));
@@ -51,14 +44,10 @@ export function buildSearchText(element, { facets, categoryLabel, methodLabel })
     return parts.join(" | ").toLowerCase();
 }
 
-// Whether an element passes the category, state, extraction-method and text filters.
+// Whether an element passes the category, state and text filters.
 export function matchesFilters(element, filters, searchText) {
     if (filters.category !== "all" && element.category !== filters.category) return false;
     if (filters.stateFilter !== "all" && element.state !== filters.stateFilter) return false;
-    if (filters.method !== "all") {
-        const methodIds = (element.facets?.mining?.extraction ?? []).map((entry) => entry.method);
-        if (!methodIds.includes(filters.method)) return false;
-    }
     return !filters.query || searchText.includes(filters.query);
 }
 

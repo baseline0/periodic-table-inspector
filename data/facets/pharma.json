@@ -3,16 +3,20 @@
   "records": {
     "Pt": {
       "status": "agent-extracted",
-      "summary": "Platinum-based cisplatin injection is labeled for metastatic testicular, ovarian and bladder tumors.",
+      "summary": "Cisplatin injection is labeled for metastatic testicular and ovarian tumors, and for transitional cell bladder cancer.",
       "metrics": [
-        {"label": "Labeled indications (cisplatin injection)", "value": "metastatic testicular, ovarian and bladder tumors", "severity": "info"}
+        {
+          "label": "Labeled indications (cisplatin injection)",
+          "value": "metastatic testicular and ovarian tumors; transitional cell bladder cancer",
+          "severity": "info"
+        }
       ],
       "citations": [
         {
           "title": "Cisplatin injection - DailyMed drug label",
           "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=de6302d5-85f0-4116-a709-57826c2c84fe",
-          "retrieved_at": "2026-11-05",
-          "locator": "Indications section"
+          "retrieved_at": "2026-11-06",
+          "locator": "Indications and Usage section (metastatic testicular and ovarian tumors; transitional cell bladder cancer)"
         }
       ]
     },

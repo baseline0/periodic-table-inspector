@@ -8,8 +8,6 @@ import {
 } from "./core.js";
 
 const DATA_URL = "data/elements.json";
-const OPERATIONS_URL = "data/operations.json";
-const LAWSUITS_URL = "data/lawsuits.json";
 const CONFIG_URL = "data/facets.config.json";
 const STORAGE_KEY = "pti_facet_state";
 const THEME_KEY = "pti_theme";
@@ -21,7 +19,6 @@ const SERIES_FIRST_COLUMN = 3;
 const state = {
     category: "all",
     stateFilter: "all",
-    method: "all",
     query: "",
     selected: null,
     lens: null,
@@ -30,10 +27,7 @@ const state = {
 
 // Elements in one place, keyed by atomic number.
 let elements = [];
-let operations = [];
-let lawsuits = [];
 let categories = new Map();
-let extractionMethods = {};
 let facets = [];
 let facetConfig = { lenses: [], facets: [], repo: "", default_lens: "" };
 let searchIndex = new Map();
@@ -63,7 +57,6 @@ const buildSearchTextFor = (element) =>
     buildSearchText(element, {
         facets,
         categoryLabel: (id) => categories.get(id)?.label,
-        methodLabel: (id) => extractionMethods[id]?.label,
     });
 
 function isVisible(element) {
@@ -220,7 +213,6 @@ function renderPanel(element) {
             ? shown.map((facet) => facetSection(facet, element))
             : [el("p", "placeholder-text text-xs", "No facets selected. Choose a lens or toggle facets above.")]),
     );
-    renderLookup(element);
     refreshIcons();
 }
 
@@ -446,8 +438,7 @@ function statusLegend() {
 
 function fieldValue(field, value) {
     if (isEmpty(value)) {
-        const message = field.type === "methods" ? "No commercial extraction recorded." : "No data recorded.";
-        return el("p", "placeholder-text text-xs", message);
+        return el("p", "placeholder-text text-xs", "No data recorded.");
     }
 
     if (field.type === "country_values") {
@@ -465,19 +456,6 @@ function fieldValue(field, value) {
         return wrapper;
     }
 
-    if (field.type === "methods") {
-        const list = el("ul", "space-y-2");
-        for (const entry of value) {
-            const method = extractionMethods[entry.method] ?? {};
-            const item = el("li", "text-body text-xs leading-relaxed");
-            item.title = method.definition ?? "";
-            item.append(el("span", "text-main font-medium", method.label ?? entry.method));
-            const detail = [entry.source, entry.production_route].filter(Boolean).join(" · ");
-            if (detail) item.append(el("span", "text-subtle", ` — ${detail}`));
-            list.append(item);
-        }
-        return list;
-    }
     if (field.type === "tags") {
         const list = el("div", "flex flex-wrap gap-1.5");
         for (const item of value) list.append(el("span", "tag", item));
@@ -509,21 +487,6 @@ function bindControls() {
         state.stateFilter = event.target.value;
         applyFilters();
     });
-
-    document.getElementById("methodFilter").addEventListener("change", (event) => {
-        state.method = event.target.value;
-        applyFilters();
-    });
-}
-
-function populateMethodFilter() {
-    const select = document.getElementById("methodFilter");
-    for (const [id, method] of Object.entries(extractionMethods)) {
-        const option = el("option", "", method.label);
-        option.value = id;
-        option.title = method.definition;
-        select.append(option);
-    }
 }
 
 async function fetchJson(url) {
@@ -533,56 +496,8 @@ async function fetchJson(url) {
 }
 
 async function load() {
-    const [catalogue, operations, lawsuits, config] = await Promise.all([
-        fetchJson(DATA_URL),
-        fetchJson(OPERATIONS_URL),
-        fetchJson(LAWSUITS_URL),
-        fetchJson(CONFIG_URL),
-    ]);
-    return { catalogue, operations, lawsuits, config };
-}
-
-// Reverse lookup join: element -> operations that extract it -> lawsuits filed against those operations.
-function lookupFor(element) {
-    const operationIds = new Set(
-        operations.filter((op) => op.elements.some((link) => link.atomic_number === element.number)).map((op) => op.id),
-    );
-    const matched = operations.filter((op) => operationIds.has(op.id));
-    const cases = lawsuits.filter((suit) => operationIds.has(suit.operation_id));
-    return { operations: matched, lawsuits: cases };
-}
-
-function renderLookup(element) {
-    const { operations: matched, lawsuits: cases } = lookupFor(element);
-    const container = document.getElementById("lookup");
-    container.replaceChildren();
-
-    const operationsColumn = el("section", "surface-panel line rounded-xl border p-4");
-    operationsColumn.append(el("h3", "text-muted mb-3 text-xs font-bold uppercase tracking-wider", "Operations extracting " + element.symbol));
-    if (matched.length === 0) {
-        operationsColumn.append(el("p", "placeholder-text text-xs", "No mining operations recorded for this element."));
-    }
-    for (const op of matched) {
-        const card = el("div", "surface-inset line mt-2 rounded-lg border p-3");
-        card.append(el("p", "text-strong text-sm font-semibold", op.name));
-        card.append(el("p", "text-muted text-xs", `${op.operator} · ${[op.region, op.country].filter(Boolean).join(", ")} · ${op.status.replace(/_/g, " ")}`));
-        operationsColumn.append(card);
-    }
-    container.append(operationsColumn);
-
-    const feed = el("section", "surface-panel line rounded-xl border p-4");
-    feed.append(el("h3", "text-muted mb-3 text-xs font-bold uppercase tracking-wider", "Lawsuits & rights disputes"));
-    if (cases.length === 0) {
-        feed.append(el("p", "placeholder-text text-xs", matched.length ? "No lawsuits recorded against these operations." : "No linked lawsuits."));
-    }
-    for (const suit of cases) {
-        const card = el("div", "surface-inset line mt-2 rounded-lg border p-3");
-        card.append(el("p", "text-strong text-sm font-semibold", suit.case_name));
-        card.append(el("p", "text-muted text-xs", `${suit.court}${suit.docket_number ? " · " + suit.docket_number : ""}`));
-        card.append(el("p", "text-body mt-1 text-[11px]", `${suit.dispute_type.replace(/_/g, " ")} · ${suit.status}${suit.filed_on ? " · filed " + suit.filed_on : ""}`));
-        feed.append(card);
-    }
-    container.append(feed);
+    const [catalogue, config] = await Promise.all([fetchJson(DATA_URL), fetchJson(CONFIG_URL)]);
+    return { catalogue, config };
 }
 
 // Modular facets (config entries with a "source") keep their records in their own JSON file. Each record is merged
@@ -651,11 +566,8 @@ async function init() {
     }
 
     const data = loaded.catalogue;
-    operations = loaded.operations;
-    lawsuits = loaded.lawsuits;
     elements = data.elements;
     categories = new Map(data.categories.map((c) => [c.id, c]));
-    extractionMethods = data.extraction_methods;
     facets = data.facets;
     facetConfig = loaded.config;
     await loadModularFacets();
@@ -663,7 +575,6 @@ async function init() {
     renderLensControls();
     for (const element of elements) searchIndex.set(element.number, buildSearchTextFor(element));
 
-    populateMethodFilter();
     renderChips();
     renderTable();
     applyFilters();
