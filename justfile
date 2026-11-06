@@ -11,8 +11,13 @@ dev_dir := env_var_or_default("PERIODIC_DEV_DIR", justfile_directory() / "../per
 default:
     @just --list
 
+# Compile the stylesheet the pages link (dist/tailwind.css). dist/ is git-ignored and rebuilt here.
+build-css:
+    @test -d node_modules || npm install --no-audit --no-fund
+    npm run build:css
+
 # Serve the latest version: this checkout, which is main.
-serve-latest PORT=latest_port:
+serve-latest PORT=latest_port: build-css
     @echo "latest (main) at http://localhost:{{PORT}}  (Ctrl+C to stop)"
     cd "{{justfile_directory()}}" && python3 -m http.server {{PORT}}
 
@@ -23,7 +28,7 @@ serve-dev PORT=dev_port:
     cd "{{dev_dir}}" && python3 -m http.server {{PORT}}
 
 # Check facet registry, lenses, status values and citations (data/facets.config.json, data/schemas/).
-validate: test-js
+validate: test-js build-css
     python3 scripts/validate_facets.py
 
 # Create an annotated release tag locally. Refuses unless VERSION is X.Y.Z, the branch is main, the tree is clean,
@@ -52,3 +57,25 @@ tag VERSION:
 test-js:
     @test -d node_modules || npm install --no-audit --no-fund
     npm test
+
+# Publish the site to GitHub Pages now, from main. Runs the manual Pages workflow. Outward: it asks for a typed yes.
+# Validation runs first, so a failing data check stops the publish.
+publish:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    just validate
+    if [ "$(git branch --show-current)" != "main" ]; then
+        echo "publish: switch to main first" >&2; exit 1
+    fi
+    if [ -n "$(git status --porcelain)" ]; then
+        echo "publish: working tree is not clean; commit or stash first" >&2; exit 1
+    fi
+    git fetch -q origin main
+    if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+        echo "publish: local main is not the same as origin/main; push first" >&2; exit 1
+    fi
+    echo "This starts the Pages workflow for $(git rev-parse --short HEAD) on baseline0/periodic-table-inspector."
+    read -r -p "Type yes to publish: " ans
+    if [ "$ans" != "yes" ]; then echo "publish: cancelled"; exit 1; fi
+    gh workflow run pages.yml --ref main
+    echo "Started. Follow it with: gh run list --workflow pages.yml"

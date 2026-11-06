@@ -27,14 +27,6 @@ from a source. A quotation is included only when copied word for word, and it is
 | NIST Museum, Luminous Script Signs (neon signs) | US National Institute of Standards and Technology | US federal, public domain | Gas-discharge colours for Ne and Ar | Meets the bar |
 | NOAA National Calibration Center, Aurora | US National Oceanic and Atmospheric Administration | US federal, public domain | Auroral emission colours for N | Meets the bar |
 
-## Sources that do not meet the bar (to be removed or replaced)
-
-| Source | Why | Action proposed |
-|---|---|---|
-| Radiopaedia, "Gadolinium" | Wiki. Licence CC BY-NC-SA (non-commercial, share-alike), which does not match the MIT licence of this repository | Remove. Replace with the PMC review above or with a primary source |
-| mriquestions.com, superconductive magnet design | Q&A site, not a primary source | Remove. Replace with a peer-reviewed or NIST source for helium and NbTi |
-| BioSpace, FDA request for a boxed warning (2007) | Trade press, and dated 2007 | Remove the citation. The claim stays unaudited or is dropped |
-
 ## How to add a source
 
 1. Record the URL, the publisher, the terms of use, and the date you read it.

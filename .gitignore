@@ -2,4 +2,7 @@
 # Node dependencies for the browser-side tests
 node_modules/
 
+# Build output: regenerated from tailwind.input.css by `npm run build:css`
+dist/
+
 TODO.md

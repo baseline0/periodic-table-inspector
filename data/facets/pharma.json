@@ -30,18 +30,9 @@
     },
     "Gd": {
       "status": "unaudited",
-      "summary": "A May 2007 news report (BioSpace, dated May 24, 2007) described an FDA request that manufacturers add a boxed warning to the labeling of gadolinium-based MRI contrast agents. That is a historical report, not a current label, and the current labeling is not recorded here.",
-      "metrics": [
-        {"label": "FDA boxed-warning request, as reported in 2007", "value": "May 2007 (article dated May 24, 2007)", "severity": "watch"}
-      ],
-      "citations": [
-        {
-          "title": "FDA Requests Boxed Warning for Contrast Agents Used to Improve MRI Images (BioSpace)",
-          "url": "https://www.biospace.com/fda-requests-boxed-warning-for-contrast-agents-used-to-improve-mri-images",
-          "retrieved_at": "2026-11-05",
-          "locator": "Article body, dated May 24, 2007"
-        }
-      ]
+      "summary": "No source was confirmed for gadolinium's pharmaceutical labeling or regulatory history; this record is unsourced.",
+      "metrics": [],
+      "citations": []
     }
   }
 }

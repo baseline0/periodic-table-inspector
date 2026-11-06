@@ -2,34 +2,16 @@
   "facet_id": "medical-devices",
   "records": {
     "He": {
-      "status": "agent-extracted",
-      "summary": "Liquid helium cools the superconducting magnet windings in many MRI scanners, holding them near 4.2 K. The share of helium end use that goes to medical imaging is not sourced here.",
-      "metrics": [
-        {"label": "Bath-cooled NbTi MRI magnet operating temperature", "value": "about 4.2 K", "severity": "info"}
-      ],
-      "citations": [
-        {
-          "title": "Superconductive magnet design - Questions and Answers in MRI",
-          "url": "https://mriquestions.com/superconductive-design.html",
-          "retrieved_at": "2026-11-05",
-          "locator": "MRI magnet design section, liquid-helium cooling statement"
-        }
-      ]
+      "status": "unaudited",
+      "summary": "No primary source was confirmed for helium's role in cooling MRI magnets; this record is unsourced.",
+      "metrics": [],
+      "citations": []
     },
     "Nb": {
-      "status": "agent-extracted",
-      "summary": "Niobium-titanium (NbTi) wire is the superconducting conductor in nearly all modern superconducting MRI scanners. The share of niobium end use in medical imaging is not sourced here.",
-      "metrics": [
-        {"label": "MRI superconducting conductor", "value": "niobium-titanium (NbTi) wire", "severity": "info"}
-      ],
-      "citations": [
-        {
-          "title": "Superconductive magnet design - Questions and Answers in MRI",
-          "url": "https://mriquestions.com/superconductive-design.html",
-          "retrieved_at": "2026-11-05",
-          "locator": "MRI magnet design section, conductor statement"
-        }
-      ]
+      "status": "unaudited",
+      "summary": "No primary source was confirmed for niobium's role as an MRI magnet conductor; this record is unsourced.",
+      "metrics": [],
+      "citations": []
     },
     "Ta": {
       "status": "agent-extracted",
@@ -62,12 +44,6 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9221011",
           "retrieved_at": "2026-11-05",
           "locator": "Section 2, Gadolinium in Medical Imaging"
-        },
-        {
-          "title": "Gadolinium - Radiopaedia",
-          "url": "https://www.radiopaedia.org/articles/gadolinium-1",
-          "retrieved_at": "2026-11-05",
-          "locator": "Chemistry, Applied chemistry"
         }
       ]
     },

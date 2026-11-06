@@ -129,10 +129,19 @@ test("Tailwind's dark strategy matches the attribute the toggle sets", async () 
   const { readRepo } = await import("./helpers.js");
   const app = readRepo("app.js");
   assert.match(app, /document\.documentElement\.dataset\.theme = next/, "toggle sets data-theme on <html>");
+  const config = readRepo("tailwind.config.js");
+  assert.match(config, /darkMode: \["class", '\[data-theme="dark"\]'\]/, "tailwind.config.js");
+});
+
+test("pages load compiled Tailwind CSS, not the Play CDN", async () => {
+  const { readRepo, ROOT } = await import("./helpers.js");
+  const { existsSync } = await import("node:fs");
+  const { join } = await import("node:path");
+  assert.ok(existsSync(join(ROOT, "dist", "tailwind.css")), "dist/tailwind.css is built (npm run build:css)");
   for (const file of ["index.html", "methodology.html"]) {
     const html = readRepo(file);
-    assert.match(html, /tailwind\.config = \{ darkMode: \['class', '\[data-theme="dark"\]'\] \}/, file);
-    // The config must come after the Tailwind script that reads it.
-    assert.ok(html.indexOf("tailwind.config") > html.indexOf("cdn.tailwindcss.com"), `${file}: config after the CDN script`);
+    assert.doesNotMatch(html, /cdn\.tailwindcss\.com|tailwind\.config/, `${file}: no Play CDN`);
+    assert.match(html, /<link rel="stylesheet" href="dist\/tailwind\.css">/, `${file}: links compiled CSS`);
+    assert.ok(html.indexOf("dist/tailwind.css") < html.indexOf("styles.css"), `${file}: utilities load before styles.css`);
   }
 });

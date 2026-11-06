@@ -1,0 +1,50 @@
+# Publish the static site to GitHub Pages. Manual only: a push never deploys. Run it from the Actions tab
+# (or `gh workflow run pages.yml`) once the owner has signed off on the visibility flip.
+name: Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install and compile the stylesheet
+        run: |
+          npm ci
+          npm run build:css
+      - name: Check the facet data
+        run: python3 scripts/validate_facets.py
+      - name: Assemble the site
+        run: |
+          mkdir -p _site/dist
+          cp index.html methodology.html app.js core.js styles.css _site/
+          cp -r data _site/data
+          cp dist/tailwind.css _site/dist/tailwind.css
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
