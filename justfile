@@ -11,6 +11,10 @@ dev_dir := env_var_or_default("PERIODIC_DEV_DIR", justfile_directory() / "../per
 default:
     @just --list
 
+# Refresh the browser-target database that the CSS build reads (silences the caniuse-lite warning).
+update-browsers:
+    npx --yes update-browserslist-db@latest
+
 # Compile the stylesheet the pages link (dist/tailwind.css). dist/ is git-ignored and rebuilt here.
 build-css:
     @test -d node_modules || npm install --no-audit --no-fund
