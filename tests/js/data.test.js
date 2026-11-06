@@ -59,3 +59,21 @@ test("public data carries no price or forecast figures", () => {
   assert.doesNotMatch(elementsText, /\$\s?\d[\d,.]*\s*\/\s*kg/i);
   assert.doesNotMatch(elementsText, /\bforecast\b/i);
 });
+
+test("every category label colour passes 4.5:1 on the dark surface once its dark rule applies", () => {
+  // Pure check: the dark tint for nonmetal is set in styles.css and clears 4.5:1 against #0f172a.
+  const css = readRepo("styles.css");
+  assert.match(css, /data-theme="dark"\] \[data-category="nonmetal"\]/);
+  const lum = (hex) => {
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+    const f = (c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+    return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+  };
+  const ratio = (a, b) => {
+    const [hi, lo] = [lum(a), lum(b)].sort((x, y) => y - x);
+    return (hi + 0.05) / (lo + 0.05);
+  };
+  const tint = "#976cf7"; // 90% #8b5cf6 with white, as written in styles.css
+  assert.ok(css.includes("color-mix(in srgb, var(--c) 90%, white)"));
+  assert.ok(ratio(tint, "#0f172a") >= 4.5, `ratio ${ratio(tint, "#0f172a").toFixed(2)}`);
+});

@@ -408,6 +408,13 @@ a.text-link,
 [data-category="lanthanide"] { --light-share: 67%; }
 [data-category="actinide"] { --light-share: 82%; }
 
+/* Reactive nonmetal fails 4.5:1 on the dark surface at its base colour (4.22:1). In dark mode only, a 90% tint with
+   white reaches 4.93:1. The light theme keeps the base colour. */
+:root[data-theme="dark"] [data-category="nonmetal"],
+:root:not([data-theme="light"]) [data-category="nonmetal"] {
+    --c-ink: color-mix(in srgb, var(--c) 90%, white);
+}
+
 /* Theme toggle in the header. */
 .theme-toggle {
     display: inline-flex;
