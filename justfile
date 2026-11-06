@@ -81,5 +81,25 @@ publish:
     echo "This starts the Pages workflow for $(git rev-parse --short HEAD) on baseline0/periodic-table-inspector."
     read -r -p "Type yes to publish: " ans
     if [ "$ans" != "yes" ]; then echo "publish: cancelled"; exit 1; fi
+    before="$(gh run list --workflow pages.yml --limit 1 --json databaseId --jq '.[0].databaseId // 0')"
     gh workflow run pages.yml --ref main
-    echo "Started. Follow it with: gh run list --workflow pages.yml"
+    # Find the run this call started: the newest id after the trigger.
+    run=""
+    for _ in $(seq 1 30); do
+        sleep 2
+        run="$(gh run list --workflow pages.yml --limit 1 --json databaseId --jq '.[0].databaseId')"
+        [ "$run" != "$before" ] && break
+    done
+    echo "Pages run $run started. Waiting for it to finish..."
+    if gh run watch "$run" --exit-status >/dev/null 2>&1; then
+        repo="$(gh repo view --json nameWithOwner --jq .nameWithOwner)"
+        url="$(gh api "repos/$repo/pages" --jq .html_url 2>/dev/null || true)"
+        if [ -n "$url" ]; then
+            echo "Published: $url"
+        else
+            echo "Deployed, but GitHub returned no Pages URL. Check https://github.com/$repo/settings/pages" >&2
+        fi
+    else
+        echo "publish: run $run failed. Log: gh run view $run --log-failed" >&2
+        exit 1
+    fi
