@@ -42,7 +42,7 @@ export function startupScript(html) {
   return match ? match[1] : "";
 }
 
-export async function loadPage({ url = "http://127.0.0.1:8000/", storage = true, savedTheme = null } = {}) {
+export async function loadPage({ url = "http://127.0.0.1:8000/", storage = true, savedTheme = null, parent = null } = {}) {
   const source = readRepo("index.html");
   const html = source
     .replace(/<script[^>]*src=[^>]*><\/script>/g, "")
@@ -66,6 +66,7 @@ export async function loadPage({ url = "http://127.0.0.1:8000/", storage = true,
     });
   }
   if (savedTheme !== null) window.localStorage.setItem("pti_theme", savedTheme);
+  if (parent) Object.defineProperty(window, "parent", { value: parent, configurable: true });
   window.eval(startupScript(source));
   window.eval(browserSource());
   // Wait for init() to draw the 118 tiles.

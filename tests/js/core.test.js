@@ -110,3 +110,25 @@ test("toggleFacetState keeps the lens name only while its facets match exactly",
   assert.deepEqual([...removed.facetIds].sort(), ["mining", "uses"]);
   assert.equal(start.facetIds.size, 2, "the input state is not mutated");
 });
+
+test("embed mode is requested only by ?embed=1", () => {
+  assert.equal(core.isEmbedRequested("?embed=1"), true);
+  assert.equal(core.isEmbedRequested("?lens=core&embed=1"), true);
+  assert.equal(core.isEmbedRequested("?embed=0"), false);
+  assert.equal(core.isEmbedRequested(""), false);
+});
+
+test("embed messages carry a fixed source tag and their payload", () => {
+  assert.deepEqual(core.embedMessage("pti:ready"), { source: "periodic-table-inspector", type: "pti:ready" });
+  assert.deepEqual(core.embedMessage("pti:height", { height: 640 }), {
+    source: "periodic-table-inspector",
+    type: "pti:height",
+    height: 640,
+  });
+});
+
+test("the embed code names no host site", () => {
+  for (const file of ["core.js", "app.js", "index.html"]) {
+    assert.doesNotMatch(readRepo(file), /markalexiuk/i, file);
+  }
+});

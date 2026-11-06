@@ -88,3 +88,39 @@ test("the toggle label is stable and aria-pressed carries the state", async () =
   assert.equal(toggle.getAttribute("aria-pressed"), "true");
   assert.equal(document.getElementById("themeLabel").textContent, "Dark mode");
 });
+
+// A stand-in for a host page: it records every message the table posts to its parent.
+function recordingParent() {
+  const messages = [];
+  return { messages, postMessage(message, targetOrigin) { messages.push({ message, targetOrigin }); } };
+}
+
+test("embedded with ?embed=1: marks the page, posts ready and height, and posts lens changes", async () => {
+  const parent = recordingParent();
+  const { window, document } = await loadPage({ url: "http://127.0.0.1:8000/?embed=1", parent });
+  assert.ok(document.documentElement.classList.contains("is-embed"));
+  const types = parent.messages.map((m) => m.message.type);
+  assert.ok(types.includes("pti:ready"), types.join(","));
+  assert.ok(types.includes("pti:height"), types.join(","));
+  assert.ok(parent.messages.every((m) => m.message.source === "periodic-table-inspector"));
+  const before = parent.messages.length;
+  const supply = [...document.querySelectorAll("#lensControls button")].find((b) => b.textContent === "Supply Chain & Geopolitics");
+  supply.click();
+  await wait();
+  const lensMessages = parent.messages.slice(before).filter((m) => m.message.type === "pti:lens");
+  assert.equal(lensMessages.length, 1);
+  assert.equal(lensMessages[0].message.lens, "supply-chain");
+  assert.equal(window.location.search.includes("embed=1"), true, "the embed flag is kept in the URL after a lens change");
+});
+
+test("standalone page posts nothing to a parent and is not marked as embedded", async () => {
+  const parent = recordingParent();
+  const { document } = await loadPage({ parent });
+  assert.equal(document.documentElement.classList.contains("is-embed"), false);
+  assert.equal(parent.messages.length, 0);
+});
+
+test("the disclaimer stays on the page in embed mode", async () => {
+  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?embed=1" });
+  assert.match(document.querySelector("footer").textContent, /Not investment advice/);
+});

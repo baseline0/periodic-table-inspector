@@ -122,3 +122,14 @@ export function toggleFacetState(current, facetId, lenses) {
     const match = lenses.find((lens) => lens.facets.length === facetIds.size && lens.facets.every((f) => facetIds.has(f)));
     return { lens: match ? match.id : "custom", facetIds };
 }
+
+// Embed mode is requested with ?embed=1. Nothing about it is specific to any host page.
+export function isEmbedRequested(search) {
+    return new URLSearchParams(search).get("embed") === "1";
+}
+
+// The messages an embedding page receives. Each carries a fixed source tag so a host can ignore other messages.
+// pti:ready once on load; pti:height after each change of layout; pti:lens after each change of lens or facets.
+export function embedMessage(type, payload = {}) {
+    return { source: "periodic-table-inspector", type, ...payload };
+}

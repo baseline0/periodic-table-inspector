@@ -4,7 +4,7 @@
 
 import {
     STATUS, isEmpty, valueToText, buildSearchText, matchesFilters, flagUrl as flagUrlFor, lensById as findLens,
-    resolveLensState, setLensState, toggleFacetState, statusInfo,
+    resolveLensState, setLensState, toggleFacetState, statusInfo, isEmbedRequested, embedMessage,
 } from "./core.js";
 
 const DATA_URL = "data/elements.json";
@@ -383,6 +383,21 @@ function afterStateChange() {
     syncState();
     renderLensControls();
     if (state.selected) renderPanel(state.selected);
+    if (embedMode) {
+        postToParent(embedMessage("pti:lens", { lens: state.lens, facets: [...state.facetIds] }));
+        postHeight();
+    }
+}
+
+// Embed mode: only when the page is framed and asked for it. Outbound messages only; the page accepts no commands.
+let embedMode = false;
+
+function postToParent(message) {
+    if (window.parent && window.parent !== window) window.parent.postMessage(message, "*");
+}
+
+function postHeight() {
+    postToParent(embedMessage("pti:height", { height: document.documentElement.scrollHeight }));
 }
 
 function renderLensControls() {
@@ -621,6 +636,8 @@ function bindTheme() {
 }
 
 async function init() {
+    embedMode = isEmbedRequested(window.location.search);
+    document.documentElement.classList.toggle("is-embed", embedMode);
     bindTheme();
     document.getElementById("status").textContent = "Loading elements…";
     let loaded;
@@ -652,6 +669,11 @@ async function init() {
     applyFilters();
     bindControls();
     refreshIcons();
+    if (embedMode) {
+        postToParent(embedMessage("pti:ready"));
+        postHeight();
+        window.addEventListener("resize", () => postHeight());
+    }
 }
 
 init();
