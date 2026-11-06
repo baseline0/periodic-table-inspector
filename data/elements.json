@@ -53,20 +53,7 @@
       "color": "#d97706"
     }
   ],
-  "facets": [
-    {
-      "key": "uses",
-      "label": "Commercial & industrial uses",
-      "icon": "factory",
-      "fields": [
-        {
-          "key": "items",
-          "label": "Uses",
-          "type": "list"
-        }
-      ]
-    }
-  ],
+  "facets": [],
   "elements": [
     {
       "number": 1,
@@ -78,17 +65,7 @@
       "period": 1,
       "state": "Gas",
       "abundance": "1,400 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Ammonia synthesis for agricultural fertilizers",
-            "Petroleum hydrocracking & desulfurization",
-            "Rocket propellant fuel",
-            "Fuel cells for electric transport"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -101,17 +78,7 @@
       "period": 1,
       "state": "Gas",
       "abundance": "0.008 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Cooling superconducting magnets in MRI machines",
-            "Semiconductor & fiber optic manufacturing",
-            "Deep-sea diving breathing mixtures",
-            "Leak detection & pressurizing rockets"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -124,17 +91,7 @@
       "period": 2,
       "state": "Solid",
       "abundance": "20 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Lithium-ion batteries for Electric Vehicles (EVs)",
-            "Grid energy storage systems",
-            "High-temperature lubricating greases",
-            "Specialized heat-resistant glass & ceramics"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -147,17 +104,7 @@
       "period": 2,
       "state": "Solid",
       "abundance": "2.8 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Aerospace & defense structural alloys",
-            "Beryllium-copper non-sparking precision tools",
-            "X-ray equipment optical windows",
-            "Reflectors/moderators in nuclear reactors"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -170,17 +117,7 @@
       "period": 2,
       "state": "Solid",
       "abundance": "10 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Borosilicate heat-resistant glass (Pyrex)",
-            "Fiberglass thermal insulation",
-            "Semiconductor p-type dopant",
-            "Neodymium-iron-boron supermagnets"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -193,17 +130,7 @@
       "period": 2,
       "state": "Solid",
       "abundance": "200 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Lithium-ion battery graphite anodes",
-            "Steelmaking carbon additive & coke",
-            "Carbon fiber composites for aerospace/auto",
-            "Water filtration activated carbon"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -216,17 +143,7 @@
       "period": 2,
       "state": "Gas",
       "abundance": "19 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Agricultural nitrogen fertilizers (Urea, Ammonium Nitrate)",
-            "Inerting atmosphere for electronics & food packaging",
-            "Cryogenic liquid nitrogen cooling",
-            "Explosives manufacturing (TNT, Nitroglycerin)"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -239,17 +156,7 @@
       "period": 2,
       "state": "Gas",
       "abundance": "461,000 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Basic oxygen steelmaking processes",
-            "Medical oxygen therapy systems",
-            "Rocket liquid oxygen (LOX) oxidizer",
-            "Industrial welding & oxy-fuel cutting"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -262,17 +169,7 @@
       "period": 2,
       "state": "Gas",
       "abundance": "585 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Lithium-ion battery electrolyte salt (LiPF6)",
-            "Uranium enrichment (UF6 gas)",
-            "Teflon (PTFE) fluoropolymer synthesis",
-            "Pharmaceutical fluorination agents"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -285,16 +182,7 @@
       "period": 2,
       "state": "Gas",
       "abundance": "0.005 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "DUV excimer lasers for semiconductor lithography",
-            "High-voltage indicator lights & neon signage",
-            "Cryogenic refrigerant applications"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -307,17 +195,7 @@
       "period": 3,
       "state": "Solid",
       "abundance": "23,600 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Table salt & food preservation",
-            "Chemical manufacturing (Caustic Soda & Soda Ash)",
-            "Sodium-ion battery development",
-            "Liquid sodium coolant for fast nuclear reactors"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -330,17 +208,7 @@
       "period": 3,
       "state": "Solid",
       "abundance": "23,300 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Lightweight aluminum-magnesium alloys for aerospace & auto",
-            "Steel desulfurization reagent",
-            "Sacrificial anodes for pipeline corrosion prevention",
-            "Titanium metal reduction (Kroll process)"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -353,17 +221,7 @@
       "period": 3,
       "state": "Solid",
       "abundance": "82,300 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Aerospace fuselages & automotive structural frames",
-            "Electrical power transmission grid cables",
-            "Beverage cans & food packaging foils",
-            "Solar panel structural framing"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -376,17 +234,7 @@
       "period": 3,
       "state": "Solid",
       "abundance": "282,000 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Semiconductor microchips & integrated circuits",
-            "Photovoltaic solar panels (polysilicon)",
-            "Silicones, sealants & synthetic lubricants",
-            "Aluminum casting alloys strength enhancer"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -399,17 +247,7 @@
       "period": 3,
       "state": "Solid",
       "abundance": "1,050 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Agricultural phosphate fertilizers (DAP/MAP)",
-            "Lithium Iron Phosphate (LFP) EV batteries",
-            "Detergents & water treatment chemicals",
-            "Semiconductor n-type dopant"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -422,17 +260,7 @@
       "period": 3,
       "state": "Solid",
       "abundance": "350 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Sulfuric acid production for fertilizer manufacturing",
-            "Rubber vulcanization",
-            "Mining leach reagent for copper/nickel extraction",
-            "Pharmaceuticals & fungicides"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -445,17 +273,7 @@
       "period": 3,
       "state": "Gas",
       "abundance": "145 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Polyvinyl Chloride (PVC) plastic manufacturing",
-            "Municipal water disinfection & sanitation",
-            "Pharmaceutical chemical synthesis",
-            "Bleaching paper pulp and textiles"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -468,17 +286,7 @@
       "period": 3,
       "state": "Gas",
       "abundance": "3.5 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Inert shielding gas for TIG/MIG welding",
-            "Monocrystalline silicon crystal growth (solar/chips)",
-            "Double-pane insulated window gas filling",
-            "Titanium manufacturing thermal protection"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -491,17 +299,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "20,900 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Potash fertilizers (Muriate of Potash)",
-            "Potassium hydroxide (KOH) soap/detergent base",
-            "Specialized high-strength optical glass",
-            "Food preservation additives"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -514,17 +312,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "41,500 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Portland cement and concrete construction",
-            "Steelmaking flux & slag conditioner",
-            "Soil acidity neutralization in agriculture",
-            "Alloy deoxidizer & desulfurizer"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -537,17 +325,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "22 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Aluminum-scandium alloys for aerospace structural frames",
-            "Solid oxide fuel cells (SOFC) electrolyte stabilizer",
-            "High-intensity stadium lighting",
-            "3D printing aerospace powders"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -560,17 +338,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "5,650 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Commercial & military aircraft airframes and jet engines",
-            "Titanium dioxide (TiO2) white pigment for paints/plastics",
-            "Medical bone implants and joint replacements",
-            "Desalination plant heat exchangers"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -583,17 +351,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "120 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "High-strength low-alloy (HSLA) construction steel",
-            "Vanadium Redox Flow Batteries for grid storage",
-            "Titanium-vanadium jet engine alloys",
-            "Chemical catalysts for sulfuric acid production"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -606,17 +364,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "102 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Stainless steel manufacturing (minimum 10.5% Cr)",
-            "Chrome electroplating for corrosion & wear resistance",
-            "Refractory bricks for high-temp furnaces",
-            "Leather tanning chemicals"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -629,17 +377,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "950 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Steel deoxidation and desulfurization (Ferromanganese)",
-            "EV battery cathodes (NMC, LMFP chemistries)",
-            "Aluminum alloy strength booster (3000-series)",
-            "Dry cell battery cathodes"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -652,17 +390,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "56,300 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Steel production for buildings, bridges & infrastructure",
-            "Automotive & shipbuilding heavy structural plate",
-            "Industrial machinery & tools",
-            "Reinforced concrete rebar"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -675,17 +403,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "25 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Lithium-ion battery cathodes (NMC/LCO)",
-            "Superalloys for gas turbine jet engines",
-            "Industrial synthetic diamond tool binders",
-            "Petroleum refining catalysts"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -698,17 +416,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "84 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Stainless steel & corrosion-resistant alloys",
-            "High-energy-density EV battery cathodes",
-            "Electroplating for protective coatings",
-            "Gas turbine superalloys"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -721,17 +429,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "60 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Electrical wiring, motors & power grid cables",
-            "Printed circuit boards & microelectronics interconnects",
-            "HVAC heat exchangers & plumbing piping",
-            "EV drive motors & charging infrastructure"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -744,17 +442,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "70 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Galvanizing steel structures against rust",
-            "Die-casting intricate automotive parts",
-            "Brass alloy production (copper-zinc)",
-            "Zinc oxide for rubber vulcanization & sunscreens"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -767,17 +455,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "19 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Gallium Arsenide (GaAs) high-frequency RF microchips",
-            "Gallium Nitride (GaN) fast power electronics & 5G",
-            "Blue/UV LEDs & laser diodes",
-            "Next-gen solar photovoltaic cells"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -790,17 +468,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "1.5 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Fiber optic communications cables",
-            "Infrared thermal imaging night-vision optics",
-            "Solar cell substrates for satellites",
-            "Polymerization catalysts for PET plastic"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -813,17 +481,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "1.8 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Gallium Arsenide (GaAs) semiconductors",
-            "Wood preservatives (CCA) (phased out in many regions)",
-            "Lead-acid battery alloy hardening",
-            "Specialized optical glasses"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -836,17 +494,7 @@
       "period": 4,
       "state": "Solid",
       "abundance": "0.05 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Glass manufacturing color control & tinting",
-            "CIGS thin-film solar photovoltaic panels",
-            "Agricultural dietary supplement additives",
-            "Photoreceptors & rectifiers"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -859,17 +507,7 @@
       "period": 4,
       "state": "Liquid",
       "abundance": "2.4 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Brominated flame retardants for electronics & plastics",
-            "Clear brine fluids for deep-sea oil drilling",
-            "Water treatment biocide chemicals",
-            "Pharmaceutical intermediates"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -882,17 +520,7 @@
       "period": 4,
       "state": "Gas",
       "abundance": "0.0001 ppm",
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Thermal insulation filling for high-efficiency windows",
-            "Excimer lasers for semiconductor production",
-            "Krypton plasma thrusters for satellites (e.g. SpaceX Starlink)",
-            "High-speed flash photography"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -905,16 +533,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Atomic clocks",
-            "Specialty glass",
-            "Photocell sensors"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -927,16 +546,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Ferrite magnets",
-            "Pyrotechnic red flares",
-            "Zinc refining"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -949,16 +559,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "YAG lasers",
-            "Superconductors",
-            "LED phosphors"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -971,16 +572,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Nuclear reactor fuel cladding",
-            "Refractory ceramics",
-            "Chemical pumps"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -993,16 +585,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "High-strength low-alloy (HSLA) steel",
-            "Superconducting magnets (MRI)",
-            "Rocket nozzles"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1015,16 +598,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "High-temperature steel alloys",
-            "Petroleum desulfurization catalysts",
-            "Lubricants (MoS2)"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1037,15 +611,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Medical diagnostic nuclear imaging (Tc-99m)",
-            "Corrosion protection study"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1058,16 +624,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Hard disk drive magnetic layers",
-            "Chlor-alkali electrodes",
-            "Electrical contacts"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1080,16 +637,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Automotive catalytic converters (NOx reduction)",
-            "Glass fiber bushings",
-            "Jewelry plating"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1102,16 +650,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Gasoline vehicle catalytic converters",
-            "MLCC electronics capacitors",
-            "Hydrogen purification"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1124,17 +663,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Photovoltaic solar cell paste",
-            "Electronics & electrical contacts",
-            "Water purification",
-            "Jewelry & coinage"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1147,16 +676,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Thin-film CdTe solar panels",
-            "NiCd aircraft batteries",
-            "Corrosion plating"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1169,16 +689,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Indium Tin Oxide (ITO) touchscreens & flat screens",
-            "Low-melting solders",
-            "Semiconductors"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1191,16 +702,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Lead-free electronics soldering",
-            "Tinplate food packaging",
-            "Chemical stabilizers"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1213,16 +715,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Munitions & military armor",
-            "Flame retardant synergist",
-            "Lead-acid battery grid hardener"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1235,16 +728,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "CdTe solar photovoltaic panels",
-            "Thermoelectric cooling devices",
-            "Free-machining steel alloy"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1257,17 +741,7 @@
       "period": 5,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "X-ray medical contrast agents",
-            "Disinfectants & antiseptics",
-            "LCD polarizing films",
-            "Thyroid health"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1280,16 +754,7 @@
       "period": 5,
       "state": "Gas",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Satellite ion engine propulsion",
-            "Anesthesia gas",
-            "Specialized medical imaging & lighting"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1302,16 +767,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Atomic clocks (GPS definition)",
-            "Deep oil well drilling fluids",
-            "Photoelectric cells"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -1324,16 +780,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Oil & gas drilling mud weighting agent",
-            "Medical barium meals",
-            "Glass formulation"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -1346,16 +793,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Hybrid car NiMH batteries",
-            "Camera glass lenses",
-            "Petroleum refining catalysts"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1368,16 +806,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Glass polishing powders",
-            "Diesel fuel additives",
-            "Catalytic converters"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1390,16 +819,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "NdFeB high-strength magnets",
-            "Aircraft engine alloys",
-            "Didymium glass goggles"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1412,16 +832,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Neodymium permanent magnets (EV motors & wind turbines)",
-            "Hard drives",
-            "Laser glass"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1434,15 +845,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Nuclear batteries for spacecraft/pacemakers",
-            "Luminous paint signal lights"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1455,16 +858,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Samarium-Cobalt high-temp magnets",
-            "Cancer radiation therapy (Sm-153)",
-            "Nuclear control rods"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1477,16 +871,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Euro banknote anti-forgery phosphors",
-            "Red phosphors in TV screens",
-            "Quantum memory"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1499,16 +884,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "MRI medical contrast agents",
-            "Nuclear marine propulsion control rods",
-            "Magnetocaloric cooling"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1521,16 +897,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "High-performance EV magnets",
-            "Green phosphors",
-            "Terfenol-D sonar transducers"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1543,16 +910,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "EV motor permanent magnet heat stability",
-            "Nuclear control rods",
-            "Data storage lasers"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1565,15 +923,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Medical holmium lasers (kidney stones)",
-            "Highest magnetic moment pole pieces"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1586,15 +936,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Erbium-doped fiber amplifiers (EDFA) for long-haul internet",
-            "Surgical skin lasers"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1607,15 +949,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Portable medical X-ray units",
-            "High-efficiency holmium-thulium surgical lasers"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1628,16 +962,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "High-power fiber lasers for metal manufacturing cutting",
-            "Atomic optical clocks",
-            "Stainless steel stress sensors"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1650,15 +975,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "PET cancer scan detectors (LSO crystals)",
-            "Petroleum cracking catalysts"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -1671,16 +988,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Nuclear submarine control rods",
-            "Semiconductor microchip gate insulators",
-            "Plasma cutting tips"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1693,16 +1001,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Micro-capacitors in smartphones & electronics",
-            "Jet engine superalloys",
-            "Surgical bone screws"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1715,16 +1014,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Tungsten carbide cutting tools & drill bits",
-            "Kinetic energy armor penetrators",
-            "Filaments"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1737,15 +1027,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Single-crystal jet engine turbine blades",
-            "Octane-boosting petroleum catalysts"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1758,16 +1040,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Fountain pen nib tips",
-            "High-durability electrical contacts",
-            "Staining microscopic tissue"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1780,16 +1053,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "PEM green hydrogen electrolyzer anodes",
-            "Spark plugs",
-            "OLED displays"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1802,17 +1066,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Diesel engine catalytic converters",
-            "Hydrogen fuel cells",
-            "Chemotherapy drugs (Cisplatin)",
-            "Fine Jewelry"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1825,16 +1079,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Global reserve asset & store of value",
-            "High-reliability electronic connectors",
-            "Aerospace heat shielding"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1847,16 +1092,7 @@
       "period": 6,
       "state": "Liquid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Artisanal small-scale gold mining",
-            "Chlor-alkali cells (phasing out)",
-            "Fluorescent lighting"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -1869,15 +1105,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Cardiac stress test nuclear imaging (Tl-201)",
-            "Special infrared optical glass"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1890,16 +1118,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "SLI automotive Lead-Acid batteries",
-            "Radiation shielding for X-ray & nuclear",
-            "Subsea power cable sheathing"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1912,16 +1131,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Pepto-Bismol pharmaceuticals",
-            "Non-toxic lead replacement solders & shot",
-            "Cosmetics"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1934,15 +1144,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Static eliminators in industrial machinery",
-            "Spacecraft thermoelectric heating"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1955,14 +1157,7 @@
       "period": 6,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Targeted Alpha Therapy (TAT) precision cancer treatment (At-211)"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1975,15 +1170,7 @@
       "period": 6,
       "state": "Gas",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Radiation therapy research",
-            "Earthquake hydrologic prediction monitoring"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -1996,14 +1183,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Fundamental subatomic physics research & trap studies"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -2016,15 +1196,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Targeted prostate cancer radiopharmaceuticals (Ra-223)",
-            "Industrial radiography"
-          ]
-        }
-      },
+      "facets": {},
       "block": "s"
     },
     {
@@ -2037,14 +1209,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Targeted Alpha Therapy cancer oncology (Ac-225)"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2057,16 +1222,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Next-generation molten salt Thorium nuclear reactors",
-            "TIG welding electrodes",
-            "Optical glass"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2079,14 +1235,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Geological radiometric ocean sediment dating research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2099,16 +1248,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Commercial nuclear power station fuel (U-235)",
-            "Naval submarine propulsion",
-            "Medical radioisotopes"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2121,14 +1261,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Precursor for Plutonium-238 space radioisotope thermal generators (RTG)"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2141,16 +1274,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "MOX nuclear fuel recycling",
-            "Space probe RTG power (Pu-238)",
-            "Nuclear defense deterrents"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2163,15 +1287,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Ionization smoke detectors",
-            "Industrial fluid thickness gauge measurement"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2184,15 +1300,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Alpha Particle X-ray Spectrometers on Mars Rovers",
-            "Deep space energy research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2205,14 +1313,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Target material synthesized to discover superheavy elements (Tennessine)"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2225,16 +1326,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Neutron startup sources for nuclear reactors",
-            "Coal & mineral real-time elemental analyzers",
-            "Gold detection"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2247,14 +1339,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Fundamental physical study of actinide chemical bonding"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2267,14 +1352,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Basic heavy actinide chemical research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2287,14 +1365,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Scientific study of aqueous valence states"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2307,14 +1378,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Fundamental atomic physics research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2327,14 +1391,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Confirmation of relativistic electron orbital contractions"
-          ]
-        }
-      },
+      "facets": {},
       "block": "f"
     },
     {
@@ -2347,14 +1404,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Relativistic quantum chemistry verification"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2367,14 +1417,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Superheavy element stability research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2387,14 +1430,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Gas-phase carbonyl complex chemical studies"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2407,14 +1443,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Volatilization chemistry experiments"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2427,14 +1456,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Group 8 tetroxide volatility studies"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2447,14 +1469,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Nuclear stability island research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2467,14 +1482,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Atomic decay chain mapping"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2487,14 +1495,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Relativistic gold-homologue chemistry"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2507,14 +1508,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Volatile noble-metal gas-phase chemistry research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "d"
     },
     {
@@ -2527,14 +1521,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "First element discovered in Asia; superheavy physics research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -2547,14 +1534,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Testing the 'Island of Stability' theoretical nuclear physics models"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -2567,14 +1547,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Synthesis precursor for element 117 Tennessine"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -2587,14 +1560,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Alpha decay chain mapping research"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -2607,14 +1573,7 @@
       "period": 7,
       "state": "Solid",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Extreme superheavy halogen chemical behavior modeling"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     },
     {
@@ -2627,14 +1586,7 @@
       "period": 7,
       "state": "Gas",
       "abundance": null,
-      "facets": {
-        "uses": {
-          "status": "unaudited",
-          "items": [
-            "Theoretical relativistic quantum electrodynamics computation verification"
-          ]
-        }
-      },
+      "facets": {},
       "block": "p"
     }
   ]

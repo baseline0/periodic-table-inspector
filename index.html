@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Periodic Table Inspector</title>
-    <meta name="description" content="Interactive periodic table of all 118 elements with a side panel for commercial uses.">
+    <meta name="description" content="Interactive periodic table of all 118 elements with a side panel of sourced facts.">
     <script>
         // Apply the saved theme before the first paint. Storage can be blocked; then the OS setting applies.
         try {
@@ -27,7 +27,7 @@
         <div class="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3">
             <div class="min-w-0">
                 <h1 class="text-lg font-bold text-strong">Periodic Table</h1>
-                <p class="text-xs text-muted">Atomic properties and uses for all 118 elements</p>
+                <p class="text-xs text-muted">Atomic properties for all 118 elements</p>
             </div>
             <div class="header-controls flex w-full flex-1 items-center gap-2 sm:w-auto sm:max-w-xl">
                 <label class="relative flex-1">
@@ -71,7 +71,7 @@
         <aside id="panel" class="min-w-0 lg:sticky lg:top-24 lg:self-start" aria-live="polite">
             <div id="emptyState" class="line-strong text-muted rounded-xl border border-dashed p-6 text-center text-sm">
                 <p class="text-body font-medium">No element selected.</p>
-                <p class="mt-2">Click a tile on the table, or press Tab to reach one and Enter to open it. The panel then shows its atomic properties and uses.</p>
+                <p class="mt-2">Click a tile on the table, or press Tab to reach one and Enter to open it. The panel then shows its atomic properties and cited facts.</p>
                 <p class="mt-2">To find an element, type its name, symbol or number in the search box, or filter by category or state.</p>
             </div>
 
@@ -97,7 +97,7 @@
 
     <footer class="text-subtle line mx-auto max-w-[1400px] space-y-2 border-t px-4 py-4 text-xs">
         <p class="text-warn font-semibold">Work in progress. Not investment advice.</p>
-        <p>Uses are unverified unless a panel shows a Verified badge with citations. Nothing here is a statement of rights, ownership or legal status. Do not make financial, legal or investment decisions based on this page.</p>
+        <p>Nothing here is a statement of rights, ownership or legal status. Do not make financial, legal or investment decisions based on this page.</p>
         <p>
             <a class="text-link underline" href="methodology.html">How this site decides what it says</a>
             <span class="mx-1">·</span>

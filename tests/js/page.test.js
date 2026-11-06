@@ -8,14 +8,22 @@ test("draws all 118 elements and logs no errors", async () => {
   assert.deepEqual(errors, []);
 });
 
-test("the default Core lens shows uses, with a status badge", async () => {
-  const { document } = await loadPage();
+test("the Core lens is empty: it shows no facet panels and says so", async () => {
+  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?lens=core" });
   tile(document, "Si").click();
   await wait();
   const headings = [...document.querySelectorAll("#facetSections section h3")].map((h) => h.textContent);
-  assert.equal(headings.length, 1, headings.join(" | "));
-  assert.ok(headings.some((h) => h.includes("Commercial & industrial uses")), headings.join(" | "));
-  assert.ok(headings.every((h) => /Verified|Sourced, not yet checked|Unaudited|Disputed/.test(h)), headings.join(" | "));
+  assert.equal(headings.length, 0, headings.join(" | "));
+  assert.match(document.getElementById("facetSections").textContent, /No facets selected/);
+  assert.doesNotMatch(document.getElementById("facetSections").textContent, /Commercial & industrial uses/);
+});
+
+test("the default lens is Quantum & Exotic States, so the page opens with sourced content", async () => {
+  const { document } = await loadPage();
+  tile(document, "Ne").click();
+  await wait();
+  const headings = [...document.querySelectorAll("#facetSections section h3")].map((h) => h.textContent);
+  assert.ok(headings.length >= 1, "default lens shows at least one facet panel");
 });
 
 test("the Medical & Life Sciences lens shows the medical facets with their status", async () => {
@@ -29,11 +37,11 @@ test("the Medical & Life Sciences lens shows the medical facets with their statu
 });
 
 test("every facet panel has a Flag link pointing at a pre-filled GitHub issue", async () => {
-  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?facets=uses,pharma,medical-devices,states" });
+  const { document } = await loadPage({ url: "http://127.0.0.1:8000/?facets=pharma,medical-devices,states" });
   tile(document, "U").click();
   await wait();
   const flags = [...document.querySelectorAll("#facetSections a")].filter((a) => a.textContent === "Flag this fact");
-  assert.equal(flags.length, 4, `flags: ${flags.length}`);
+  assert.equal(flags.length, 3, `flags: ${flags.length}`);
   for (const flag of flags) {
     const url = new URL(flag.href);
     assert.equal(url.origin, "https://github.com");

@@ -21,6 +21,6 @@ Eight statements were removed. Nothing else was removed for lack of a source.
 
 ## Open decision
 
-The Core lens shows the uses lists for each element. These are hand-written, carry no citation, and are marked
-unaudited. They are shown because the lens is kept as "uses only". If uses are treated as science facts that must be
-qualified, each list item needs a source, and until then the Core lens would show nothing.
+The uses lists for each element were hand-written, carried no citation, and were commercial. They are removed from
+the public site and held in the private copy. The Core lens is now empty. It will fill again once any uses item has a
+citable source. The default lens is now Quantum & Exotic States.

@@ -5,10 +5,10 @@ import * as core from "../../core.js";
 import { readRepo } from "./helpers.js";
 
 const lenses = [
-  { id: "core", facets: ["uses"] },
+  { id: "core", facets: ["states"] },
   { id: "healthcare", facets: ["pharma", "medical-devices"] },
 ];
-const known = new Set(["uses", "pharma", "medical-devices", "states"]);
+const known = new Set(["pharma", "medical-devices", "states"]);
 
 test("core.js has no DOM, storage, network or global references", () => {
   const source = readRepo("core.js");
@@ -27,12 +27,12 @@ test("buildSearchText lower-cases and includes the core fields and facet values"
   const element = {
     name: "Silicon", symbol: "Si", number: 14, state: "Solid", category: "metalloid",
     facets: {
-      uses: { items: ["Dedicated semiconductor wafers"] },
+      sample: { items: ["Dedicated semiconductor wafers"] },
       pharma: { summary: "Silicon-based drug delivery is not a labelled use." },
     },
   };
   const facets = [
-    { key: "uses", fields: [{ key: "items", type: "list" }] },
+    { key: "sample", fields: [{ key: "items", type: "list" }] },
     { key: "pharma", fields: [{ key: "summary", type: "text" }] },
   ];
   const text = core.buildSearchText(element, {
@@ -68,7 +68,7 @@ test("flagUrl builds a pre-filled GitHub issue for the given repo", () => {
 });
 
 test("flagUrl says so when a record has no citations", () => {
-  const url = new URL(core.flagUrl({ name: "Iron", symbol: "Fe" }, { key: "uses", label: "Uses" }, { status: "unaudited" }, "o/r"));
+  const url = new URL(core.flagUrl({ name: "Iron", symbol: "Fe" }, { key: "pharma", label: "Pharmaceutical use" }, { status: "unaudited" }, "o/r"));
   assert.match(url.searchParams.get("body"), /none recorded/);
 });
 
@@ -86,10 +86,10 @@ test("resolveLensState: URL beats saved choice, which beats the default lens", (
 test("resolveLensState: an explicit facets parameter wins and unknown ids are dropped", () => {
   const next = core.resolveLensState({
     lenses, defaultLens: "core", knownFacetIds: known,
-    lensParam: "core", facetsParam: "uses,bogus,pharma", saved: null,
+    lensParam: "core", facetsParam: "states,bogus,pharma", saved: null,
   });
   assert.equal(next.lens, "core");
-  assert.deepEqual([...next.facetIds].sort(), ["pharma", "uses"]);
+  assert.deepEqual([...next.facetIds].sort(), ["pharma", "states"]);
 });
 
 test("setLensState drops unregistered facets and rejects unknown lenses", () => {
@@ -99,12 +99,12 @@ test("setLensState drops unregistered facets and rejects unknown lenses", () => 
 });
 
 test("toggleFacetState keeps the lens name only while its facets match exactly", () => {
-  const start = { lens: "core", facetIds: new Set(["uses"]) };
+  const start = { lens: "core", facetIds: new Set(["states"]) };
   const added = core.toggleFacetState(start, "pharma", lenses);
   assert.equal(added.lens, "custom");
   const removed = core.toggleFacetState(added, "pharma", lenses);
   assert.equal(removed.lens, "core");
-  assert.deepEqual([...removed.facetIds].sort(), ["uses"]);
+  assert.deepEqual([...removed.facetIds].sort(), ["states"]);
   assert.equal(start.facetIds.size, 1, "the input state is not mutated");
 });
 

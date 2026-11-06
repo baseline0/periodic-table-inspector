@@ -1,15 +1,13 @@
 {
   "$comment": "Lenses and methodology for each facet. Field layout and labels stay in data/elements.json (the facet registry). Adding a facet: register it in elements.json, then add it here and to at least one lens. See scripts/validate_facets.py.",
   "repo": "baseline0/periodic-table-inspector",
-  "default_lens": "core",
+  "default_lens": "quantum-exotic",
   "lenses": [
     {
       "id": "core",
-      "label": "Core Chemistry & Uses",
+      "label": "Core Chemistry",
       "description": "Baseline context: what the element is used for.",
-      "facets": [
-        "uses"
-      ]
+      "facets": []
     },
     {
       "id": "healthcare",
@@ -30,10 +28,6 @@
     }
   ],
   "facets": [
-    {
-      "id": "uses",
-      "methodology": "Hand-written summary of the main commercial and industrial uses. Not yet checked against a source, so its status is unaudited."
-    },
     {
       "id": "pharma",
       "source": "data/facets/pharma.json",

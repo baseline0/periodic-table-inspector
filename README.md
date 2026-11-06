@@ -1,6 +1,6 @@
 # Periodic Table Inspector
 
-A static, work-in-progress periodic table. Each element links to its uses and its cited science facts.
+A static, work-in-progress periodic table. Each element links to its cited science facts.
 
 **Work in progress. Not investment advice.** Read the [methodology](methodology.html) before relying on any claim.
 
